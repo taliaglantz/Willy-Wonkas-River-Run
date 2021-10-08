@@ -76,8 +76,13 @@ function init() {
     cells[position].classList.add('bourbon')
   }
 
-  function moveBourbon() {
+ 
+
+  function moveBourbon {
+    setInterval(() => {
     
+
+  },1000)
   }
   
   

@@ -33,6 +33,7 @@
 // obstacles moving vertically across screen - "cheat" move
 //? once object is in same box at same time as these, the obstacle "carries" the object to the top of the gric
 // player is able to choose what object they are
+// start screen with start button and timer countdown to game start
 
 
 // THEMES
@@ -42,7 +43,8 @@
 // crossing a road in NY with shopping bags/ crossing IKEA carpark/ millenial with plants
 
 
-// To do
+// To do Friday
 // // get grid and character set up and moving
-// put biscuits on cells and create if for when char appears on them to disappear if they aren't there -> biscuit class
-// create closed cells that cause chars to disappear
+// //create boubons
+// create moving bourbons
+// create: if char moves onto cell with no bourbon class - char disappears
