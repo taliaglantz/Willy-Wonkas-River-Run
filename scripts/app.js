@@ -12,7 +12,11 @@ function init() {
   const characterStartPosition = 10
   let characterCurrentPosition = 10
 
+  const bourbon = document.querySelector('.bourbon')
+  let bourbonCurrentPosition = 220
 
+  // ** FUNCTIONS FOR MAKING GRID AND ADDING CHARACTER **
+  
   // Making grid
 
   function createGrid(characterStartPosition) {
@@ -24,6 +28,7 @@ function init() {
       cells.push(cell) // add the newly created div into our empty array
     }
     addCharacter(characterStartPosition) // call the function that adds the char to the starting position
+    addBourbon(bourbonCurrentPosition)
   }
 
   // Add character to grid
@@ -38,6 +43,7 @@ function init() {
   function removeCharacter(position) {
     cells[position].classList.remove('character')
   }
+  // Moving character around the grid
 
   function handleKeyUp(event) {
     const key = event.keyCode 
@@ -58,6 +64,25 @@ function init() {
     //console.log('POSITION AFTER REDEFINING --->', characterCurrentPosition)
     addCharacter(characterCurrentPosition) // add character to the new position that was defined in the if statement above 
   }
+
+  // ** FUNCTIONS FOR MOVING FOOD **
+
+  
+  // const bourbonCell = cells.[220]
+  // console.log(bourbonCell)
+  function addBourbon(position) {
+    //console.log(position)
+    //console.log(cells[position])
+    cells[position].classList.add('bourbon')
+  }
+
+  function moveBourbon() {
+    
+  }
+  
+  
+
+  
 
   // ** EVENT LISTENERS **
 
