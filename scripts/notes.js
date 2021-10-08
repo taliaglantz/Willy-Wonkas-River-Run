@@ -40,3 +40,9 @@
 // sweetie/chocolate world - Willy Wonka??
 // snow kingdom/ winter wonderland
 // crossing a road in NY with shopping bags/ crossing IKEA carpark/ millenial with plants
+
+
+// To do
+// // get grid and character set up and moving
+// put biscuits on cells and create if for when char appears on them to disappear if they aren't there -> biscuit class
+// create closed cells that cause chars to disappear

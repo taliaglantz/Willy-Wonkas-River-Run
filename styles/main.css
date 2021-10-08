@@ -29,13 +29,20 @@ main {
 .grid div {
   border: 1px solid lightgrey;
   flex-grow: 1;
-  height: 10%;
-  width: 10%;
+  height: 5%;
+  width: 5%;
 }
 
 
-.grid div.character {
+.character {
   background-image: url('../assets/oompa\ loompa.jpeg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.bourbon {
+  background-image: url('../assets/bourbon.jpeg');
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;
