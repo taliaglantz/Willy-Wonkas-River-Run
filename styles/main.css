@@ -1,24 +1,50 @@
+@font-face {
+  font-family: 'Willy Wonka';
+  src:  url('../assets/willywonka.regular-webfont.woff2') format('woff2'),
+        url('../assets/willywonka.regular-webfont.woff') format('woff');
+}
+
+
 * {
   box-sizing: border-box;
 }
 
 body {
   height: 100vh;
-  margin: 50px;
+  width: 100vw;
+  margin: 100px;
   display: flex;
   justify-content: space-around;
+  flex-direction: column;
+  background-color: #9c21db;
+ 
+
 }
+
+main {
+  display: flex;
+  justify-content: space-evenly;
+  
+
+}
+
 
 /***SECTION 1***/
 
-.section-one, .section-two, .section-three  {
+.section-one {
 display: flex;
 flex-direction: column;
 justify-content: space-evenly;
 align-items: center;
+/* width: calc(33.33%); */
+
+
 }
 .div-one {
-border: 2px solid black;
+color: white;
+font-family: 'Willy Wonka';
+font-size: 25px;
+
 }
 h2 {
   text-align: center;
@@ -29,7 +55,6 @@ h2 {
   flex-wrap: wrap;
   width: 200px;
   justify-content: space-around;
-  border: 2px solid black;
 }
 img {
   height: 90px;
@@ -38,11 +63,26 @@ img {
 
 /*** SECTION 2 ***/
 
+.section-two {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  /* width: calc(33.33%); */
+  
+  
+  }
 
-/*** MAIN ***/
+h1 {
+  font-family: 'Willy Wonka';
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  padding: 20px;
+}
 
-main {
-  height: 100vh;
+.div-three {
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,17 +90,17 @@ main {
 
 .grid {
   align-items: center;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
   display: flex;
   flex-wrap: wrap;
   height: 100%;
   justify-content: center;
   height: 600px;
   width: 600px;
+  background-color: white;
 }
 
 .grid div {
-  border: 1px solid lightgrey;
+  border: 1px solid white;
   flex-grow: 1;
   height: 5%;
   width: 5%;
@@ -81,10 +121,11 @@ main {
   cursor: pointer;
 }
 
-.div-three {
+.div-four {
 width: 300px;
 height: 50px;
-border: 3px solid black;
+border: 3px solid white;
+margin: 50px;
 
 
 }
@@ -92,14 +133,26 @@ border: 3px solid black;
 
 /*** SECTION 3 ***/
 
-
-.div-four {
-  border: 2px solid black;
-
-}
-.div-five {
+.section-three  {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  border: 2px solid black;
+  align-items: center;
+  /* width: calc(33.33%); */
+  
+  
+  }
+
+
+.div-five {
+  border: 2px solid white;
+  color: white;
+  font-family: 'Willy Wonka';
+
+}
+.div-six {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
 }
