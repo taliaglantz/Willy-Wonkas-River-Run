@@ -146,49 +146,52 @@ function init() {
 
 
 
-  let i = bourbonCurrentPosition
+ // let i = bourbonCurrentPosition
   // for (let i = 0; i > width; i++) {
   //       bourbonCurrentPosition++
   //     }
+  //while (i < 230) {
+    //     bourbonCurrentPosition++
+    //   }
 
-  function moveBourbon() {
-    removeBourbon
-    //console.log(removeBourbon)
-    //while (i)
+    function moveBourbon() {
+      removeBourbon
+      console.log(removeBourbon)
+      for (let i = bourbonCurrentPosition; i > width; i++) {
+        i++
+      }
+      addBourbon
+      //console.log(addBourbon)
+    }
 
 
-    addBourbon
-    //console.log(addBourbon)
+
+    // ** EVENT LISTENERS **
+
+    document.addEventListener('keyup', handleKeyUp) // listening for key press
+
+
+
+    // ** CALLING FUNCTIONS **
+
+    createGrid(characterStartPosition) //pass function to the starting position of the cat
+
+    moveBourbon()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   }
 
-
-
-  // ** EVENT LISTENERS **
-
-  document.addEventListener('keyup', handleKeyUp) // listening for key press
-
-
-
-  // ** CALLING FUNCTIONS **
-
-  createGrid(characterStartPosition) //pass function to the starting position of the cat
-
-  moveBourbon()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
-
-window.addEventListener('DOMContentLoaded', init)
+  window.addEventListener('DOMContentLoaded', init)
