@@ -13,7 +13,8 @@ function init() {
   let characterCurrentPosition = 10
 
   const bourbon = document.querySelector('.bourbon')
-  let bourbonStartPosition = 220
+  const bourbonStartPosition = 220
+  let bourbonCurrentPosition
 
   // ** FUNCTIONS FOR MAKING GRID AND ADDING CHARACTER **
 
@@ -28,7 +29,8 @@ function init() {
       cells.push(cell) // add the newly created div into our empty array
     }
     addCharacter(characterStartPosition) // call the function that adds the char to the starting position
-    //addBourbon(bourbonStartPosition)
+    //addingBourbon(bourbonStartPosition)
+    moveBourbon()
   }
 
   // Add character to grid
@@ -68,47 +70,68 @@ function init() {
   // ** FUNCTIONS FOR MOVING FOOD **
 
 
-//   const bourbonCell = cells.[220]
-//  console.log(bourbonCell)
-  //function addBourbon(position) {
-  //console.log(position)
-  //console.log(cells[position])
+  //*ADDING BOURBON*
+  //function addingBourbon(position) {
   //cells[position].classList.add('bourbon')
   //}
 
-  //function removeBourbon(position) {
+  //*REMOVING BOURBON*
+  //function removingBourbon(position) {
   //cells[position].classList.remove('bourbon')
   //}
 
+  // const removeBourbon = setTimeout(() => {
+  //   function removingBourbon(position) {
+  //     cells[position].classList.add('bourbon')
+  //   }
+  //   removingBourbon(bourbonStartPosition)
+  // }, 2000)
+  // console.log(removeBourbon)
 
-  const addingBourbon = setTimeout(() => {
-    for (let i = 220; i > 239; i++) {
 
-      function addBourbon(position) {
+
+
+  // console.log(addBourbon)
+
+
+
+//let i = bourbonCurrentPosition
+
+const addBourbon = setTimeout(() => {
+
+
+      function addingBourbon(position) {
         cells[position].classList.add('bourbon')
       }
-      addBourbon(bourbonStartPosition)
-    }
-  }, 20)
+addingBourbon(bourbonCurrentPosition)
+    }, 2000)
 
-  console.log(addingBourbon)
 
 
 
   function moveBourbon() {
+let bourbonCurrentPosition = 
+    
+
+
+    for (let i = 0; i > 10; i++) {
+      addBourbon
+    }
+
+
+
+
+
+
 
 
 
 
 
   }
-  // const removingBourbon = setTimeout(() => {
-  //   function removeBourbon(position) {
-  //     cells[position].classList.add('bourbon')
-  //   }
-  // }, 20)
 
-  // removeBourbon(bourbonStartPosition)
+
+
 
 
 
@@ -135,7 +158,7 @@ function init() {
   document.addEventListener('keyup', handleKeyUp) // listening for key press
 
   createGrid(characterStartPosition) //pass function to the starting position of the cat
-  moveBourbon()
+
 
 
 
