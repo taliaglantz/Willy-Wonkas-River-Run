@@ -33,8 +33,6 @@ function init() {
     //addingBourbon(bourbonStartPosition)
 
 
-
-
   }
 
   // Add character to grid
@@ -71,112 +69,103 @@ function init() {
     addCharacter(characterCurrentPosition) // add character to the new position that was defined in the if statement above 
   }
 
-  // ** FUNCTIONS FOR MOVING FOOD **
+  // **TEST**
+  
+  // var animate
+  // // .bourbon.style.position = 'relative'
+  // bourbon.style.left = '0px'
 
+  // function moveRight() {
+  //   bourbon.style.left = parseInt(bourbon.style.left) + 10 + 'px'
+  //   animate = setTimeout(moveRight, 20)    // call moveRight in 20msec
+  // }
+  // function stop() {
+  //   clearTimeout(animate)
+  //   bourbon.style.left = '0px'
+  // }
+
+  // ** FUNCTIONS FOR MOVING FOOD **
 
   //*ADDING BOURBON*
   // function addingBourbon(position) {
   // cells[position].classList.add('bourbon')
   // }
 
-  //   const addBourbon = setTimeout(() => {
-  //     function addingBourbon(position) {
-  //       cells[position].classList.add('bourbon')
-  //     }
-  // addingBourbon(bourbonCurrentPosition)
-  //   }, 2000)
+  // const addBourbon = setTimeout(() => {
+  //   function addingBourbon(position) {
+  //     cells[position].classList.add('bourbon')
+  //   }
+  //   addingBourbon(bourbonCurrentPosition)
+  // }, 2000)
 
   //*REMOVING BOURBON*
-  //function removingBourbon(position) {
-  //cells[position].classList.remove('bourbon')
-  //}
+  // function removingBourbon(position) {
+  // cells[position].classList.remove('bourbon')
+  // }
 
   // const removeBourbon = setTimeout(() => {
   //   function removingBourbon(position) {
   //     cells[position].classList.add('bourbon')
   //   }
-  //   removingBourbon(bourbonStartPosition)
+  //   removingBourbon(bourbonCurrentPosition)
   // }, 2000)
-  // console.log(removeBourbon)
 
-  //let i = bourbonCurrentPosition
 
-  // for (let i = 0; i > 10; i++) {
-  //   addBourbon
+
+  // TEST
+  // function sayHello() {
+  //   for (let i = 0; i < 10; i++) {
+  //     console.log('hello')
+  //   }
   // }
 
 
-
-  // function addingBourbon(position) {
-  //   cells[position].classList.add('bourbon')
-  // }
-
-
-
-  // function removingBourbon(position) {
-  //   cells[position].classList.remove('bourbon')
-  // }
-
+  // let i = bourbonCurrentPosition
 
   // function moveBourbon() {
-  //   removingBourbon(bourbonCurrentPosition)
+
+  //   removeBourbon
   //   //console.log(bourbonCurrentPosition)
-  //   for (let i = 0; i > width; i++) {
+  //   for (let i = 0; i < width - 1; i++) {
   //     bourbonCurrentPosition++
   //   }
-  //   addingBourbon(bourbonCurrentPosition)
+  //   addBourbon
   //   //console.log(bourbonCurrentPosition)
+
+  // }
+
+  // function moveBourbon() {
+  //   for (let i = 0; i < width - 1; i++) {
+  //     addingBourbon(bourbonCurrentPosition)
+  //   }
   // }
 
 
-  const addBourbon = setTimeout(() => {
-    function addingBourbon(position) {
-      cells[position].classList.add('bourbon')
-    }
-    addingBourbon(bourbonCurrentPosition)
-  }, 2000)
+  // let i = bourbonCurrentPosition
+  //   function moveBourbon(bourbonStartPosition) {
 
-  const removeBourbon = setTimeout(() => {
-    function removingBourbon(position) {
-      cells[position].classList.add('bourbon')
-    }
-    removingBourbon(bourbonCurrentPosition)
-  }, 2000)
-  //console.log(removeBourbon)
-
-
-
- // let i = bourbonCurrentPosition
-  // for (let i = 0; i > width; i++) {
-  //       bourbonCurrentPosition++
+  //     removeBourbon
+  //     //console.log(removeBourbon)
+  //     for (let i = 0; i < width; i++) {
+  //       i++
   //     }
-  //while (i < 230) {
-    //     bourbonCurrentPosition++
-    //   }
-
-    function moveBourbon() {
-      removeBourbon
-      console.log(removeBourbon)
-      for (let i = bourbonCurrentPosition; i > width; i++) {
-        i++
-      }
-      addBourbon
-      //console.log(addBourbon)
-    }
+  //     addBourbon
+  //     console.log(addBourbon)
+  //   }
 
 
 
-    // ** EVENT LISTENERS **
+  // ** EVENT LISTENERS **
 
-    document.addEventListener('keyup', handleKeyUp) // listening for key press
+  document.addEventListener('keyup', handleKeyUp) // listening for key press
 
 
 
-    // ** CALLING FUNCTIONS **
+  // ** CALLING FUNCTIONS **
 
-    createGrid(characterStartPosition) //pass function to the starting position of the cat
+  createGrid(characterStartPosition) //pass function to the starting position of the cat
 
-    moveBourbon()
+  //moveBourbon()
 
 
 
@@ -192,6 +181,7 @@ function init() {
 
 
 
-  }
 
-  window.addEventListener('DOMContentLoaded', init)
+}
+
+window.addEventListener('DOMContentLoaded', init)
