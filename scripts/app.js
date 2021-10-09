@@ -6,6 +6,7 @@ function init() {
   const width = 20
   const height = 13
   const cellCount = width * height// total number of cells
+
   const cells = [] // empty array to store the divs that we create
 
   const character = document.querySelector('.character')
@@ -14,7 +15,7 @@ function init() {
 
   const bourbon = document.querySelector('.bourbon')
   const bourbonStartPosition = 220
-  let bourbonCurrentPosition
+  let bourbonCurrentPosition = 220
 
   // ** FUNCTIONS FOR MAKING GRID AND ADDING CHARACTER **
 
@@ -71,9 +72,16 @@ function init() {
 
 
   //*ADDING BOURBON*
-  //function addingBourbon(position) {
-  //cells[position].classList.add('bourbon')
-  //}
+  // function addingBourbon(position) {
+  // cells[position].classList.add('bourbon')
+  // }
+
+  //   const addBourbon = setTimeout(() => {
+  //     function addingBourbon(position) {
+  //       cells[position].classList.add('bourbon')
+  //     }
+  // addingBourbon(bourbonCurrentPosition)
+  //   }, 2000)
 
   //*REMOVING BOURBON*
   //function removingBourbon(position) {
@@ -88,65 +96,33 @@ function init() {
   // }, 2000)
   // console.log(removeBourbon)
 
+  //let i = bourbonCurrentPosition
+
+  // for (let i = 0; i > 10; i++) {
+  //   addBourbon
+  // }
 
 
 
-  // console.log(addBourbon)
+  function addingBourbon(position) {
+    cells[position].classList.add('bourbon')
+  }
 
-
-
-//let i = bourbonCurrentPosition
-
-const addBourbon = setTimeout(() => {
-
-
-      function addingBourbon(position) {
-        cells[position].classList.add('bourbon')
-      }
-addingBourbon(bourbonCurrentPosition)
-    }, 2000)
-
-
-
-
-  function moveBourbon() {
-let bourbonCurrentPosition = 
-    
-
-
-    for (let i = 0; i > 10; i++) {
-      addBourbon
-    }
-
-
-
-
-
-
-
-
-
-
-
+  function removingBourbon(position) {
+    cells[position].classList.remove('bourbon')
   }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  function moveBourbon(bourbonStartPosition) {
+    removingBourbon(bourbonCurrentPosition)
+// console.log(bourbonCurrentPosition)
+    for (let i = 0; i > width; i++) {
+      bourbonCurrentPosition++
+    }
+    addingBourbon(bourbonCurrentPosition)
+    console.log(bourbonCurrentPosition)
+  }
+  // console.log(moveBourbon())
 
 
 
