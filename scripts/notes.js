@@ -46,5 +46,8 @@
 // To do Friday
 // // get grid and character set up and moving
 // //create boubons
+// // Set up basic CSS
+
+// To do Saturday
 // create moving bourbons
 // create: if char moves onto cell with no bourbon class - char disappears

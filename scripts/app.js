@@ -13,10 +13,10 @@ function init() {
   let characterCurrentPosition = 10
 
   const bourbon = document.querySelector('.bourbon')
-  let bourbonCurrentPosition = 220
+  let bourbonStartPosition = 220
 
   // ** FUNCTIONS FOR MAKING GRID AND ADDING CHARACTER **
-  
+
   // Making grid
 
   function createGrid(characterStartPosition) {
@@ -28,7 +28,7 @@ function init() {
       cells.push(cell) // add the newly created div into our empty array
     }
     addCharacter(characterStartPosition) // call the function that adds the char to the starting position
-    addBourbon(bourbonCurrentPosition)
+    //addBourbon(bourbonStartPosition)
   }
 
   // Add character to grid
@@ -46,7 +46,7 @@ function init() {
   // Moving character around the grid
 
   function handleKeyUp(event) {
-    const key = event.keyCode 
+    const key = event.keyCode
     //console.log('position before moving', characterCurrentPosition)
     removeCharacter(characterCurrentPosition)
 
@@ -67,31 +67,75 @@ function init() {
 
   // ** FUNCTIONS FOR MOVING FOOD **
 
-  
-  // const bourbonCell = cells.[220]
-  // console.log(bourbonCell)
-  function addBourbon(position) {
-    //console.log(position)
-    //console.log(cells[position])
-    cells[position].classList.add('bourbon')
+
+//   const bourbonCell = cells.[220]
+//  console.log(bourbonCell)
+  //function addBourbon(position) {
+  //console.log(position)
+  //console.log(cells[position])
+  //cells[position].classList.add('bourbon')
+  //}
+
+  //function removeBourbon(position) {
+  //cells[position].classList.remove('bourbon')
+  //}
+
+
+  const addingBourbon = setTimeout(() => {
+    for (let i = 220; i > 239; i++) {
+
+      function addBourbon(position) {
+        cells[position].classList.add('bourbon')
+      }
+      addBourbon(bourbonStartPosition)
+    }
+  }, 20)
+
+  console.log(addingBourbon)
+
+
+
+  function moveBourbon() {
+
+
+
+
+
   }
+  // const removingBourbon = setTimeout(() => {
+  //   function removeBourbon(position) {
+  //     cells[position].classList.add('bourbon')
+  //   }
+  // }, 20)
 
-  // function moveBourbon {
-  //   setInterval(() => {
-    
+  // removeBourbon(bourbonStartPosition)
 
-  // },1000)
-  // }
-  
-  
 
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   // ** EVENT LISTENERS **
 
   document.addEventListener('keyup', handleKeyUp) // listening for key press
 
-   createGrid(characterStartPosition) //pass function to the starting position of the cat
+  createGrid(characterStartPosition) //pass function to the starting position of the cat
+  moveBourbon()
 
 
 
