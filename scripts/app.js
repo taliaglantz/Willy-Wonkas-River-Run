@@ -31,7 +31,10 @@ function init() {
     }
     addCharacter(characterStartPosition) // call the function that adds the char to the starting position
     //addingBourbon(bourbonStartPosition)
-    moveBourbon()
+
+
+
+
   }
 
   // Add character to grid
@@ -104,28 +107,59 @@ function init() {
 
 
 
-  function addingBourbon(position) {
-    cells[position].classList.add('bourbon')
-  }
-
-  function removingBourbon(position) {
-    cells[position].classList.remove('bourbon')
-  }
+  // function addingBourbon(position) {
+  //   cells[position].classList.add('bourbon')
+  // }
 
 
-  function moveBourbon(bourbonStartPosition) {
-    removingBourbon(bourbonCurrentPosition)
-// console.log(bourbonCurrentPosition)
-    for (let i = 0; i > width; i++) {
-      bourbonCurrentPosition++
+
+  // function removingBourbon(position) {
+  //   cells[position].classList.remove('bourbon')
+  // }
+
+
+  // function moveBourbon() {
+  //   removingBourbon(bourbonCurrentPosition)
+  //   //console.log(bourbonCurrentPosition)
+  //   for (let i = 0; i > width; i++) {
+  //     bourbonCurrentPosition++
+  //   }
+  //   addingBourbon(bourbonCurrentPosition)
+  //   //console.log(bourbonCurrentPosition)
+  // }
+
+
+  const addBourbon = setTimeout(() => {
+    function addingBourbon(position) {
+      cells[position].classList.add('bourbon')
     }
     addingBourbon(bourbonCurrentPosition)
-    console.log(bourbonCurrentPosition)
+  }, 2000)
+
+  const removeBourbon = setTimeout(() => {
+    function removingBourbon(position) {
+      cells[position].classList.add('bourbon')
+    }
+    removingBourbon(bourbonCurrentPosition)
+  }, 2000)
+  //console.log(removeBourbon)
+
+
+
+  let i = bourbonCurrentPosition
+  // for (let i = 0; i > width; i++) {
+  //       bourbonCurrentPosition++
+  //     }
+
+  function moveBourbon() {
+    removeBourbon
+    //console.log(removeBourbon)
+    //while (i)
+
+
+    addBourbon
+    //console.log(addBourbon)
   }
-  // console.log(moveBourbon())
-
-
-
 
 
 
@@ -133,8 +167,13 @@ function init() {
 
   document.addEventListener('keyup', handleKeyUp) // listening for key press
 
+
+
+  // ** CALLING FUNCTIONS **
+
   createGrid(characterStartPosition) //pass function to the starting position of the cat
 
+  moveBourbon()
 
 
 
