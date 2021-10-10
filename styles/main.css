@@ -62,8 +62,6 @@ img {
   justify-content: space-evenly;
   align-items: center;
   /* width: calc(33.33%); */
-  
-  
   }
 
 h1 {
@@ -127,6 +125,7 @@ h1 {
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;
+}
 .egg {
   background-image: url('../assets/FriedEgg-removebg-preview.png');
   background-repeat: no-repeat;
@@ -145,7 +144,7 @@ h1 {
   background-size: contain;
   cursor: pointer;
 }
-.skittle-yellow {
+.yellow-skittle {
   background-image: url('../assets/yellow-skittle-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
@@ -157,7 +156,7 @@ h1 {
   background-size: contain;
   cursor: pointer;
 }
-.skittle-green {
+.green-skittle {
   background-image: url('../assets/green-skittle-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
@@ -169,8 +168,6 @@ width: 300px;
 height: 50px;
 border: 3px solid white;
 margin: 50px;
-
-
 }
 
 
@@ -182,8 +179,6 @@ margin: 50px;
   justify-content: space-evenly;
   align-items: center;
   /* width: calc(33.33%); */
-  
-  
   }
 
 
@@ -191,11 +186,9 @@ margin: 50px;
   border: 2px solid white;
   color: white;
   font-family: 'Willy Wonka';
-
 }
 .div-six {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-
 }

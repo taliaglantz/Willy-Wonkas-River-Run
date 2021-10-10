@@ -10,10 +10,10 @@ function init() {
   const cells = [] // empty array to store the divs that we create
   // Character
   const character = document.querySelector('.character')
-  const characterStartPosition = 10
+  const characterStartPosition = 6
   let characterCurrentPosition = 10
   // Sweets/chocs/biscuits
-  const pinkPartyRing = document.querySelector('.pinkparty-ring')
+  const pinkPartyRing = document.querySelector('.pink-party-ring')
   const pinkPartyRingStartPosition = 143
   let pinkPartyRingCurrentPosition = 143
 
@@ -63,7 +63,15 @@ function init() {
       cells.push(cell) // add the newly created div into our empty array
     }
     addCharacter(characterStartPosition) // call the function that adds the char to the starting position
-    //addingBourbon(bourbonStartPosition)
+    addingPinkPartyRing(pinkPartyRingStartPosition)
+    addingCustardCream(custardCreamStartPosition)
+    addingYellowPartyRing(yellowPartyRingStartPosition)
+    addingEgg(eggStartPosition)
+    addingHeart(heartStartPosition)
+    addingWorm(wormStartPosition)
+    addingYellowSkittle(yellowSkittleStartPosition)
+    addingCremeEgg(cremeEggStartPosition)
+    addingGreenSkittle(greenSkittleStartPosition)
 
 
   }
@@ -99,7 +107,8 @@ function init() {
       //console.log('INVALID KEY') // any other key, log invalid key
     }
     //console.log('POSITION AFTER REDEFINING --->', characterCurrentPosition)
-    addCharacter(characterCurrentPosition) // add character to the new position that was defined in the if statement above 
+    addCharacter(characterCurrentPosition)
+
   }
 
   // **TEST**
@@ -119,10 +128,46 @@ function init() {
 
   // ** FUNCTIONS FOR MOVING FOOD **
 
-  *ADDING BOURBON*
-  function addingBourbon(position) {
-  cells[position].classList.add('bourbon')
+  // *ADDING FOOD*
+  function addingPinkPartyRing(position) {
+    cells[position].classList.add('pink-party-ring')
   }
+  function addingCustardCream(position) {
+    cells[position].classList.add('custard-cream')
+  }
+  function addingYellowPartyRing(position) {
+    cells[position].classList.add('yellow-party-ring')
+  }
+  function addingEgg(position) {
+    cells[position].classList.add('egg')
+  }
+  function addingHeart(position) {
+    cells[position].classList.add('heart')
+  }
+  function addingWorm(position) {
+    cells[position].classList.add('worm')
+  }
+  function addingYellowSkittle(position) {
+    cells[position].classList.add('yellow-skittle')
+  }
+  function addingCremeEgg(position) {
+    cells[position].classList.add('creme-egg')
+  }
+  function addingGreenSkittle(position) {
+    cells[position].classList.add('green-skittle')
+  }
+
+
+
+
+
+
+
+
+
+
+
+
 
   // const addBourbon = setTimeout(() => {
   //   function addingBourbon(position) {
