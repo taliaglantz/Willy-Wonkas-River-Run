@@ -57,12 +57,14 @@ h2 {
 .div-two {
   display: flex;
   flex-wrap: wrap;
-  width: 200px;
+  width: 250px;
   justify-content: space-around;
 }
 img {
   height: 90px;
   padding: 5px;
+  cursor: pointer;
+  
 }
 
 /*** SECTION 2 ***/
@@ -116,6 +118,7 @@ h1 {
   background-image: url('../assets/oompa_loompa_transparent-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
+  cursor: pointer;
 }
 
 .pink-party-ring {

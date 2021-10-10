@@ -13,6 +13,10 @@ function init() {
   const character = document.querySelector('.character')
   const characterStartPosition = 6
   let characterCurrentPosition = 10
+  const willyWonka = document.querySelector('#willy-wonka')
+  const charlie = document.querySelector('#charlie')
+  const violet = document.querySelector('#violet')
+  const oompaLoompa = document.querySelector('#oompa-loompa')
   // Sweets/chocs/biscuits
   const pinkPartyRing = document.querySelector('.pink-party-ring')
   const pinkPartyRingStartPosition = 143
@@ -83,6 +87,20 @@ function init() {
     //console.log(position)
     //console.log(cells[position])
     cells[position].classList.add('character') // use position as index to pick the corresponding div from the array of cells and add the class of char
+  }
+// Change characters
+
+  function characterChange(event) {
+    //console.log(event.target.id)
+    if (event.target.id = willyWonka) {
+      character.style.background-image = 'url('../assets/oompa_loompa_transparent-removebg-preview.png')'
+    } else if (event.target.id = charlie) {
+      character.style.background-image = 'url('../assets/charlie.png')'
+    } else if (event.target.id = violet) {
+      character.style.background-image = 'url('../assets/violet.png')'
+    } else if(event.target.id = oompaLoompa) {
+      character.style.background-image = 'url('../assets/oompa_loompa_transparent-removebg-preview.png')'
+    }
   }
 
   // Remove character from grid
@@ -174,31 +192,49 @@ function init() {
   }
 
   // *MOVING FOOD*
-  function movingFood() {
-    console.log('hello')
-    addingPinkPartyRing(pinkPartyRingCurrentPosition)
-    foodTimer = setInterval(() => {
-      removingPinkPartyRing(pinkPartyRingCurrentPosition)
-      if (pinkPartyRingCurrentPosition % width !== width - 1) {
-        pinkPartyRingCurrentPosition += 1
-      } else {
-        removingPinkPartyRing(pinkPartyRingCurrentPosition)
-        addingPinkPartyRing(pinkPartyRingStartPosition)
-      }
-      
-      addingPinkPartyRing(pinkPartyRingCurrentPosition)
-    }, 500)
+  // function movingFood() {
+  //   //console.log('hello')
+  //   const foodTimer = setInterval(() => {
+  //     removingPinkPartyRing(pinkPartyRingStartPosition)
+  //     addingPinkPartyRing(pinkPartyRingCurrentPosition)
+  //     removingPinkPartyRing(pinkPartyRingCurrentPosition)
+  //     if (pinkPartyRingCurrentPosition % width !== width - 1) {
+  //       pinkPartyRingCurrentPosition += 1
+  //       addingPinkPartyRing(pinkPartyRingCurrentPosition)
+  //     } else {
+  //       removingPinkPartyRing(pinkPartyRingCurrentPosition)
+  //       addingPinkPartyRing(pinkPartyRingStartPosition)
+  //     }
 
+  //   }, 500)
+
+
+  // }
+  let counter = 0
+  let repeat
+  //let foodTimer
+
+  function movingFood() {
+    clearInterval(repeat)
+    counter = 0
+    repeat = setInterval(addingRemoving, 500)
   }
 
-
-
-
-
-
-
-
-
+  function addingRemoving() {
+    removingPinkPartyRing(pinkPartyRingStartPosition)
+    addingPinkPartyRing(pinkPartyRingCurrentPosition)
+    counter++
+    if (counter < 13) {
+      removingPinkPartyRing(pinkPartyRingCurrentPosition)
+      pinkPartyRingCurrentPosition += 1
+      addingPinkPartyRing(pinkPartyRingCurrentPosition)
+      
+    } else {
+      removingPinkPartyRing(pinkPartyRingCurrentPosition)
+      addingPinkPartyRing(pinkPartyRingStartPosition)
+      clearInterval(repeat)
+    }
+  }
 
 
   // **TEST**
@@ -286,6 +322,10 @@ function init() {
 
   document.addEventListener('keyup', handleKeyUp) // listening for key press
   start.addEventListener('click', movingFood)
+  willyWonka.addEventListener('click',characterChange)
+  charlie.addEventListener('click',characterChange)
+  violet.addEventListener('click',characterChange)
+  oompaLoompa.addEventListener('click',characterChange)
 
 
 
