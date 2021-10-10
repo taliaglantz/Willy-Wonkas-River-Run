@@ -3,19 +3,52 @@ function init() {
 
   // ** VARIABLES ** 
   const grid = document.querySelector('.grid') // get grid element
-  const width = 20
+  const width = 13
   const height = 13
   const cellCount = width * height// total number of cells
 
   const cells = [] // empty array to store the divs that we create
-
+  // Character
   const character = document.querySelector('.character')
   const characterStartPosition = 10
   let characterCurrentPosition = 10
+  // Sweets/chocs/biscuits
+  const pinkPartyRing = document.querySelector('.pinkparty-ring')
+  const pinkPartyRingStartPosition = 143
+  let pinkPartyRingCurrentPosition = 143
 
-  const bourbon = document.querySelector('.bourbon')
-  const bourbonStartPosition = 220
-  let bourbonCurrentPosition = 220
+  const custardCream = document.querySelector('.custard-cream')
+  const custardCreamStartPosition = 142
+  let custardCreamCurrentPosition = 142
+
+  const yellowPartyRing = document.querySelector('.yellow-party-ring')
+  const yellowPartyRingStartPosition = 117
+  let yellowPartyRingCurrentPosition = 117
+
+  const egg = document.querySelector('.egg')
+  const eggStartPosition = 91
+  let eggCurrentPosition = 91
+
+  const heart = document.querySelector('.heart')
+  const heartStartPosition = 90
+  let heartCurrentPosition = 90
+
+  const worm = document.querySelector('.worm')
+  const wormStartPosition = 65
+  let wormCurrentPosition = 65
+
+  const yellowSkittle = document.querySelector('.skittle-yellow')
+  const yellowSkittleStartPosition = 39
+  let yellowSkittleCurrentPosition = 39
+
+  const cremeEgg = document.querySelector('.creme-egg')
+  const cremeEggStartPosition = 38
+  let cremeEggCurrentPosition = 38
+
+  const greenSkittle = document.querySelector('.skittle-green')
+  const greenSkittleStartPosition = 13
+  let greenSkittleCurrentPosition = 13
+
 
   // ** FUNCTIONS FOR MAKING GRID AND ADDING CHARACTER **
 
@@ -70,7 +103,7 @@ function init() {
   }
 
   // **TEST**
-  
+
   // var animate
   // // .bourbon.style.position = 'relative'
   // bourbon.style.left = '0px'
@@ -86,10 +119,10 @@ function init() {
 
   // ** FUNCTIONS FOR MOVING FOOD **
 
-  //*ADDING BOURBON*
-  // function addingBourbon(position) {
-  // cells[position].classList.add('bourbon')
-  // }
+  *ADDING BOURBON*
+  function addingBourbon(position) {
+  cells[position].classList.add('bourbon')
+  }
 
   // const addBourbon = setTimeout(() => {
   //   function addingBourbon(position) {

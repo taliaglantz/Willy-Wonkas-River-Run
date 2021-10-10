@@ -15,18 +15,11 @@ body {
   margin: 100px;
   display: flex;
   justify-content: space-around;
-  flex-direction: column;
+  flex-direction: row;
   background-color: #9c21db;
- 
-
 }
 
-main {
-  display: flex;
-  justify-content: space-evenly;
-  
 
-}
 
 
 /***SECTION 1***/
@@ -94,28 +87,78 @@ h1 {
   flex-wrap: wrap;
   height: 100%;
   justify-content: center;
-  height: 700px;
-  width: 900px;
+  height: 800px;
+  width: 800px;
   background-color: white;
 }
 
 .grid div {
   border: 1px solid white;
   flex-grow: 1;
-  height: 5%;
-  width: 5%;
+  height: 50px;
+  width: 60px;
+  text-align: center;
+  padding: 2px;
+  line-height: 50px;
 }
 
 
 .character {
-  background-image: url('../assets/oompa\ loompa.jpeg');
+  background-image: url('../assets/oompa_loompa_transparent-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;
 }
 
-.bourbon {
-  background-image: url('../assets/bourbon.jpeg');
+.pink-party-ring {
+  background-image: url('../assets/pink-party-ring--removebg-preview.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+.custard-cream {
+  background-image: url('../assets/Custard_cream_biscuit-removebg-preview.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+.yellow-party-ring {
+  background-image: url('../assets/yellow-party-ring-removebg-preview.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+.egg {
+  background-image: url('../assets/FriedEgg-removebg-preview.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+.heart {
+  background-image: url('../assets/haribo-heart-removebg-preview.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+.worm {
+  background-image: url('../assets/worm-removebg-preview.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+.skittle-yellow {
+  background-image: url('../assets/yellow-skittle-removebg-preview.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+.creme-egg {
+  background-image: url('../assets/creme-egg-removebg-preview.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+.skittle-green {
+  background-image: url('../assets/green-skittle-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;
