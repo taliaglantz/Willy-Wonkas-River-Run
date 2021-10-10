@@ -17,6 +17,7 @@ body {
   justify-content: space-around;
   flex-direction: row;
   background-color: #9c21db;
+
 }
 
 
@@ -30,9 +31,19 @@ flex-direction: column;
 justify-content: space-evenly;
 align-items: center;
 /* width: calc(33.33%); */
-
-
 }
+button {
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 30px;
+  font-family: 'Willy Wonka';
+  background-color: gold;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
 .div-one {
 color: white;
 font-family: 'Willy Wonka';
@@ -105,62 +116,58 @@ h1 {
   background-image: url('../assets/oompa_loompa_transparent-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
-  cursor: pointer;
 }
 
 .pink-party-ring {
   background-image: url('../assets/pink-party-ring--removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
-  cursor: pointer;
+ 
 }
 .custard-cream {
   background-image: url('../assets/Custard_cream_biscuit-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
-  cursor: pointer;
+  
 }
 .yellow-party-ring {
   background-image: url('../assets/yellow-party-ring-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
-  cursor: pointer;
 }
 .egg {
   background-image: url('../assets/FriedEgg-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
-  cursor: pointer;
+  
 }
 .heart {
   background-image: url('../assets/haribo-heart-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
-  cursor: pointer;
 }
 .worm {
   background-image: url('../assets/worm-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
-  cursor: pointer;
+ 
 }
 .yellow-skittle {
   background-image: url('../assets/yellow-skittle-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
-  cursor: pointer;
+  
 }
 .creme-egg {
   background-image: url('../assets/creme-egg-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
-  cursor: pointer;
 }
 .green-skittle {
   background-image: url('../assets/green-skittle-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
-  cursor: pointer;
+  
 }
 
 .div-four {

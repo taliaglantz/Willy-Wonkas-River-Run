@@ -111,20 +111,6 @@ function init() {
 
   }
 
-  // **TEST**
-
-  // var animate
-  // // .bourbon.style.position = 'relative'
-  // bourbon.style.left = '0px'
-
-  // function moveRight() {
-  //   bourbon.style.left = parseInt(bourbon.style.left) + 10 + 'px'
-  //   animate = setTimeout(moveRight, 20)    // call moveRight in 20msec
-  // }
-  // function stop() {
-  //   clearTimeout(animate)
-  //   bourbon.style.left = '0px'
-  // }
 
   // ** FUNCTIONS FOR MOVING FOOD **
 
@@ -157,6 +143,37 @@ function init() {
     cells[position].classList.add('green-skittle')
   }
 
+  // *ADDING FOOD*
+  function addingPinkPartyRing(position) {
+    cells[position].classList.remove('pink-party-ring')
+  }
+  function addingCustardCream(position) {
+    cells[position].classList.remove('custard-cream')
+  }
+  function addingYellowPartyRing(position) {
+    cells[position].classList.remove('yellow-party-ring')
+  }
+  function addingEgg(position) {
+    cells[position].classList.remove('egg')
+  }
+  function addingHeart(position) {
+    cells[position].classList.remove('heart')
+  }
+  function addingWorm(position) {
+    cells[position].classList.remove('worm')
+  }
+  function addingYellowSkittle(position) {
+    cells[position].classList.remove('yellow-skittle')
+  }
+  function addingCremeEgg(position) {
+    cells[position].classList.remove('creme-egg')
+  }
+  function addingGreenSkittle(position) {
+    cells[position].classList.remove('green-skittle')
+  }
+
+ // *MOVING FOOD*
+function movingFood(event)
 
 
 
@@ -166,6 +183,22 @@ function init() {
 
 
 
+
+
+  // **TEST**
+
+  // var animate
+  // // .bourbon.style.position = 'relative'
+  // bourbon.style.left = '0px'
+
+  // function moveRight() {
+  //   bourbon.style.left = parseInt(bourbon.style.left) + 10 + 'px'
+  //   animate = setTimeout(moveRight, 20)    // call moveRight in 20msec
+  // }
+  // function stop() {
+  //   clearTimeout(animate)
+  //   bourbon.style.left = '0px'
+  // }
 
 
 
@@ -236,12 +269,13 @@ function init() {
   // ** EVENT LISTENERS **
 
   document.addEventListener('keyup', handleKeyUp) // listening for key press
+  document.addEventListener('click', )
 
 
 
   // ** CALLING FUNCTIONS **
 
-  createGrid(characterStartPosition) //pass function to the starting position of the cat
+  createGrid(characterStartPosition) //pass function to the starting position of the char
 
   //moveBourbon()
 
