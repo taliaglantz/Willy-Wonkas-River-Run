@@ -8,6 +8,7 @@ function init() {
   const cellCount = width * height// total number of cells
 
   const cells = [] // empty array to store the divs that we create
+  const start = document.querySelector('button')
   // Character
   const character = document.querySelector('.character')
   const characterStartPosition = 6
@@ -144,36 +145,51 @@ function init() {
   }
 
   // *ADDING FOOD*
-  function addingPinkPartyRing(position) {
+  function removingPinkPartyRing(position) {
     cells[position].classList.remove('pink-party-ring')
   }
-  function addingCustardCream(position) {
+  function removingCustardCream(position) {
     cells[position].classList.remove('custard-cream')
   }
-  function addingYellowPartyRing(position) {
+  function removingYellowPartyRing(position) {
     cells[position].classList.remove('yellow-party-ring')
   }
-  function addingEgg(position) {
+  function removingEgg(position) {
     cells[position].classList.remove('egg')
   }
-  function addingHeart(position) {
+  function removingHeart(position) {
     cells[position].classList.remove('heart')
   }
-  function addingWorm(position) {
+  function removingWorm(position) {
     cells[position].classList.remove('worm')
   }
-  function addingYellowSkittle(position) {
+  function removingYellowSkittle(position) {
     cells[position].classList.remove('yellow-skittle')
   }
-  function addingCremeEgg(position) {
+  function removingCremeEgg(position) {
     cells[position].classList.remove('creme-egg')
   }
-  function addingGreenSkittle(position) {
+  function removingGreenSkittle(position) {
     cells[position].classList.remove('green-skittle')
   }
 
- // *MOVING FOOD*
-function movingFood(event)
+  // *MOVING FOOD*
+  function movingFood() {
+    console.log('hello')
+    addingPinkPartyRing(pinkPartyRingCurrentPosition)
+    foodTimer = setInterval(() => {
+      removingPinkPartyRing(pinkPartyRingCurrentPosition)
+      if (pinkPartyRingCurrentPosition % width !== width - 1) {
+        pinkPartyRingCurrentPosition += 1
+      } else {
+        removingPinkPartyRing(pinkPartyRingCurrentPosition)
+        addingPinkPartyRing(pinkPartyRingStartPosition)
+      }
+      
+      addingPinkPartyRing(pinkPartyRingCurrentPosition)
+    }, 500)
+
+  }
 
 
 
@@ -269,7 +285,7 @@ function movingFood(event)
   // ** EVENT LISTENERS **
 
   document.addEventListener('keyup', handleKeyUp) // listening for key press
-  document.addEventListener('click', )
+  start.addEventListener('click', movingFood)
 
 
 
