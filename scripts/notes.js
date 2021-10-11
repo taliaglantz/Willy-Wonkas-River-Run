@@ -84,5 +84,6 @@
 // timer
 // animations on lollies
 // sizing of characters
+// // border
 
 

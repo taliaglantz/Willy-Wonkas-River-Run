@@ -98,9 +98,11 @@ h1 {
   flex-wrap: wrap;
   height: 100%;
   justify-content: center;
-  height: 800px;
-  width: 800px;
+  height: 850px;
+  width: 850px;
   background-color: white;
+  border: 25px solid ;
+  border-image: url('../assets/sweetie-border-removebg-preview.png') 10% round;
 }
 
 .grid div {

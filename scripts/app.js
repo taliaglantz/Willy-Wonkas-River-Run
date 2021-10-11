@@ -12,7 +12,7 @@ function init() {
   // Character
   const character = document.querySelector('.character')
   const characterStartPosition = 6
-  let characterCurrentPosition = 10
+  let characterCurrentPosition = 6
   const willyWonka = document.querySelector('#willy-wonka')
   const charlie = document.querySelector('#charlie')
   const violet = document.querySelector('#violet')
@@ -68,6 +68,7 @@ function init() {
       cells.push(cell) // add the newly created div into our empty array
     }
     addCharacter(characterStartPosition) // call the function that adds the char to the starting position
+
     addingPinkPartyRing(pinkPartyRingStartPosition)
     addingCustardCream(custardCreamStartPosition)
     addingYellowPartyRing(yellowPartyRingStartPosition)
@@ -90,19 +91,19 @@ function init() {
   }
   // Change characters
 
-  function characterChange(event) {
-    console.log(event.target.id)
-    if (event.target.id = willyWonka) {
-      character.style.background = "url('../assets/oompa_loompa_transparent-removebg-preview.png');"
-      //console.log(character)
-    } else if (event.target.id = charlie) {
-      character.style.background = "url('../assets/charlie.png');"
-    } else if (event.target.id = violet) {
-      character.style.background = "url('../assets/violet.png');"
-    } else if (event.target.id = oompaLoompa) {
-      character.style.background = "url('../assets/oompa_loompa_transparent-removebg-preview.png');"
-    }
-  }
+  // function characterChange(event) {
+  //   console.log(event.target.id)
+  //   if (event.target.id = willyWonka) {
+  //     character.style.background = "url('../assets/oompa_loompa_transparent-removebg-preview.png');"
+  //     //console.log(character)
+  //   } else if (event.target.id = charlie) {
+  //     character.style.background = "url('../assets/charlie.png');"
+  //   } else if (event.target.id = violet) {
+  //     character.style.background = "url('../assets/violet.png');"
+  //   } else if (event.target.id = oompaLoompa) {
+  //     character.style.background = "url('../assets/oompa_loompa_transparent-removebg-preview.png');"
+  //   }
+  // }
 
   // Remove character from grid
   function removeCharacter(position) {
@@ -332,10 +333,10 @@ function init() {
 
   document.addEventListener('keyup', handleKeyUp) // listening for key press
   start.addEventListener('click', movingFood)
-  willyWonka.addEventListener('click', characterChange)
-  charlie.addEventListener('click', characterChange)
-  violet.addEventListener('click', characterChange)
-  oompaLoompa.addEventListener('click', characterChange)
+  // willyWonka.addEventListener('click', characterChange)
+  // charlie.addEventListener('click', characterChange)
+  // violet.addEventListener('click', characterChange)
+  // oompaLoompa.addEventListener('click', characterChange)
 
 
 
