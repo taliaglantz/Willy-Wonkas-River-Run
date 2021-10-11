@@ -221,9 +221,6 @@ function init() {
     })
     startMovement()
     addCharacter(characterStartPosition) // call the function that adds the char to the starting position
-    
-
-
   }
 
   // Add rainbow belt
@@ -244,16 +241,46 @@ function init() {
 
   // Add character to grid
 
-  function addCharacter(position) { // takes argument so function is reusable
-    //console.log(position)
-    //console.log(cells[position])
-    cells[position].classList.add('character') // use position as index to pick the corresponding div from the array of cells and add the class of char
+  // function addCharacter(position) { // takes argument so function is reusable
+  //   //console.log(position)
+  //   //console.log(cells[position])
+  //   cells[position].classList.add('character') // use position as index to pick the corresponding div from the array of cells and add the class of char
+  // }
+function characterChange(event) {
+
+  function addCharacter(position) {
+    if (event.target.id = willyWonka) {
+      cells[position].classList.add('willy-wonka')
+    } else if (event.target.id = charlie) {
+      cells[position].classList.add('charlie')
+    } else if (event.target.id = violet) {
+      cells[position].classList.add('violet')
+    } else if (event.target.id = oompaLoompa) {
+      cells[position].classList.add('oompa-loompa')
+    } 
+  }
+  
+  function removeCharacter(position) {
+    if (event.target.id = willyWonka) {
+      cells[position].classList.add('willy-wonka')
+    } else if (event.target.id = charlie) {
+      cells[position].classList.add('charlie')
+    } else if (event.target.id = violet) {
+      cells[position].classList.add('violet')
+    } else if (event.target.id = oompaLoompa) {
+      cells[position].classList.add('oompa-loompa')
+    } 
   }
 
+
+
+
+}
+
   // Remove character from grid
-  function removeCharacter(position) {
-    cells[position].classList.remove('character')
-  }
+  // function removeCharacter(position) {
+  //   cells[position].classList.remove('character')
+  // }
   // Moving character around the grid
 
   function handleKeyUp(event) {
@@ -342,19 +369,18 @@ function init() {
 
   // Change characters
 
-  function characterChange(event) {
-    //console.log(event.target.id)
-    if (event.target.id = willyWonka) {
-      character.style.background = "url('../assets/oompa_loompa_transparent-removebg-preview.png');"
-    } else if (event.target.id = charlie) {
-      character.style.background = "url('../assets/charlie.png');"
-    } else if (event.target.id = violet) {
-      character.style.background = "url('../assets/violet.png');"
-    } else if (event.target.id = oompaLoompa) {
-      character.style.background = "url('../assets/oompa_loompa_transparent-removebg-preview.png');"
-    }
-    addCharacter(characterStartPosition)
-  }
+  // function characterChange(event) {
+  //   console.log(event.target.id)
+  //   if (event.target.id = willyWonka) {
+  //     addCharacter(characterStartPosition)
+  //   } else if (event.target.id = charlie) {
+  //     addCharacter(characterStartPosition)
+  //   } else if (event.target.id = violet) {
+  //     addCharacter(characterStartPosition)
+  //   } else if (event.target.id = oompaLoompa) {
+  //     addCharacter(characterStartPosition)
+  //   }
+  // }
 
 //console.log(willyWonka)
 
@@ -380,7 +406,7 @@ function init() {
   // ** CALLING FUNCTIONS **
 
   createGrid(characterStartPosition) //pass function to the starting position of the char
-
+//characterChange()
 }
 
 
