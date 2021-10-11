@@ -48,8 +48,8 @@ button {
 color: white;
 font-family: 'Willy Wonka';
 font-size: 25px;
-
 }
+
 h2 {
   text-align: center;
   padding: 15px;
@@ -117,6 +117,12 @@ h1 {
   padding: 2px;
   line-height: 50px;
   color: white;
+}
+
+#rainbow-belt {
+  background-image: url('../assets/rainbow.mp4');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 

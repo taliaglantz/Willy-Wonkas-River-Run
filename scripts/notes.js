@@ -66,10 +66,9 @@
 
 
 // manage to change characters - HELP
-// get food moving smoothly - setTimeout?? - add back in quicker than goes out - HELP
 // add in rainbow bars
 
-
+// get food moving smoothly - setTimeout?? - add back in quicker than goes out - HELP
 
 // To do - JS
 // interactions with food and river - ESSENTIAL
