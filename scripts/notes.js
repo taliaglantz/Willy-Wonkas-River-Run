@@ -60,11 +60,16 @@
 // //create clicks for changing characters
 
 // To do Monday
-// manage to change characters - HELP
+
 // get food moving on repeat
 // get all food moving in correct directions
+
+
+// manage to change characters - HELP
 // get food moving smoothly - setTimeout?? - add back in quicker than goes out - HELP
 // add in rainbow bars
+
+
 
 // To do - JS
 // interactions with food and river - ESSENTIAL
