@@ -88,18 +88,19 @@ function init() {
     //console.log(cells[position])
     cells[position].classList.add('character') // use position as index to pick the corresponding div from the array of cells and add the class of char
   }
-// Change characters
+  // Change characters
 
   function characterChange(event) {
-    //console.log(event.target.id)
+    console.log(event.target.id)
     if (event.target.id = willyWonka) {
-      character.style.background-image = 'url('../assets/oompa_loompa_transparent-removebg-preview.png')'
+      character.style.background = "url('../assets/oompa_loompa_transparent-removebg-preview.png');"
+      //console.log(character)
     } else if (event.target.id = charlie) {
-      character.style.background-image = 'url('../assets/charlie.png')'
+      character.style.background = "url('../assets/charlie.png');"
     } else if (event.target.id = violet) {
-      character.style.background-image = 'url('../assets/violet.png')'
-    } else if(event.target.id = oompaLoompa) {
-      character.style.background-image = 'url('../assets/oompa_loompa_transparent-removebg-preview.png')'
+      character.style.background = "url('../assets/violet.png');"
+    } else if (event.target.id = oompaLoompa) {
+      character.style.background = "url('../assets/oompa_loompa_transparent-removebg-preview.png');"
     }
   }
 
@@ -207,11 +208,15 @@ function init() {
   //     }
 
   //   }, 500)
-
-
   // }
+
+
+
+
+
   let counter = 0
   let repeat
+
   //let foodTimer
 
   function movingFood() {
@@ -221,6 +226,7 @@ function init() {
   }
 
   function addingRemoving() {
+
     removingPinkPartyRing(pinkPartyRingStartPosition)
     addingPinkPartyRing(pinkPartyRingCurrentPosition)
     counter++
@@ -228,13 +234,17 @@ function init() {
       removingPinkPartyRing(pinkPartyRingCurrentPosition)
       pinkPartyRingCurrentPosition += 1
       addingPinkPartyRing(pinkPartyRingCurrentPosition)
-      
+
     } else {
       removingPinkPartyRing(pinkPartyRingCurrentPosition)
       addingPinkPartyRing(pinkPartyRingStartPosition)
       clearInterval(repeat)
     }
   }
+
+
+
+
 
 
   // **TEST**
@@ -322,10 +332,10 @@ function init() {
 
   document.addEventListener('keyup', handleKeyUp) // listening for key press
   start.addEventListener('click', movingFood)
-  willyWonka.addEventListener('click',characterChange)
-  charlie.addEventListener('click',characterChange)
-  violet.addEventListener('click',characterChange)
-  oompaLoompa.addEventListener('click',characterChange)
+  willyWonka.addEventListener('click', characterChange)
+  charlie.addEventListener('click', characterChange)
+  violet.addEventListener('click', characterChange)
+  oompaLoompa.addEventListener('click', characterChange)
 
 
 

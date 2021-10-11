@@ -51,3 +51,38 @@
 // To do Saturday
 // create moving bourbons
 // create: if char moves onto cell with no bourbon class - char disappears
+
+// To do Sunday
+// //create moving food
+// //add rest of food
+// //remove white space from all images
+// //add start button to get game going
+// //create clicks for changing characters
+
+// To do Monday
+// manage to change characters - HELP
+// get food moving on repeat - HELP
+// get all food moving in correct directions
+// get food moving smoothly - setTimeout?? - add back in quicker than goes out - HELP
+
+// To do - JS
+// interactions with food and river - ESSENTIAL
+// kitkat bars stretching over 
+// timer
+// enter screen with start button
+// game over screen
+// lives
+// points and objects that help get more points?
+// objects to gain a round
+// levels
+
+// To do - CSS
+// fix sizing of screen
+// moving river as background to grid
+// factory and gate at top
+// start screen
+// timer
+// animations on lollies
+// sizing of characters
+
+
