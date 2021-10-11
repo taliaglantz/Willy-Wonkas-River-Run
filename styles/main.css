@@ -126,7 +126,31 @@ h1 {
 }
 
 
-.character {
+.default-character {
+  background-image: url('../assets/oompa_loompa_transparent-removebg-preview.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+.willy-wonka {
+  background-image: url('../assets/willy_wonka_transparent-removebg-preview.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+.charlie {
+  background-image: url('../assets/charlie.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+.violet {
+  background-image: url('../assets/violet.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+.oompa-loompa {
   background-image: url('../assets/oompa_loompa_transparent-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;

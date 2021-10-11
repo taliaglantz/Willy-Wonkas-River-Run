@@ -61,8 +61,12 @@
 
 // To do Monday
 
-// get food moving on repeat
-// get all food moving in correct directions
+// //get food moving on repeat
+// //get all food moving in correct directions
+
+// To do Tuesday
+
+// character to only be able to 'step' on food items
 
 
 // manage to change characters - HELP
@@ -72,13 +76,12 @@
 
 // To do - JS
 // interactions with food and river - ESSENTIAL
-// kitkat bars stretching over 
 // timer
 // enter screen with start button
 // game over screen
 // lives
 // points and objects that help get more points?
-// objects to gain a round
+// objects to gain a life
 // levels
 
 // To do - CSS

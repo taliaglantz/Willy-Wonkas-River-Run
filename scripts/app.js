@@ -12,13 +12,14 @@ function init() {
   
   // Character
   
-  const character = document.querySelector('.character')
+  const defaultCharacter = document.querySelector('.default-character')
   const characterStartPosition = 6
   let characterCurrentPosition = 6
-  const willyWonka = document.querySelector('#willy-wonka')
-  const charlie = document.querySelector('#charlie')
-  const violet = document.querySelector('#violet')
-  const oompaLoompa = document.querySelector('#oompa-loompa')
+
+  const willyWonka = document.querySelector('.willy-wonka')
+  const charlie = document.querySelector('.charlie')
+  const violet = document.querySelector('.violet')
+  const oompaLoompa = document.querySelector('.oompa-loompa')
  
   // Sweet Treats
 
@@ -188,7 +189,7 @@ function init() {
   ]
 
 
-  // ** FUNCTIONS FOR MAKING GRID AND ADDING CHARACTER **
+  // ** FUNCTIONS FOR MAKING GRID AND ADDING CHARACTER & FOOD ITEMS **
 
   // Making grid
 
@@ -276,13 +277,13 @@ function init() {
 
   }
 
-  // add a biscuit to the grid
+  // add a food item to the grid
   function addFood(treat) {
     //console.log('treat', treat)
     cells[treat.currentPosition].classList.add(treat.cssClass)
   }
 
-  // remove a Food from the grid
+  // remove a food item from the grid
   function removeFood(treat) {
     cells[treat.currentPosition].classList.remove(treat.cssClass)
   }
@@ -312,13 +313,13 @@ function init() {
     addFood(treat)
   }
 
-  // start movement of the biscuits
+  // start movement of the food items
   function startMovement() {
-    sweetTreats.forEach(treat => { // iterate through all the biscuits
+    sweetTreats.forEach(treat => { // iterate through all the food items
       if (treat.order === 'first') { // check if the biscuit should come first
-        treat.treatTimer = setInterval(() => moveFoods(treat), 1000) // set value of treatTimer to be id returned from setInterval and call function to move the biscuits 
+        treat.treatTimer = setInterval(() => moveFoods(treat), 1000) // set value of treatTimer to be id returned from setInterval and call function to move the food items 
       } else {
-        setTimeout(() => { // delay start of the second set of biscuits
+        setTimeout(() => { // delay start of the second set of food items
           addFood(treat) // add them at their starting positions
           treat.treatTimer = setInterval(() => moveFoods(treat), 1000)
         }, 3000) // determines how long before 2nd biscuit comes in
@@ -341,19 +342,21 @@ function init() {
 
   // Change characters
 
-  // function characterChange(event) {
-  //   console.log(event.target.id)
-  //   if (event.target.id = willyWonka) {
-  //     character.style.background = "url('../assets/oompa_loompa_transparent-removebg-preview.png');"
-  //     //console.log(character)
-  //   } else if (event.target.id = charlie) {
-  //     character.style.background = "url('../assets/charlie.png');"
-  //   } else if (event.target.id = violet) {
-  //     character.style.background = "url('../assets/violet.png');"
-  //   } else if (event.target.id = oompaLoompa) {
-  //     character.style.background = "url('../assets/oompa_loompa_transparent-removebg-preview.png');"
-  //   }
+  function characterChange(event) {
+    //console.log(event.target.id)
+    if (event.target.id = willyWonka) {
+      character.style.background = "url('../assets/oompa_loompa_transparent-removebg-preview.png');"
+    } else if (event.target.id = charlie) {
+      character.style.background = "url('../assets/charlie.png');"
+    } else if (event.target.id = violet) {
+      character.style.background = "url('../assets/violet.png');"
+    } else if (event.target.id = oompaLoompa) {
+      character.style.background = "url('../assets/oompa_loompa_transparent-removebg-preview.png');"
+    }
+    addCharacter(characterStartPosition)
+  }
 
+//console.log(willyWonka)
 
   
 
@@ -365,14 +368,12 @@ function init() {
 
   document.addEventListener('keyup', handleKeyUp) // listening for key press
   start.addEventListener('click', startMovement)
-  //start.addEventListener('click', movingPinkPartyRingTwo)
-  //start.addEventListener('click', movingCustardCream)
-  //start.addEventListener('click', movingCustardCreamTwo)
+  
 
-  // willyWonka.addEventListener('click', characterChange)
-  // charlie.addEventListener('click', characterChange)
-  // violet.addEventListener('click', characterChange)
-  // oompaLoompa.addEventListener('click', characterChange)
+  willyWonka.addEventListener('click', characterChange)
+  charlie.addEventListener('click', characterChange)
+  violet.addEventListener('click', characterChange)
+  oompaLoompa.addEventListener('click', characterChange)
 
 
 
