@@ -75,6 +75,16 @@ function init() {
       cells.push(cell) // add the newly created div into our empty array
 
     }
+    function addRainbowBelt() {
+//const position = cells[position].innerText
+      const filteredCells = cells.filter((cells[position].innerText) => {
+        if (cells[position].innerText <= 12 && (cells[position].innerText >= 52 && cells[position].innerText <= 64) && (cells[position].innerText] >= 104 && cells[position].innerText <= 116) && cells[position].innerText >= 156) {
+          return filteredCells
+        }
+      })
+    }
+    //console.log(filteredCells)
+
 
     addCharacter(characterStartPosition) // call the function that adds the char to the starting position
     addRainbowBelt()
@@ -92,20 +102,32 @@ function init() {
     addingCremeEgg(cremeEggStartPosition)
     addingGreenSkittle(greenSkittleStartPosition)
 
+    
   }
-const filteredCells = cells.filter((position) => {
-      return position <= 12 && (position >= 52 && position <= 64) && (position >= 104 && position <= 116) && position >= 156  
+
+
+  // function filteringCells(cells) {
+  //     const filteredCells = cells.filter((position) => {
+  //       if (position <= 12 && (position >= 52 && position <= 64) && (position >= 104 && position <= 116) && position >= 156) {
+  //         return position
+  //       }
+  //     })
+
+
+  // const filteredCells = cells.filter((cells[position]) => {
+  //       if (cells[position] <= 12 && (cells[position] >= 52 && cells[position] <= 64) && (cells[position] >= 104 && cells[position] <= 116) && cells[position] >= 156) {
+  //         return cells[position]
+  //       } 
+  //        })
+
+
+
+
+
   // Add rainbow belt
-  function addRainbowBelt() {
-     
-    })
-    if (cells <= 12 && (cells >= 52 && cells <= 64) && (cells >= 104 && cells <= 116) && cells >= 156) {
-      cells[position].setAttribute('id', 'rainbow-belt')
-    }
-  }
 
-
-    console.log([13])
+  
+    
 
 
     // Add character to grid
@@ -129,7 +151,7 @@ const filteredCells = cells.filter((position) => {
     //   } else if (event.target.id = oompaLoompa) {
     //     character.style.background = "url('../assets/oompa_loompa_transparent-removebg-preview.png');"
     //   }
-    // }
+    // 
 
     // Remove character from grid
     function removeCharacter(position) {
@@ -361,7 +383,7 @@ const filteredCells = cells.filter((position) => {
 
     createGrid(characterStartPosition) //pass function to the starting position of the char
 
-
   }
+
 
   window.addEventListener('DOMContentLoaded', init)
