@@ -78,55 +78,109 @@ function init() {
       treatTimer: null
     },
     {
-      item: 'yellow party ring',
-      cssClass: 'yellow-party-ring',
-      startPosition: 117,
-      currentPosition: 117,
+      item: 'egg',
+      cssClass: 'egg',
+      startPosition: 91,
+      currentPosition: 91,
       direction: 'right',
       order: 'first',
       treatTimer: null
     },
     {
-      item: 'yellow party ring',
-      cssClass: 'yellow-party-ring',
-      startPosition: 117,
-      currentPosition: 117,
+      item: 'egg',
+      cssClass: 'egg',
+      startPosition: 91,
+      currentPosition: 91,
       direction: 'right',
       order: 'second',
       treatTimer: null
     },
     {
-      item: 'yellow party ring',
-      cssClass: 'yellow-party-ring',
-      startPosition: 117,
-      currentPosition: 117,
+      item: 'heart',
+      cssClass: 'heart',
+      startPosition: 90,
+      currentPosition: 90,
+      direction: 'left',
+      order: 'first',
+      treatTimer: null
+    },
+    {
+      item: 'heart',
+      cssClass: 'heart',
+      startPosition: 90,
+      currentPosition: 90,
+      direction: 'left',
+      order: 'second',
+      treatTimer: null
+    },
+    {
+      item: 'worm',
+      cssClass: 'worm',
+      startPosition: 65,
+      currentPosition: 65,
       direction: 'right',
       order: 'first',
       treatTimer: null
     },
     {
-      item: 'yellow party ring',
-      cssClass: 'yellow-party-ring',
-      startPosition: 117,
-      currentPosition: 117,
+      item: 'worm',
+      cssClass: 'worm',
+      startPosition: 65,
+      currentPosition: 65,
       direction: 'right',
       order: 'second',
       treatTimer: null
     },
     {
-      item: 'yellow party ring',
-      cssClass: 'yellow-party-ring',
-      startPosition: 117,
-      currentPosition: 117,
+      item: 'yellow skittle',
+      cssClass: 'yellow-skittle',
+      startPosition: 39,
+      currentPosition: 39,
       direction: 'right',
       order: 'first',
       treatTimer: null
     },
     {
-      item: 'yellow party ring',
-      cssClass: 'yellow-party-ring',
-      startPosition: 117,
-      currentPosition: 117,
+      item: 'yellow skittle',
+      cssClass: 'yellow-skittle',
+      startPosition: 39,
+      currentPosition: 39,
+      direction: 'right',
+      order: 'second',
+      treatTimer: null
+    },
+    {
+      item: 'creme egg',
+      cssClass: 'creme-egg',
+      startPosition: 38,
+      currentPosition: 38,
+      direction: 'left',
+      order: 'first',
+      treatTimer: null
+    },
+    {
+      item: 'creme egg',
+      cssClass: 'creme-egg',
+      startPosition: 38,
+      currentPosition: 38,
+      direction: 'left',
+      order: 'second',
+      treatTimer: null
+    },
+    {
+      item: 'green skittle',
+      cssClass: 'green-skittle',
+      startPosition: 13,
+      currentPosition: 13,
+      direction: 'right',
+      order: 'first',
+      treatTimer: null
+    },
+    {
+      item: 'green skittle',
+      cssClass: 'green-skittle',
+      startPosition: 13,
+      currentPosition: 13,
       direction: 'right',
       order: 'second',
       treatTimer: null
@@ -145,7 +199,6 @@ function init() {
       cell.innerText = i // inner text of the div to be its index
       grid.appendChild(cell) // make the cell a child of the grid element we grabbed above
       cells.push(cell) // add the newly created div into our empty array
-
     }
     //function addRainbowBelt() {
     //const position = cells[position].innerText
@@ -156,8 +209,6 @@ function init() {
     //   })
     // }
     //console.log(filteredCells)
-
-
 
     sweetTreats.forEach(treat => {
       if (treat.order === 'first') {
@@ -173,8 +224,8 @@ function init() {
 
 
   }
-  // Add rainbow belt
 
+  // Add rainbow belt
   // function filteringCells(cells) {
   //     const filteredCells = cells.filter((position) => {
   //       if (position <= 12 && (position >= 52 && position <= 64) && (position >= 104 && position <= 116) && position >= 156) {
