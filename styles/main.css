@@ -100,10 +100,13 @@ h1 {
   justify-content: center;
   height: 850px;
   width: 850px;
-  background-color: white;
+  background-color: rgb(59, 13, 13);
   border: 25px solid ;
   border-image: url('../assets/sweetie-border-removebg-preview.png') 10% round;
+  grid-template-columns: repeat((4));
 }
+
+/* https://gfycat.com/infatuatedlateamericanshorthair */
 
 .grid div {
   border: 1px solid white;
@@ -113,6 +116,7 @@ h1 {
   text-align: center;
   padding: 2px;
   line-height: 50px;
+  color: white;
 }
 
 
