@@ -372,3 +372,31 @@
   //         return cells[position]
   //       } 
   //        })
+
+
+
+  //   function gameOver(event) {
+//     const key = event.keyCode  
+    
+//     sweetTreats.forEach(treat => {
+//       if ((key === 39 && characterCurrentPosition === treat.currentPosition)) {
+//       //|| (key === 39 && rainbowBelt.positions.includes(characterCurrentPosition))) 
+      
+//         characterCurrentPosition++
+//       } else if ((key === 37 && characterCurrentPosition === treat.currentPosition)) {
+//       //|| (key === 37 && rainbowBelt.positions.includes(characterCurrentPosition))) 
+      
+//         characterCurrentPosition-- 
+//       } else if ((key === 38 && characterCurrentPosition === treat.currentPosition)) {
+//       //|| (key === 38 && rainbowBelt.positions.includes(characterCurrentPosition))) 
+      
+//         characterCurrentPosition -= width
+//       } else if ((key === 40 && characterCurrentPosition === treat.currentPosition)) {
+//       //|| (key === 40 && rainbowBelt.positions.includes(characterCurrentPosition))) 
+      
+//         characterCurrentPosition += width
+//       } else {
+//         //alert('GAME OVER')
+//       }
+//   })
+// }
