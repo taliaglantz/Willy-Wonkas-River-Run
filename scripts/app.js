@@ -279,15 +279,15 @@ function init() {
   // const movingFoodPresent = cells[position].classList = '.pink party ring'
   // console.log(movingFoodPresent)
 
-  function gameOver(event) {
-    const key = event.keyCode
-    const rainbowBeltCells = rainbowBelt.positions.forEach((position) => {
-      //console.log(position)
-      cells[position].setAttribute('id', 'rainbow-belt')
-    })
 
+  
+
+
+  function gameOver(event) {
+    const key = event.keyCode  
+    
     sweetTreats.forEach(treat => {
-      if ((key === 39 && characterCurrentPosition === treat.currentPosition) || (key === 39 && characterCurrentPosition === rainbowBeltCells)) {
+      if ((key === 39 && characterCurrentPosition === treat.currentPosition) || (key === 39 && rainbowBelt.positions.includes(characterCurrentPosition))) {
         characterCurrentPosition++
       } else if (key === 37 && (characterCurrentPosition === treat.currentPosition)) {
         characterCurrentPosition-- 
@@ -295,11 +295,13 @@ function init() {
         characterCurrentPosition -= width
       } else if (key === 40 && (characterCurrentPosition === treat.currentPosition)) {
         characterCurrentPosition += width
-      } else {
-        alert('GAME OVER')
-      }
+      } 
+      // else {
+      //   alert('GAME OVER')
+      // }
   })
 }
+
 
   // function gameOver(event) {
   //   const key = event.keyCode
@@ -310,14 +312,22 @@ function init() {
   // }
 
 
+ 
+
   // Add rainbow belt
   function addRainbowBelt() {
-    const rainbowBeltCells = rainbowBelt.positions.forEach((position) => {
+    rainbowBelt.positions.forEach((position) => {
       //console.log(position)
       cells[position].setAttribute('id', 'rainbow-belt')
-    })
-   
+    //console.log(cells[position])
+  })
+  //console.log(rainbowBeltCells)
   }
+
+
+
+  
+
   
 
   // add a food item to the grid
