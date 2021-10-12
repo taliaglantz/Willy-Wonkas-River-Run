@@ -109,20 +109,23 @@ h1 {
 /* https://gfycat.com/infatuatedlateamericanshorthair */
 
 .grid div {
-  border: 1px solid white;
+  /* border: 1px solid white; */
   flex-grow: 1;
-  height: 50px;
+  height: 60px;
   width: 60px;
   text-align: center;
-  padding: 2px;
+  /* padding: 2px; */
   line-height: 50px;
   color: white;
+ 
 }
 
 #rainbow-belt {
-  background-image: url('../assets/creme-egg-removebg-preview.png');
+  background: url('../assets/sparkles.gif');
   background-repeat: no-repeat;
   background-size: contain;
+  object-fit: fill;
+
 }
 
 
