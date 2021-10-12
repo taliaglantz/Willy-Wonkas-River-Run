@@ -11,13 +11,16 @@ function init() {
   const cellCount = width * height// total number of cells
 
   const cells = [] // empty array to store the divs that we create
-  const start = document.querySelector('button')
+  const start = document.querySelector('.start')
+  const easy = document.querySelector('#easy')
+  const medium = document.querySelector('#medium')
+  const hard = document.querySelector('#hard')
 
   // Character
 
   const defaultCharacter = document.querySelector('.character')
-  const characterStartPosition = 0
-  let characterCurrentPosition = 0
+  const characterStartPosition = 162
+  let characterCurrentPosition = 162
 
   // const willyWonka = document.querySelector('.willy-wonka')
   // const charlie = document.querySelector('.charlie')
@@ -287,6 +290,7 @@ function init() {
 
     })
   }
+  console.log(characterCurrentPosition)
 
 
   // Add rainbow belt
@@ -336,7 +340,7 @@ function init() {
   }
 
   // start movement of the food items
-  function startMovement() {
+  function startMovementEasy() {
     sweetTreats.forEach(treat => { // iterate through all the food items
       if (treat.order === 'first') { // check if the biscuit should come first
         treat.treatTimer = setInterval(() => moveFoods(treat), 1000) // set value of treatTimer to be id returned from setInterval and call function to move the food items 
@@ -345,6 +349,30 @@ function init() {
           addFood(treat) // add them at their starting positions
           treat.treatTimer = setInterval(() => moveFoods(treat), 1000)
         }, 3000) // determines how long before 2nd food item comes in
+      }
+    })
+  }
+  function startMovementMedium() {
+    sweetTreats.forEach(treat => { // iterate through all the food items
+      if (treat.order === 'first') { // check if the biscuit should come first
+        treat.treatTimer = setInterval(() => moveFoods(treat), 750) // set value of treatTimer to be id returned from setInterval and call function to move the food items 
+      } else {
+        setTimeout(() => { // delay start of the second set of food items
+          addFood(treat) // add them at their starting positions
+          treat.treatTimer = setInterval(() => moveFoods(treat), 750)
+        }, 3000) // determines how long before 2nd food item comes in
+      }
+    })
+  }
+  function startMovementHard() {
+    sweetTreats.forEach(treat => { // iterate through all the food items
+      if (treat.order === 'first') { // check if the biscuit should come first
+        treat.treatTimer = setInterval(() => moveFoods(treat), 500) // set value of treatTimer to be id returned from setInterval and call function to move the food items 
+      } else {
+        setTimeout(() => { // delay start of the second set of food items
+          addFood(treat) // add them at their starting positions
+          treat.treatTimer = setInterval(() => moveFoods(treat), 500)
+        }, 1500) // determines how long before 2nd food item comes in
       }
     })
   }
@@ -397,7 +425,10 @@ function init() {
   // ** EVENT LISTENERS **
 
   document.addEventListener('keyup', handleKeyUp) // listening for key press
-  start.addEventListener('click', startMovement)
+  start.addEventListener('click', startMovementEasy)
+  easy.addEventListener('click', startMovementEasy)
+  medium.addEventListener('click', startMovementMedium)
+  hard.addEventListener('click', startMovementHard)
   //document.addEventListener('keyup', gameOver)
 
 

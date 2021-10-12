@@ -7,9 +7,16 @@
 
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
+ 
 }
 
 body {
+  display: flex;
+  justify-content: center;
+}
+
+.sections-wrapper {
   height: 100vh;
   width: 100vw;
   margin: 100px;
@@ -32,7 +39,7 @@ justify-content: space-evenly;
 align-items: center;
 /* width: calc(33.33%); */
 }
-button {
+.start {
   color: white;
   text-align: center;
   padding: 20px;
@@ -48,11 +55,25 @@ button {
 color: white;
 font-family: 'Willy Wonka';
 font-size: 25px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+
 }
 
-h2 {
+#easy, #medium, #hard {
+  color: white;
   text-align: center;
-  padding: 15px;
+  padding: 20px;
+  font-size: 30px;
+  font-family: 'Willy Wonka';
+  background-color: gold;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  margin: 5px;
+
 }
 .div-two {
   display: flex;
@@ -83,6 +104,7 @@ h1 {
   color: white;
   font-size: 70px;
   padding: 20px;
+  
 }
 
 .div-three {
