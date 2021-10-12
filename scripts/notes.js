@@ -67,29 +67,27 @@
 // To do Tuesday
 
 // character to only be able to 'step' on food items
+// //add in rainbow bars
 
-
+// To do Wednesday
+// finish game bit
 // manage to change characters - HELP
-// add in rainbow bars
-
-// get food moving smoothly - setTimeout?? - add back in quicker than goes out - HELP
+// timer
+// lives???
+// random objects to get points
 
 // To do - JS
-// interactions with food and river - ESSENTIAL
-// timer
+
 // enter screen with start button
 // game over screen
-// lives
-// points and objects that help get more points?
+
 // objects to gain a life
-// levels
+// //levels
+// get food moving smoothly - setTimeout?? - add back in quicker than goes out - HELP
 
 // To do - CSS
 // fix sizing of screen
-// moving river as background to grid
 // factory and gate at top
-// start screen
-// timer
 // animations on lollies
 // sizing of characters
 // // border

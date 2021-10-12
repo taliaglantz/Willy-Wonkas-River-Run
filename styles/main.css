@@ -14,6 +14,7 @@
 body {
   display: flex;
   justify-content: center;
+  background-color: #9c21db;
 }
 
 .sections-wrapper {
@@ -104,6 +105,7 @@ h1 {
   color: white;
   font-size: 70px;
   padding: 20px;
+  margin-bottom: 20px;
   
 }
 
@@ -126,8 +128,8 @@ h1 {
   border: 25px solid;
   border-image: url('../assets/sweetie-border-removebg-preview.png') 10% round;
   grid-template-columns: repeat((4));
-  z-index: -2;
-  position: relative;
+  /* z-index: -1;
+  position: relative; */
 }
 
 
@@ -140,8 +142,8 @@ h1 {
   /* padding: 2px; */
   line-height: 50px;
   color: white;
-  z-index: -2;
-  position: relative;
+  /* z-index: -1;
+  position: relative; */
 }
 
 #rainbow-belt {
@@ -149,8 +151,8 @@ h1 {
   /* background-repeat: no-repeat; */
   background-size: cover;
   object-fit: fill;
-  z-index: -1;
-  position: relative;
+  /* z-index: -1;
+  position: relative; */
 
 }
 
@@ -159,8 +161,8 @@ h1 {
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;
-  z-index: 1;
-  position: relative;
+  /* z-index: 1;
+  position: relative; */
 }
 .willy-wonka {
   background-image: url('../assets/willy_wonka_transparent-removebg-preview.png');
@@ -241,7 +243,7 @@ h1 {
 
 .div-four {
 width: 300px;
-height: 50px;
+height: 100px;
 border: 3px solid white;
 margin: 50px;
 }
