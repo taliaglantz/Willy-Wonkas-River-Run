@@ -341,3 +341,34 @@
   //     clearInterval(repeatTwo)
   //   }
   // }
+
+
+
+
+
+
+
+    // function addRainbowBelt() {
+    //   console.log(cells[position].innerText)
+    //const position = cells[position].innerText
+    //   const filteredCells = cells.filter((cells[position].innerText) => {
+    //     if (cells[position].innerText <= 12 && (cells[position].innerText >= 52 && cells[position].innerText <= 64) && (cells[position].innerText] >= 104 && cells[position].innerText <= 116) && cells[position].innerText >= 156) {
+    //       return filteredCells
+    //     }
+    //   })
+
+
+  // Add rainbow belt
+  // function filteringCells(cells) {
+  //     const filteredCells = cells.filter((position) => {
+  //       if (position <= 12 && (position >= 52 && position <= 64) && (position >= 104 && position <= 116) && position >= 156) {
+  //         return position
+  //       }
+  //     })
+
+
+  // const filteredCells = cells.filter((cells[position]) => {
+  //       if (cells[position] <= 12 && (cells[position] >= 52 && cells[position] <= 64) && (cells[position] >= 104 && cells[position] <= 116) && cells[position] >= 156) {
+  //         return cells[position]
+  //       } 
+  //        })

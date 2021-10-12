@@ -2,6 +2,9 @@ function init() {
   //console.log('JS working')
 
   // ** VARIABLES ** 
+
+  // Grid
+
   const grid = document.querySelector('.grid') // get grid element
   const width = 13
   const height = 13
@@ -9,18 +12,27 @@ function init() {
 
   const cells = [] // empty array to store the divs that we create
   const start = document.querySelector('button')
-  
+
   // Character
-  
+
   const defaultCharacter = document.querySelector('.default-character')
   const characterStartPosition = 6
   let characterCurrentPosition = 6
 
-  const willyWonka = document.querySelector('.willy-wonka')
-  const charlie = document.querySelector('.charlie')
-  const violet = document.querySelector('.violet')
-  const oompaLoompa = document.querySelector('.oompa-loompa')
- 
+  // const willyWonka = document.querySelector('.willy-wonka')
+  // const charlie = document.querySelector('.charlie')
+  // const violet = document.querySelector('.violet')
+  // const oompaLoompa = document.querySelector('.oompa-loompa')
+
+  // Rainbow belt
+  const rainbowBelt = {
+    item: 'rainbow belt',
+    cssId: 'rainbow-belt',
+    positions: [1, 2]
+    //positions: [0,1,2,3,4,5,6,7,8,9,10,11,12,52,53,54,55,56,57,58,59,60,61,62,63,64,104,105,106,107,108,109,110,112,113,114,115,116,156,157,158,159,160,161,162,163,164,165,166,167,168]
+  }
+  // console.log(rainbowBelt.positions)
+
   // Sweet Treats
 
   const sweetTreats = [
@@ -201,14 +213,7 @@ function init() {
       grid.appendChild(cell) // make the cell a child of the grid element we grabbed above
       cells.push(cell) // add the newly created div into our empty array
     }
-    //function addRainbowBelt() {
-    //const position = cells[position].innerText
-    //   const filteredCells = cells.filter((cells[position].innerText) => {
-    //     if (cells[position].innerText <= 12 && (cells[position].innerText >= 52 && cells[position].innerText <= 64) && (cells[position].innerText] >= 104 && cells[position].innerText <= 116) && cells[position].innerText >= 156) {
-    //       return filteredCells
-    //     }
-    //   })
-    // }
+
     //console.log(filteredCells)
 
     sweetTreats.forEach(treat => {
@@ -219,68 +224,71 @@ function init() {
         addFood(treat)
       }
     })
-    startMovement()
+
+    // rainbowBelt.positions.forEach((position) => {
+    //   addRainbowBelt(position)
+    // })
+
+
+
+
+
+
+
+    //startMovement()
+    //addRainbowBelt(positions)
     addCharacter(characterStartPosition) // call the function that adds the char to the starting position
   }
 
-  // Add rainbow belt
-  // function filteringCells(cells) {
-  //     const filteredCells = cells.filter((position) => {
-  //       if (position <= 12 && (position >= 52 && position <= 64) && (position >= 104 && position <= 116) && position >= 156) {
-  //         return position
-  //       }
-  //     })
 
+  const eachPlace = rainbowBelt.positions.forEach((place) => {
+    console.log(place)
+    // addRainbowBelt()
+    //positions[place].id.add(rainbowBelt.cssId)
+  })
 
-  // const filteredCells = cells.filter((cells[position]) => {
-  //       if (cells[position] <= 12 && (cells[position] >= 52 && cells[position] <= 64) && (cells[position] >= 104 && cells[position] <= 116) && cells[position] >= 156) {
-  //         return cells[position]
-  //       } 
-  //        })
+  // function addRainbowBelt() {
+  // }
 
 
   // Add character to grid
 
-  // function addCharacter(position) { // takes argument so function is reusable
-  //   //console.log(position)
-  //   //console.log(cells[position])
-  //   cells[position].classList.add('character') // use position as index to pick the corresponding div from the array of cells and add the class of char
-  // }
-function characterChange(event) {
-
-  function addCharacter(position) {
-    if (event.target.id = willyWonka) {
-      cells[position].classList.add('willy-wonka')
-    } else if (event.target.id = charlie) {
-      cells[position].classList.add('charlie')
-    } else if (event.target.id = violet) {
-      cells[position].classList.add('violet')
-    } else if (event.target.id = oompaLoompa) {
-      cells[position].classList.add('oompa-loompa')
-    } 
+  function addCharacter(position) { // takes argument so function is reusable
+    //console.log(position)
+    //console.log(cells[position])
+    cells[position].classList.add('default-character') // use position as index to pick the corresponding div from the array of cells and add the class of char
   }
-  
+
+  //Remove character from grid
   function removeCharacter(position) {
-    if (event.target.id = willyWonka) {
-      cells[position].classList.add('willy-wonka')
-    } else if (event.target.id = charlie) {
-      cells[position].classList.add('charlie')
-    } else if (event.target.id = violet) {
-      cells[position].classList.add('violet')
-    } else if (event.target.id = oompaLoompa) {
-      cells[position].classList.add('oompa-loompa')
-    } 
+    cells[position].classList.remove('default-character')
   }
+  //function characterChange(event) {
 
+  //   function addCharacter(position) {
+  //     if (event.target.id = willyWonka) {
+  //       cells[position].classList.add('willy-wonka')
+  //     } else if (event.target.id = charlie) {
+  //       cells[position].classList.add('charlie')
+  //     } else if (event.target.id = violet) {
+  //       cells[position].classList.add('violet')
+  //     } else if (event.target.id = oompaLoompa) {
+  //       cells[position].classList.add('oompa-loompa')
+  //     } 
+  //   }
 
+  //   function removeCharacter(position) {
+  //     if (event.target.id = willyWonka) {
+  //       cells[position].classList.remove('willy-wonka')
+  //     } else if (event.target.id = charlie) {
+  //       cells[position].classList.remove('charlie')
+  //     } else if (event.target.id = violet) {
+  //       cells[position].classList.remove('violet')
+  //     } else if (event.target.id = oompaLoompa) {
+  //       cells[position].classList.remove('oompa-loompa')
+  //     } 
+  //   }
 
-
-}
-
-  // Remove character from grid
-  // function removeCharacter(position) {
-  //   cells[position].classList.remove('character')
-  // }
   // Moving character around the grid
 
   function handleKeyUp(event) {
@@ -302,7 +310,19 @@ function characterChange(event) {
     //console.log('POSITION AFTER REDEFINING --->', characterCurrentPosition)
     addCharacter(characterCurrentPosition)
 
+    //if (key === 39)
+
+
+
   }
+
+  // function gameOver(event) {
+  //   const key = event.keyCode
+  //   alert('Hello')
+  // }
+
+
+
 
   // add a food item to the grid
   function addFood(treat) {
@@ -349,22 +369,10 @@ function characterChange(event) {
         setTimeout(() => { // delay start of the second set of food items
           addFood(treat) // add them at their starting positions
           treat.treatTimer = setInterval(() => moveFoods(treat), 1000)
-        }, 3000) // determines how long before 2nd biscuit comes in
+        }, 3000) // determines how long before 2nd food item comes in
       }
     })
   }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   // Change characters
@@ -382,10 +390,7 @@ function characterChange(event) {
   //   }
   // }
 
-//console.log(willyWonka)
-
-  
-
+  //console.log(willyWonka)
 
 
 
@@ -394,19 +399,22 @@ function characterChange(event) {
 
   document.addEventListener('keyup', handleKeyUp) // listening for key press
   start.addEventListener('click', startMovement)
-  
+  //document.addEventListener('keyup', gameOver)
 
-  willyWonka.addEventListener('click', characterChange)
-  charlie.addEventListener('click', characterChange)
-  violet.addEventListener('click', characterChange)
-  oompaLoompa.addEventListener('click', characterChange)
+
+  // willyWonka.addEventListener('click', characterChange)
+  // charlie.addEventListener('click', characterChange)
+  // violet.addEventListener('click', characterChange)
+  // oompaLoompa.addEventListener('click', characterChange)
 
 
 
   // ** CALLING FUNCTIONS **
 
   createGrid(characterStartPosition) //pass function to the starting position of the char
-//characterChange()
+  //characterChange()
+  //alert()
+
 }
 
 
