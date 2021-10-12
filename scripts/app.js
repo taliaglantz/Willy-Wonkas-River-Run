@@ -256,13 +256,14 @@ function init() {
     //console.log('position before moving', characterCurrentPosition)
     removeCharacter(characterCurrentPosition)
 
-    if (key === 39 && characterCurrentPosition % width !== width - 1) { // if the right arrow is pressed and the character is not on the right edge
+    sweetTreats.forEach(treat => {
+    if ((key === 39 && characterCurrentPosition % width !== width - 1) && ((key === 39 && characterCurrentPosition === treat.currentPosition) || (key === 39 && rainbowBelt.positions.includes(characterCurrentPosition)))) { // if the right arrow is pressed and the character is not on the right edge
       characterCurrentPosition++ // redefine character position index to be previous position plus 1
-    } else if (key === 37 && characterCurrentPosition % width !== 0) { // if the left arrow is pressed and the cat is not on the left edge
+    } else if ((key === 37 && characterCurrentPosition % width !== 0) && ((key === 37 && characterCurrentPosition === treat.currentPosition) || (key === 37 && rainbowBelt.positions.includes(characterCurrentPosition)))) { // if the left arrow is pressed and the cat is not on the left edge
       characterCurrentPosition-- // redefine character position index to be previous position minus 1
-    } else if (key === 38 && characterCurrentPosition >= width) { // if the up arrow is pressed and the character is not on the top row
+    } else if ((key === 38 && characterCurrentPosition >= width) && ((key === 38 && characterCurrentPosition === treat.currentPosition) || (key === 38 && rainbowBelt.positions.includes(characterCurrentPosition)))) { // if the up arrow is pressed and the character is not on the top row
       characterCurrentPosition -= width // redefine cacharactert position index to be previous position minus width
-    } else if (key === 40 && characterCurrentPosition + width <= width * height - 1) { // if the down arrow is pressed and the character is not on the bottom row
+    } else if ((key === 40 && characterCurrentPosition + width <= width * height - 1) && ((key === 40 && characterCurrentPosition === treat.currentPosition) || (key === 40 && rainbowBelt.positions.includes(characterCurrentPosition)))) { // if the down arrow is pressed and the character is not on the bottom row
       characterCurrentPosition += width // redefine character position index to be previous position plus width
     } else {
       //console.log('INVALID KEY') // any other key, log invalid key
@@ -271,45 +272,34 @@ function init() {
     addCharacter(characterCurrentPosition)
 
 
-
-
-
-  }
-
-  // const movingFoodPresent = cells[position].classList = '.pink party ring'
-  // console.log(movingFoodPresent)
-
-
-  
-
-
-  function gameOver(event) {
-    const key = event.keyCode  
-    
-    sweetTreats.forEach(treat => {
-      if ((key === 39 && characterCurrentPosition === treat.currentPosition) || (key === 39 && rainbowBelt.positions.includes(characterCurrentPosition))) {
-        characterCurrentPosition++
-      } else if (key === 37 && (characterCurrentPosition === treat.currentPosition)) {
-        characterCurrentPosition-- 
-      } else if (key === 39 && (characterCurrentPosition === treat.currentPosition)) {
-        characterCurrentPosition -= width
-      } else if (key === 40 && (characterCurrentPosition === treat.currentPosition)) {
-        characterCurrentPosition += width
-      } 
-      // else {
-      //   alert('GAME OVER')
-      // }
   })
 }
 
-
-  // function gameOver(event) {
-  //   const key = event.keyCode
-
-  //   if (key === 39 && characterCurrentPosition === ) {
-  //     alert('Hello')
-  //   } 
-  // }
+//   function gameOver(event) {
+//     const key = event.keyCode  
+    
+//     sweetTreats.forEach(treat => {
+//       if ((key === 39 && characterCurrentPosition === treat.currentPosition)) {
+//       //|| (key === 39 && rainbowBelt.positions.includes(characterCurrentPosition))) 
+      
+//         characterCurrentPosition++
+//       } else if ((key === 37 && characterCurrentPosition === treat.currentPosition)) {
+//       //|| (key === 37 && rainbowBelt.positions.includes(characterCurrentPosition))) 
+      
+//         characterCurrentPosition-- 
+//       } else if ((key === 38 && characterCurrentPosition === treat.currentPosition)) {
+//       //|| (key === 38 && rainbowBelt.positions.includes(characterCurrentPosition))) 
+      
+//         characterCurrentPosition -= width
+//       } else if ((key === 40 && characterCurrentPosition === treat.currentPosition)) {
+//       //|| (key === 40 && rainbowBelt.positions.includes(characterCurrentPosition))) 
+      
+//         characterCurrentPosition += width
+//       } else {
+//         //alert('GAME OVER')
+//       }
+//   })
+// }
 
 
  
@@ -325,10 +315,6 @@ function init() {
   }
 
 
-
-  
-
-  
 
   // add a food item to the grid
   function addFood(treat) {
@@ -429,7 +415,7 @@ function init() {
 
   document.addEventListener('keyup', handleKeyUp) // listening for key press
   start.addEventListener('click', startMovement)
-  document.addEventListener('keyup', gameOver)
+  //document.addEventListener('keyup', gameOver)
 
 
   // willyWonka.addEventListener('click', characterChange)
