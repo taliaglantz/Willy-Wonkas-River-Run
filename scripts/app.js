@@ -25,13 +25,16 @@ function init() {
   // const oompaLoompa = document.querySelector('.oompa-loompa')
 
   // Rainbow belt
+
   const rainbowBelt = {
     item: 'rainbow belt',
     cssId: 'rainbow-belt',
-    positions: [1, 2]
+    positions: 1
+    //positions: [1,2]
     //positions: [0,1,2,3,4,5,6,7,8,9,10,11,12,52,53,54,55,56,57,58,59,60,61,62,63,64,104,105,106,107,108,109,110,112,113,114,115,116,156,157,158,159,160,161,162,163,164,165,166,167,168]
   }
   // console.log(rainbowBelt.positions)
+  
 
   // Sweet Treats
 
@@ -226,29 +229,34 @@ function init() {
     })
 
     // rainbowBelt.positions.forEach((position) => {
-    //   addRainbowBelt(position)
+    //   console.log(positions)
     // })
 
 
 
 
 
-
-
     //startMovement()
-    //addRainbowBelt(positions)
+    addRainbowBelt()
     addCharacter(characterStartPosition) // call the function that adds the char to the starting position
   }
+  const eachPlace = rainbowBelt.positions
+  //console.log(eachPlace)
+  function addRainbowBelt() {
+    cells[eachPlace].setAttribute('id', '(rainbowBelt.cssId)')
+  }
+  //console.log(cells[eachPlace].id.add(rainbowBelt.cssId))
 
 
-  const eachPlace = rainbowBelt.positions.forEach((place) => {
-    console.log(place)
-    // addRainbowBelt()
-    //positions[place].id.add(rainbowBelt.cssId)
-  })
 
-  // function addRainbowBelt() {
-  // }
+  // .forEach((place) => {
+  //   console.log(place)
+  //   // addRainbowBelt()
+  //   //positions[place].id.add(rainbowBelt.cssId)
+  // })
+
+
+
 
 
   // Add character to grid
