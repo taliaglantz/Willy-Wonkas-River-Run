@@ -15,9 +15,9 @@ function init() {
 
   // Character
 
-  const defaultCharacter = document.querySelector('.default-character')
-  const characterStartPosition = 6
-  let characterCurrentPosition = 6
+  const defaultCharacter = document.querySelector('.character')
+  const characterStartPosition = 0
+  let characterCurrentPosition = 0
 
   // const willyWonka = document.querySelector('.willy-wonka')
   // const charlie = document.querySelector('.charlie')
@@ -31,7 +31,7 @@ function init() {
     cssId: 'rainbow-belt',
     //positions: 1
     //positions: [1,2]
-    positions: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 104, 105, 106, 107, 108, 109, 110,111, 112, 113, 114, 115, 116, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168]
+    positions: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168]
   }
   // console.log(rainbowBelt.positions)
 
@@ -240,38 +240,14 @@ function init() {
   function addCharacter(position) { // takes argument so function is reusable
     //console.log(position)
     //console.log(cells[position])
-    cells[position].classList.add('default-character') // use position as index to pick the corresponding div from the array of cells and add the class of char
+    cells[position].classList.add('character') // use position as index to pick the corresponding div from the array of cells and add the class of char
   }
 
   //Remove character from grid
   function removeCharacter(position) {
-    cells[position].classList.remove('default-character')
+    cells[position].classList.remove('character')
   }
-  //function characterChange(event) {
 
-  //   function addCharacter(position) {
-  //     if (event.target.id = willyWonka) {
-  //       cells[position].classList.add('willy-wonka')
-  //     } else if (event.target.id = charlie) {
-  //       cells[position].classList.add('charlie')
-  //     } else if (event.target.id = violet) {
-  //       cells[position].classList.add('violet')
-  //     } else if (event.target.id = oompaLoompa) {
-  //       cells[position].classList.add('oompa-loompa')
-  //     } 
-  //   }
-
-  //   function removeCharacter(position) {
-  //     if (event.target.id = willyWonka) {
-  //       cells[position].classList.remove('willy-wonka')
-  //     } else if (event.target.id = charlie) {
-  //       cells[position].classList.remove('charlie')
-  //     } else if (event.target.id = violet) {
-  //       cells[position].classList.remove('violet')
-  //     } else if (event.target.id = oompaLoompa) {
-  //       cells[position].classList.remove('oompa-loompa')
-  //     } 
-  //   }
 
   // Moving character around the grid
 
@@ -294,15 +270,39 @@ function init() {
     //console.log('POSITION AFTER REDEFINING --->', characterCurrentPosition)
     addCharacter(characterCurrentPosition)
 
-    //if (key === 39)
+
 
 
 
   }
 
+  // const movingFoodPresent = cells[position].classList = '.pink party ring'
+  // console.log(movingFoodPresent)
+
+  function gameOver(event) {
+    const key = event.keyCode
+
+    sweetTreats.forEach(treat => {
+      if (key === 39 && (characterCurrentPosition === treat.currentPosition)) {
+        characterCurrentPosition++
+      } else if (key === 37 && (characterCurrentPosition === treat.currentPosition)) {
+        characterCurrentPosition-- 
+      } else if (key === 39 && (characterCurrentPosition === treat.currentPosition)) {
+        characterCurrentPosition -= width
+      } else if (key === 40 && (characterCurrentPosition === treat.currentPosition)) {
+        characterCurrentPosition += width
+      } else {
+        alert('GAME OVER')
+      }
+  })
+}
+
   // function gameOver(event) {
   //   const key = event.keyCode
-  //   alert('Hello')
+
+  //   if (key === 39 && characterCurrentPosition === ) {
+  //     alert('Hello')
+  //   } 
   // }
 
 
@@ -382,14 +382,38 @@ function init() {
 
   //console.log(willyWonka)
 
+  //function characterChange(event) {
 
+  //   function addCharacter(position) {
+  //     if (event.target.id = willyWonka) {
+  //       cells[position].classList.add('willy-wonka')
+  //     } else if (event.target.id = charlie) {
+  //       cells[position].classList.add('charlie')
+  //     } else if (event.target.id = violet) {
+  //       cells[position].classList.add('violet')
+  //     } else if (event.target.id = oompaLoompa) {
+  //       cells[position].classList.add('oompa-loompa')
+  //     } 
+  //   }
+
+  //   function removeCharacter(position) {
+  //     if (event.target.id = willyWonka) {
+  //       cells[position].classList.remove('willy-wonka')
+  //     } else if (event.target.id = charlie) {
+  //       cells[position].classList.remove('charlie')
+  //     } else if (event.target.id = violet) {
+  //       cells[position].classList.remove('violet')
+  //     } else if (event.target.id = oompaLoompa) {
+  //       cells[position].classList.remove('oompa-loompa')
+  //     } 
+  //   }
 
 
   // ** EVENT LISTENERS **
 
   document.addEventListener('keyup', handleKeyUp) // listening for key press
   start.addEventListener('click', startMovement)
-  //document.addEventListener('keyup', gameOver)
+  document.addEventListener('keyup', gameOver)
 
 
   // willyWonka.addEventListener('click', characterChange)

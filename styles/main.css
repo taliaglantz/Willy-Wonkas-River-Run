@@ -101,12 +101,13 @@ h1 {
   height: 850px;
   width: 850px;
   background-color: rgb(59, 13, 13);
-  border: 25px solid ;
+  border: 25px solid;
   border-image: url('../assets/sweetie-border-removebg-preview.png') 10% round;
   grid-template-columns: repeat((4));
+  z-index: -2;
+  position: relative;
 }
 
-/* https://gfycat.com/infatuatedlateamericanshorthair */
 
 .grid div {
   /* border: 1px solid white; */
@@ -117,23 +118,27 @@ h1 {
   /* padding: 2px; */
   line-height: 50px;
   color: white;
- 
+  z-index: -2;
+  position: relative;
 }
 
 #rainbow-belt {
   background: url('../assets/sparkles.gif');
-  background-repeat: no-repeat;
-  background-size: contain;
+  /* background-repeat: no-repeat; */
+  background-size: cover;
   object-fit: fill;
+  z-index: -1;
+  position: relative;
 
 }
 
-
-.default-character {
+.character {
   background-image: url('../assets/oompa_loompa_transparent-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;
+  z-index: 1;
+  position: relative;
 }
 .willy-wonka {
   background-image: url('../assets/willy_wonka_transparent-removebg-preview.png');
