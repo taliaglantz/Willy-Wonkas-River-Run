@@ -7,7 +7,7 @@
 
 * {
   box-sizing: border-box;
-  scroll-behavior: smooth;
+ 
  
 }
 
@@ -20,7 +20,7 @@ body {
 .sections-wrapper {
   height: 100vh;
   width: 100vw;
-  margin: 100px;
+  margin: 50px;
   display: flex;
   justify-content: space-around;
   flex-direction: row;
@@ -103,9 +103,11 @@ h1 {
   font-family: 'Willy Wonka';
   text-align: center;
   color: white;
-  font-size: 70px;
+  font-size: 60px;
   padding: 20px;
-  margin-bottom: 20px;
+  /* margin-bottom: 10px; */
+  margin: 0;
+
   
 }
 
@@ -114,6 +116,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 .grid {
@@ -122,8 +125,8 @@ h1 {
   flex-wrap: wrap;
   height: 100%;
   justify-content: center;
-  height: 850px;
-  width: 850px;
+  height: 700px;
+  width: 700px;
   background-color: rgb(59, 13, 13);
   border: 25px solid;
   border-image: url('../assets/sweetie-border-removebg-preview.png') 10% round;
@@ -136,11 +139,11 @@ h1 {
 .grid div {
   /* border: 1px solid white; */
   flex-grow: 1;
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
   text-align: center;
   /* padding: 2px; */
-  line-height: 50px;
+  line-height: 40px;
   color: white;
   /* z-index: -1;
   position: relative; */
@@ -241,13 +244,6 @@ h1 {
   
 }
 
-.div-four {
-width: 300px;
-height: 100px;
-border: 3px solid white;
-margin: 50px;
-}
-
 
 /*** SECTION 3 ***/
 
@@ -264,9 +260,11 @@ margin: 50px;
   border: 2px solid white;
   color: white;
   font-family: 'Willy Wonka';
+  padding: 15px;
 }
 .div-six {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+width: 50px;
+height: 300px;
+border: 3px solid white;
+margin: 50px;
 }

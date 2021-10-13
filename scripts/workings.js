@@ -400,3 +400,16 @@
 //       }
 //   })
 // }
+
+// sweetTreats.forEach(treat => {
+  //   if ((key === 39 && characterCurrentPosition === treat.currentPosition) || (key === 39 && rainbowBelt.positions.includes(characterCurrentPosition))) { 
+  //   } else if ((key === 37 && characterCurrentPosition === treat.currentPosition) || (key === 37 && rainbowBelt.positions.includes(characterCurrentPosition))) { 
+      
+  //   } else if ((key === 38 && characterCurrentPosition === treat.currentPosition) || (key === 38 && rainbowBelt.positions.includes(characterCurrentPosition))) { 
+      
+  //   } else if ((key === 40 && characterCurrentPosition === treat.currentPosition) || (key === 40 && rainbowBelt.positions.includes(characterCurrentPosition))) { 
+  //   } else {
+  //     //alert('GAME OVER')
+  //   }
+  //   //console.log('POSITION AFTER REDEFINING --->', characterCurrentPosition)
+  // })

@@ -259,39 +259,50 @@ function init() {
     //console.log('position before moving', characterCurrentPosition)
     removeCharacter(characterCurrentPosition)
 
-    sweetTreats.forEach(treat => {
-      if ((key === 39 && characterCurrentPosition % width !== width - 1) && ((key === 39 && characterCurrentPosition === treat.currentPosition) || (key === 39 && rainbowBelt.positions.includes(characterCurrentPosition)))) { // if the right arrow is pressed and the character is not on the right edge
-        characterCurrentPosition++ // redefine character position index to be previous position plus 1
-      } else if ((key === 37 && characterCurrentPosition % width !== 0) && ((key === 37 && characterCurrentPosition === treat.currentPosition) || (key === 37 && rainbowBelt.positions.includes(characterCurrentPosition)))) { // if the left arrow is pressed and the cat is not on the left edge
-        characterCurrentPosition-- // redefine character position index to be previous position minus 1
-      } else if ((key === 38 && characterCurrentPosition >= width) && ((key === 38 && characterCurrentPosition === treat.currentPosition) || (key === 38 && rainbowBelt.positions.includes(characterCurrentPosition)))) { // if the up arrow is pressed and the character is not on the top row
-        characterCurrentPosition -= width // redefine cacharactert position index to be previous position minus width
-      } else if ((key === 40 && characterCurrentPosition + width <= width * height - 1) && (!(key === 40 && characterCurrentPosition === treat.currentPosition) || (key === 40 && rainbowBelt.positions.includes(characterCurrentPosition)))) { // if the down arrow is pressed and the character is not on the bottom row
-        characterCurrentPosition += width // redefine character position index to be previous position plus width
-      } else {
-        //console.log('INVALID KEY') // any other key, log invalid key
-        //alert('GAME OVER')
-      }
-    })
+    if ((key === 39 && characterCurrentPosition % width !== width - 1)) { // if the right arrow is pressed and the character is not on the right edge
+      characterCurrentPosition++ // redefine character position index to be previous position plus 1
+    } else if ((key === 37 && characterCurrentPosition % width !== 0)) { // if the left arrow is pressed and the cat is not on the left edge
+      characterCurrentPosition-- // redefine character position index to be previous position minus 1
+    } else if ((key === 38 && characterCurrentPosition >= width)) { // if the up arrow is pressed and the character is not on the top row
+      characterCurrentPosition -= width // redefine cacharactert position index to be previous position minus width
+    } else if ((key === 40 && characterCurrentPosition + width <= width * height - 1)) { // if the down arrow is pressed and the character is not on the bottom row
+      characterCurrentPosition += width // redefine character position index to be previous position plus width
+    } else {
+      //console.log('INVALID KEY') // any other key, log invalid key
+    }
     //console.log('POSITION AFTER REDEFINING --->', characterCurrentPosition)
-    addCharacter(characterCurrentPosition)
+  addCharacter(characterCurrentPosition)
 
-    sweetTreats.forEach(treat => {
-      if ((key === 39 && characterCurrentPosition % width !== width - 1) && ((key === 39 && characterCurrentPosition !== treat.currentPosition) || (key === 39 && !rainbowBelt.positions.includes(characterCurrentPosition)))) { // if the right arrow is pressed and the character is not on the right edge
-        console.log('Game Over')
-      } else if ((key === 37 && characterCurrentPosition % width !== 0) && ((key === 37 && characterCurrentPosition !== treat.currentPosition) || (key === 37 && !rainbowBelt.positions.includes(characterCurrentPosition)))) { // if the left arrow is pressed and the cat is not on the left edge
-        console.log('Game Over')
-      } else if ((key === 38 && characterCurrentPosition >= width) && ((key === 38 && characterCurrentPosition !== treat.currentPosition) || (key === 38 && !rainbowBelt.positions.includes(characterCurrentPosition)))) { // if the up arrow is pressed and the character is not on the top row
-        console.log('Game Over')
-      } else if ((key === 40 && characterCurrentPosition + width <= width * height - 1) && ((key === 40 && characterCurrentPosition !== treat.currentPosition) || (key === 40 && !rainbowBelt.positions.includes(characterCurrentPosition)))) { // if the down arrow is pressed and the character is not on the bottom row
-        console.log('Game Over')
-      } else {
-      }
-
-    })
   }
-  console.log(characterCurrentPosition)
+  //console.log(characterCurrentPosition)
 
+
+
+
+function interactions(event) {
+  const key = event.keyCode
+
+  sweetTreats.forEach(treat => {
+
+    if (key === 39 && characterCurrentPosition !== treat.currentPosition) { 
+      console.log('Game Over')
+    } else if (key === 37 && characterCurrentPosition !== treat.currentPosition) { 
+      console.log('Game Over')
+    } else if (key === 38 && characterCurrentPosition !== treat.currentPosition) { 
+      console.log('Game Over')
+    } else if (key === 40 && characterCurrentPosition !== treat.currentPosition) { 
+      console.log('Game Over')
+    } else {
+      console.log('carry on playing')
+    }
+
+  })
+}
+
+// || (key === 39 && (rainbowBelt.positions.includes(characterCurrentPosition)))
+// || (key === 37 && (rainbowBelt.positions.includes(characterCurrentPosition)))
+// || (key === 38 && (rainbowBelt.positions.includes(characterCurrentPosition)))
+// || (key === 40 && (rainbowBelt.positions.includes(characterCurrentPosition)))
 
   // Add rainbow belt
   function addRainbowBelt() {
@@ -425,6 +436,7 @@ function init() {
   // ** EVENT LISTENERS **
 
   document.addEventListener('keyup', handleKeyUp) // listening for key press
+  document.addEventListener('keyup', interactions)
   start.addEventListener('click', startMovementEasy)
   easy.addEventListener('click', startMovementEasy)
   medium.addEventListener('click', startMovementMedium)
