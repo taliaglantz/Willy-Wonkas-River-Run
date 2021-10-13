@@ -144,7 +144,7 @@ h1 {
   text-align: center;
   /* padding: 2px; */
   line-height: 40px;
-  color: white;
+  
   /* z-index: -1;
   position: relative; */
 }
@@ -156,6 +156,8 @@ h1 {
   background-size: cover;
   object-fit: fill;
 }
+
+
 #rainbow-belt.violet {
   background: url('../assets/violet.png'),url('../assets/sparkles.gif');
   background-size: contain,cover;
@@ -171,12 +173,12 @@ h1 {
 
 /* Characters */
 
-.character {
+/* .character {
   background-image: url('../assets/violet.png');
   background-repeat: no-repeat;
   background-size: contain;
   
-}
+} */
 .willy-wonka {
   background-image: url('../assets/willy_wonka_transparent-removebg-preview.png');
   background-repeat: no-repeat;
@@ -355,12 +357,12 @@ h1 {
   }
 
 
-.div-five {
+/* .div-five {
   border: 2px solid white;
   color: white;
   font-family: 'Willy Wonka';
   padding: 15px;
-}
+} */
 .div-six {
 width: 50px;
 height: 300px;

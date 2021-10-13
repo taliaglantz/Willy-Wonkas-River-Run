@@ -26,8 +26,8 @@ function init() {
 
   //const willyWonka = document.querySelector('.willy-wonka')
   // const charlie = document.querySelector('.charlie')
-  const violet = document.querySelector('.violet')
-  const oompaLoompa = document.querySelector('.oompa-loompa')
+  //const violet = document.querySelector('.violet')
+  //const oompaLoompa = document.querySelector('.oompa-loompa')
 
   // Lives
 
@@ -71,6 +71,15 @@ function init() {
       treatTimer: null
     },
     {
+      item: 'pink party ring',
+      cssClass: 'pink-party-ring',
+      startPosition: 143,
+      currentPosition: 143,
+      direction: 'right',
+      order: 'third',
+      treatTimer: null
+    },
+    {
       item: 'custard cream',
       cssClass: 'custard-cream',
       startPosition: 142,
@@ -86,6 +95,15 @@ function init() {
       currentPosition: 142,
       direction: 'left',
       order: 'second',
+      treatTimer: null
+    },
+    {
+      item: 'custard cream',
+      cssClass: 'custard-cream',
+      startPosition: 142,
+      currentPosition: 142,
+      direction: 'left',
+      order: 'third',
       treatTimer: null
     },
     {
@@ -107,6 +125,15 @@ function init() {
       treatTimer: null
     },
     {
+      item: 'yellow party ring',
+      cssClass: 'yellow-party-ring',
+      startPosition: 117,
+      currentPosition: 117,
+      direction: 'right',
+      order: 'third',
+      treatTimer: null
+    },
+    {
       item: 'egg',
       cssClass: 'egg',
       startPosition: 91,
@@ -125,10 +152,19 @@ function init() {
       treatTimer: null
     },
     {
+      item: 'egg',
+      cssClass: 'egg',
+      startPosition: 91,
+      currentPosition: 91,
+      direction: 'right',
+      order: 'third',
+      treatTimer: null
+    },
+    {
       item: 'heart',
       cssClass: 'heart',
       startPosition: 90,
-      currentPosition: 90,
+      currentPosition: 88,
       direction: 'left',
       order: 'first',
       treatTimer: null
@@ -137,16 +173,25 @@ function init() {
       item: 'heart',
       cssClass: 'heart',
       startPosition: 90,
-      currentPosition: 90,
+      currentPosition: 88,
       direction: 'left',
       order: 'second',
+      treatTimer: null
+    },
+    {
+      item: 'heart',
+      cssClass: 'heart',
+      startPosition: 90,
+      currentPosition: 88,
+      direction: 'left',
+      order: 'third',
       treatTimer: null
     },
     {
       item: 'worm',
       cssClass: 'worm',
       startPosition: 65,
-      currentPosition: 65,
+      currentPosition: 69,
       direction: 'right',
       order: 'first',
       treatTimer: null
@@ -155,9 +200,18 @@ function init() {
       item: 'worm',
       cssClass: 'worm',
       startPosition: 65,
-      currentPosition: 65,
+      currentPosition: 69,
       direction: 'right',
       order: 'second',
+      treatTimer: null
+    },
+    {
+      item: 'worm',
+      cssClass: 'worm',
+      startPosition: 65,
+      currentPosition: 69,
+      direction: 'right',
+      order: 'third',
       treatTimer: null
     },
     {
@@ -179,6 +233,15 @@ function init() {
       treatTimer: null
     },
     {
+      item: 'yellow skittle',
+      cssClass: 'yellow-skittle',
+      startPosition: 39,
+      currentPosition: 39,
+      direction: 'right',
+      order: 'third',
+      treatTimer: null
+    },
+    {
       item: 'creme egg',
       cssClass: 'creme-egg',
       startPosition: 38,
@@ -197,6 +260,15 @@ function init() {
       treatTimer: null
     },
     {
+      item: 'creme egg',
+      cssClass: 'creme-egg',
+      startPosition: 38,
+      currentPosition: 38,
+      direction: 'left',
+      order: 'third',
+      treatTimer: null
+    },
+    {
       item: 'green skittle',
       cssClass: 'green-skittle',
       startPosition: 13,
@@ -212,6 +284,15 @@ function init() {
       currentPosition: 13,
       direction: 'right',
       order: 'second',
+      treatTimer: null
+    },
+    {
+      item: 'green skittle',
+      cssClass: 'green-skittle',
+      startPosition: 13,
+      currentPosition: 13,
+      direction: 'right',
+      order: 'third',
       treatTimer: null
     }
   ]
@@ -225,9 +306,11 @@ function init() {
     for (let i = 0; i < cellCount; i++) { // for loop to run for every cell
       const cell = document.createElement('div') // create the div
       //console.log(cell)
-      cell.innerText = i // inner text of the div to be its index
+      //cell.innerText = i // inner text of the div to be its index
       grid.appendChild(cell) // make the cell a child of the grid element we grabbed above
       cells.push(cell) // add the newly created div into our empty array
+     
+      //console.log(typeof(parseInt(cell.innerText)))
     }
 
     //console.log(filteredCells)
@@ -235,8 +318,9 @@ function init() {
     sweetTreats.forEach(treat => {
       if (treat.order === 'first') {
         addFood(treat)
-      }
-      else if (treat.order === 'second') {
+      } else if (treat.order === 'second') {
+        addFood(treat)
+      } else if (treat.order === 'third') {
         addFood(treat)
       }
     })
@@ -245,37 +329,41 @@ function init() {
     addCharacter(characterStartPosition) // call the function that adds the char to the starting position
   }
 
-
   // Add character to grid
 
   function addCharacter(position) { // takes argument so function is reusable
     //console.log(position)
     //console.log(cells[position])
-   
-    function characterChange(event) {
-      if (event.target = violet) {
-        cells[position].classList.add('violet')// use position as index to pick the corresponding div from the array of cells and add the class of char  
-      } else if (event.target = oompaLoompa) {
-        cells[position].classList.add('oompa-loompa')
-      }
-    }
-    characterChange()
+    cells[position].classList.add('violet')// use position as index to pick the corresponding div from the array of cells and add the class of char  
   }
+
+  // function addCharacter(position) { // takes argument so function is reusable
+  //   //console.log(position)
+  //   //console.log(cells[position])
+  //   function characterChange(event) {
+  //     if (event.target = violet) {
+  //       cells[position].classList.add('violet')// use position as index to pick the corresponding div from the array of cells and add the class of char  
+  //     } else if (event.target = oompaLoompa) {
+  //       cells[position].classList.add('oompa-loompa')
+  //     }
+  //   }
+  // }
 
   //Remove character from grid
 
   function removeCharacter(position) {
-
-    function characterChange(event) {
-      if (event.target = violet) {
-        cells[position].classList.remove('violet')
-      } else if (event.target = oompaLoompa) {
-        cells[position].classList.remove('oompa-loompa')
-      }
-    }
-    characterChange()
+    cells[position].classList.remove('violet')
   }
 
+  // function removeCharacter(position) {
+  //   function characterChange(event) {
+  //     if (event.target = violet) {
+  //       cells[position].classList.remove('violet')
+  //     } else if (event.target = oompaLoompa) {
+  //       cells[position].classList.remove('oompa-loompa')
+  //     }
+  //   }
+  // }
 
   // Moving character around the grid
 
@@ -384,11 +472,16 @@ function init() {
     sweetTreats.forEach(treat => { // iterate through all the food items
       if (treat.order === 'first') { // check if the food item should come first
         treat.treatTimer = setInterval(() => moveFoods(treat), 1000) // set value of treatTimer to be id returned from setInterval and call function to move the food items 
-      } else {
+      } else if (treat.order === 'second') {
         setTimeout(() => { // delay start of the second set of food items
           addFood(treat) // add them at their starting positions
           treat.treatTimer = setInterval(() => moveFoods(treat), 1000)
-        }, 3000) // determines how long before 2nd food item comes in
+        }, 4000) // determines how long before 2nd food item comes in
+      } else if (treat.order === 'third') {
+        setTimeout(() => { // delay start of the second set of food items
+          addFood(treat) // add them at their starting positions
+          treat.treatTimer = setInterval(() => moveFoods(treat), 1000)
+        }, 8000) // determines how long before 2nd food item comes in
       }
     })
   }
@@ -396,11 +489,16 @@ function init() {
     sweetTreats.forEach(treat => { // iterate through all the food items
       if (treat.order === 'first') { // check if the food item should come first
         treat.treatTimer = setInterval(() => moveFoods(treat), 750) // set value of treatTimer to be id returned from setInterval and call function to move the food items 
-      } else {
+      } else if (treat.order === 'second') { // check if the food item should come second
         setTimeout(() => { // delay start of the second set of food items
           addFood(treat) // add them at their starting positions
           treat.treatTimer = setInterval(() => moveFoods(treat), 750)
         }, 3000) // determines how long before 2nd food item comes in
+      } else {
+        setTimeout(() => { // delay start of the second set of food items
+          addFood(treat) // add them at their starting positions
+          treat.treatTimer = setInterval(() => moveFoods(treat), 750)
+        }, 6000) // determines how long before 2nd food item comes in
       }
     })
   }
@@ -408,11 +506,16 @@ function init() {
     sweetTreats.forEach(treat => { // iterate through all the food items
       if (treat.order === 'first') { // check if the food item should come first
         treat.treatTimer = setInterval(() => moveFoods(treat), 500) // set value of treatTimer to be id returned from setInterval and call function to move the food items 
+      } else if (treat.order === 'second') { // check if the food item should come second
+        setTimeout(() => { // delay start of the second set of food items
+          addFood(treat) // add them at their starting positions
+          treat.treatTimer = setInterval(() => moveFoods(treat), 500)
+        }, 2500) // determines how long before 2nd food item comes in
       } else {
         setTimeout(() => { // delay start of the second set of food items
           addFood(treat) // add them at their starting positions
           treat.treatTimer = setInterval(() => moveFoods(treat), 500)
-        }, 1500) // determines how long before 2nd food item comes in
+        }, 4000) // determines how long before 2nd food item comes in
       }
     })
   }
@@ -538,8 +641,8 @@ function init() {
 
   //willyWonka.addEventListener('click', characterChange)
   //charlie.addEventListener('click', characterChange)
-  violet.addEventListener('click', characterChange)
-  oompaLoompa.addEventListener('click', characterChange)
+  //violet.addEventListener('click', characterChange)
+  //oompaLoompa.addEventListener('click', characterChange)
 
 
 

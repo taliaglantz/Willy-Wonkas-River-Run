@@ -76,23 +76,22 @@
 // // MVP done!!!!! :) :) :) 
 // //sort lives
 // //sort game over
-// sort alert messages
+
 // //timer
-// manage to change characters
-// add on another treat/item
+
+// // add on another treat/item
 
 // Thursday
-
-// random objects to get points
-
+// sort alert messages
+// manage to change characters
 // CSS
 
+
+
+
 // To do - JS
-
 // enter screen with start button
-
 // objects gain points
-
 // get food moving smoothly - setTimeout?? - add back in quicker than goes out
 
 // To do - CSS
