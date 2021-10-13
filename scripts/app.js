@@ -28,7 +28,9 @@ function init() {
   // const oompaLoompa = document.querySelector('.oompa-loompa')
 
   // Lives
+
   let lives = 3
+  const lollipop = document.querySelectorAll('.lollipop')
 
   // Rainbow belt
 
@@ -210,7 +212,7 @@ function init() {
   ]
 
 
-  // ** FUNCTIONS FOR MAKING GRID AND ADDING CHARACTER & FOOD ITEMS **
+  // ** FUNCTIONS **
 
   // Making grid
 
@@ -234,8 +236,6 @@ function init() {
       }
     })
 
-
-    //startMovement()
     addRainbowBelt()
     addCharacter(characterStartPosition) // call the function that adds the char to the starting position
   }
@@ -250,10 +250,10 @@ function init() {
   }
 
   //Remove character from grid
+
   function removeCharacter(position) {
     cells[position].classList.remove('character')
   }
-
 
   // Moving character around the grid
 
@@ -277,39 +277,17 @@ function init() {
     addCharacter(characterCurrentPosition)
     if (characterInRiver()) {
       loseLife()
+        if(lives === 0) {
+          alert('Game over')
+        }
     }
   }
   //console.log(characterCurrentPosition)
 
 
 
-
-  function interactions(event) {
-    const key = event.keyCode
-
-    sweetTreats.forEach(treat => {
-
-      if (key === 39 && characterCurrentPosition !== treat.currentPosition) {
-        console.log('Game Over')
-      } else if (key === 37 && characterCurrentPosition !== treat.currentPosition) {
-        console.log('Game Over')
-      } else if (key === 38 && characterCurrentPosition !== treat.currentPosition) {
-        console.log('Game Over')
-      } else if (key === 40 && characterCurrentPosition !== treat.currentPosition) {
-        console.log('Game Over')
-      } else {
-        console.log('carry on playing')
-      }
-
-    })
-  }
-
-  // || (key === 39 && (rainbowBelt.positions.includes(characterCurrentPosition)))
-  // || (key === 37 && (rainbowBelt.positions.includes(characterCurrentPosition)))
-  // || (key === 38 && (rainbowBelt.positions.includes(characterCurrentPosition)))
-  // || (key === 40 && (rainbowBelt.positions.includes(characterCurrentPosition)))
-
   // Add rainbow belt
+
   function addRainbowBelt() {
     rainbowBelt.positions.forEach((position) => {
       //console.log(position)
@@ -319,16 +297,20 @@ function init() {
     //console.log(rainbowBeltCells)
   }
 
-  // add a food item to the grid
+  // Add a food item to the grid
+
   function addFood(treat) {
     //console.log('treat', treat)
     cells[treat.currentPosition].classList.add(treat.cssClass)
   }
 
-  // remove a food item from the grid
+  // Remove a food item from the grid
+
   function removeFood(treat) {
     cells[treat.currentPosition].classList.remove(treat.cssClass)
   }
+
+// Move food items around grid
 
   function moveFoods(treat) {
     const charactersOnTreat = characterCurrentPosition === treat.currentPosition // returns true or false
@@ -343,6 +325,9 @@ function init() {
       addFood(treat) // add food item back at the start position
       if (charactersOnTreat) {
         loseLife()
+        if(lives === 0) {
+          alert('Game over')
+        }
       }
       return // return here to stop rest of function running
     }
@@ -351,13 +336,16 @@ function init() {
       addFood(treat)
       if (charactersOnTreat) { 
         loseLife()
+        if(lives === 0) {
+          alert('Game over')
+        }
       }
       return
 
     }
 
     // this if statement is the default for the movement
-    if (treat.direction === 'right') { //check direction of biscuit and update position accordingly
+    if (treat.direction === 'right') { //check direction of food item and update position accordingly
       treat.currentPosition++
       if (charactersOnTreat) {
         characterCurrentPosition++
@@ -375,10 +363,10 @@ function init() {
     }
   }
 
-  // start movement of the food items
+  // start movement of the food items - various levels
   function startMovementEasy() {
     sweetTreats.forEach(treat => { // iterate through all the food items
-      if (treat.order === 'first') { // check if the biscuit should come first
+      if (treat.order === 'first') { // check if the food item should come first
         treat.treatTimer = setInterval(() => moveFoods(treat), 1000) // set value of treatTimer to be id returned from setInterval and call function to move the food items 
       } else {
         setTimeout(() => { // delay start of the second set of food items
@@ -390,7 +378,7 @@ function init() {
   }
   function startMovementMedium() {
     sweetTreats.forEach(treat => { // iterate through all the food items
-      if (treat.order === 'first') { // check if the biscuit should come first
+      if (treat.order === 'first') { // check if the food item should come first
         treat.treatTimer = setInterval(() => moveFoods(treat), 750) // set value of treatTimer to be id returned from setInterval and call function to move the food items 
       } else {
         setTimeout(() => { // delay start of the second set of food items
@@ -402,7 +390,7 @@ function init() {
   }
   function startMovementHard() {
     sweetTreats.forEach(treat => { // iterate through all the food items
-      if (treat.order === 'first') { // check if the biscuit should come first
+      if (treat.order === 'first') { // check if the food item should come first
         treat.treatTimer = setInterval(() => moveFoods(treat), 500) // set value of treatTimer to be id returned from setInterval and call function to move the food items 
       } else {
         setTimeout(() => { // delay start of the second set of food items
@@ -413,6 +401,7 @@ function init() {
     })
   }
 
+// Timer
 
   let counterTimer = 0;
   let myInterval
@@ -436,33 +425,28 @@ function init() {
     }
   }
 
+  // Losing lives
+
   function loseLife() {
     removeCharacter(characterCurrentPosition)
+    
     characterCurrentPosition = characterStartPosition
     addCharacter(characterCurrentPosition)
     lives--
   }
 
-  // if character in river
+  // Character falling in river
+
   function characterInRiver() { // boolean function if return + &&/||
     return cells[characterCurrentPosition].getAttribute('id') !== 'rainbow-belt' && cells[characterCurrentPosition].classList.length === 1
   }
 
-  //   function startTimer() {
-  // myInterval = setInterval(() => {
-  //   counterTimer++
-  //   if (counterTimer > 15) {
-  //     clearInterval(myInterval)
-  //     counter = 0
-  //     alert('Game over')
-  //   } else {
-  //     console.log(counterTimer)
-  //   }
-  // },1000)
-  //   }
+  
+
+  
 
 
-  // Change characters
+  // Changing characters
 
   // function characterChange(event) {
   //   console.log(event.target.id)
@@ -510,8 +494,6 @@ function init() {
 
   document.addEventListener('keyup', handleKeyUp) // listening for key press
 
-  //document.addEventListener('keyup', interactions)
-
   start.addEventListener('click', startMovementEasy)
 
   easy.addEventListener('click', startMovementEasy)
@@ -520,9 +502,9 @@ function init() {
 
   start.addEventListener('click', startTimer)
 
-  //easy.addEventListener('click', startTimer)
-  //medium.addEventListener('click', startTimer)
-  //hard.addEventListener('click', startTimer)
+  easy.addEventListener('click', startTimer)
+  medium.addEventListener('click', startTimer)
+  hard.addEventListener('click', startTimer)
 
   //document.addEventListener('keyup', gameOver)
 
@@ -537,6 +519,7 @@ function init() {
   // ** CALLING FUNCTIONS **
 
   createGrid(characterStartPosition) //pass function to the starting position of the char
+ 
   //characterChange()
   //alert()
 

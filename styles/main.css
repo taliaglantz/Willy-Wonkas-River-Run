@@ -14,7 +14,7 @@
 body {
   display: flex;
   justify-content: center;
-  /* background-color: #9c21db; */
+  background-color: #9c21db;
 }
 
 .sections-wrapper {
@@ -24,7 +24,7 @@ body {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
-  /* background-color: #9c21db; */
+  background-color: #9c21db;
 
 }
 
@@ -319,14 +319,19 @@ margin: 50px;
 }
 
 #myProgress {
-width: 100%;
-background-color: grey;
+/* width: 100%; */
 
 }
 
 #myBar {
-width: 100px;
+/* width: 100px; */
 height: 100%;
-background-color: green;
+background-color: white;
 
+}
+
+.div-seven {
+  display: flex;
+  justify-content: space-around;
+  
 }

@@ -66,20 +66,25 @@
 
 // To do Tuesday
 
-// character to only be able to 'step' on food items
+// //character to only be able to 'step' on food items
 // //add in rainbow bars
 
 // To do Wednesday
-// finish game bit
-// manage to change characters - HELP
+// //finish game bit
+// // MVP done!!!!! :) :) :) 
+// sort lives
+// sort game over
+// sort alert messages
 // timer
-// lives???
+// manage to change characters
+
+// Thursday
 // random objects to get points
+// CSS
 
 // To do - JS
 
 // enter screen with start button
-// game over screen
 
 // objects to gain a life
 // //levels

@@ -413,3 +413,30 @@
   //   }
   //   //console.log('POSITION AFTER REDEFINING --->', characterCurrentPosition)
   // })
+
+
+
+  // function interactions(event) {
+  //   const key = event.keyCode
+
+  //   sweetTreats.forEach(treat => {
+
+  //     if (key === 39 && characterCurrentPosition !== treat.currentPosition) {
+  //       console.log('Game Over')
+  //     } else if (key === 37 && characterCurrentPosition !== treat.currentPosition) {
+  //       console.log('Game Over')
+  //     } else if (key === 38 && characterCurrentPosition !== treat.currentPosition) {
+  //       console.log('Game Over')
+  //     } else if (key === 40 && characterCurrentPosition !== treat.currentPosition) {
+  //       console.log('Game Over')
+  //     } else {
+  //       console.log('carry on playing')
+  //     }
+
+  //   })
+  // }
+
+  // || (key === 39 && (rainbowBelt.positions.includes(characterCurrentPosition)))
+  // || (key === 37 && (rainbowBelt.positions.includes(characterCurrentPosition)))
+  // || (key === 38 && (rainbowBelt.positions.includes(characterCurrentPosition)))
+  // || (key === 40 && (rainbowBelt.positions.includes(characterCurrentPosition)))
