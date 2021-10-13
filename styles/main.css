@@ -14,7 +14,7 @@
 body {
   display: flex;
   justify-content: center;
-  background-color: #9c21db;
+  /* background-color: #9c21db; */
 }
 
 .sections-wrapper {
@@ -24,7 +24,7 @@ body {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
-  background-color: #9c21db;
+  /* background-color: #9c21db; */
 
 }
 
@@ -149,23 +149,28 @@ h1 {
   position: relative; */
 }
 
+/* Rainbow belt*/
+
 #rainbow-belt {
   background: url('../assets/sparkles.gif');
-  /* background-repeat: no-repeat; */
   background-size: cover;
   object-fit: fill;
-  /* z-index: -1;
-  position: relative; */
-
 }
+#rainbow-belt.character {
+  background: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/sparkles.gif');
+  background-size: contain,cover;
+  background-repeat: no-repeat;
+  object-fit: fill;
+}
+
+/* Characters */
 
 .character {
   background-image: url('../assets/oompa_loompa_transparent-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;
-  /* z-index: 1;
-  position: relative; */
+  
 }
 .willy-wonka {
   background-image: url('../assets/willy_wonka_transparent-removebg-preview.png');
@@ -192,20 +197,35 @@ h1 {
   cursor: pointer;
 }
 
+/* Food items */
+
 .pink-party-ring {
   background-image: url('../assets/pink-party-ring--removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
- 
+}
+.pink-party-ring.character {
+  background-image: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/pink-party-ring--removebg-preview.png');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .custard-cream {
   background-image: url('../assets/Custard_cream_biscuit-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
-  
+}
+.custard-cream.character{
+  background-image: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/Custard_cream_biscuit-removebg-preview.png');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .yellow-party-ring {
   background-image: url('../assets/yellow-party-ring-removebg-preview.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.yellow-party-ring.character {
+  background-image: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/yellow-party-ring-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -215,8 +235,19 @@ h1 {
   background-size: contain;
   
 }
+.egg.character  {
+  background-image: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/FriedEgg-removebg-preview.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  
+}
 .heart {
   background-image: url('../assets/haribo-heart-removebg-preview.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.heart.character  {
+  background-image: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/haribo-heart-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -224,16 +255,29 @@ h1 {
   background-image: url('../assets/worm-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
- 
+}
+.worm.character  {
+  background-image: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/worm-removebg-preview.png');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .yellow-skittle {
   background-image: url('../assets/yellow-skittle-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
-  
+}
+.yellow-skittle.character  {
+  background-image: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/yellow-skittle-removebg-preview.png');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .creme-egg {
   background-image: url('../assets/creme-egg-removebg-preview.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.creme-egg.character  {
+  background-image: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/creme-egg-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -241,7 +285,11 @@ h1 {
   background-image: url('../assets/green-skittle-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
-  
+}
+.green-skittle.character  {
+  background-image: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/green-skittle-removebg-preview.png');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 
@@ -267,4 +315,18 @@ width: 50px;
 height: 300px;
 border: 3px solid white;
 margin: 50px;
+
+}
+
+#myProgress {
+width: 100%;
+background-color: grey;
+
+}
+
+#myBar {
+width: 100px;
+height: 100%;
+background-color: green;
+
 }

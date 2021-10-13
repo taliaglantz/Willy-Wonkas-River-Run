@@ -389,6 +389,42 @@ function interactions(event) {
   }
 
 
+  let counterTimer = 0;
+  let myInterval
+  function startTimer() {
+    if (counterTimer == 0) {
+      counterTimer = 1;
+      const myBar = document.getElementById("myBar");
+      let height = 1;
+
+      myInterval = setInterval(myTimer,1000);
+      function myTimer() {
+        if (height >=100) {
+          clearInterval(myInterval)
+          counterTimer = 0
+          //alert('Game over')
+        } else {
+          height ++
+          myBar.style.height = height + '%'
+        }
+      }
+    }
+  }
+
+//   function startTimer() {
+// myInterval = setInterval(() => {
+//   counterTimer++
+//   if (counterTimer > 15) {
+//     clearInterval(myInterval)
+//     counter = 0
+//     alert('Game over')
+//   } else {
+//     console.log(counterTimer)
+//   }
+// },1000)
+//   }
+
+
   // Change characters
 
   // function characterChange(event) {
@@ -436,11 +472,21 @@ function interactions(event) {
   // ** EVENT LISTENERS **
 
   document.addEventListener('keyup', handleKeyUp) // listening for key press
+
   document.addEventListener('keyup', interactions)
+
   start.addEventListener('click', startMovementEasy)
+
   easy.addEventListener('click', startMovementEasy)
   medium.addEventListener('click', startMovementMedium)
   hard.addEventListener('click', startMovementHard)
+
+  start.addEventListener('click', startTimer)
+
+  //easy.addEventListener('click', startTimer)
+  //medium.addEventListener('click', startTimer)
+  //hard.addEventListener('click', startTimer)
+
   //document.addEventListener('keyup', gameOver)
 
 
