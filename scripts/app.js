@@ -18,14 +18,16 @@ function init() {
 
   // Character
 
-  const defaultCharacter = document.querySelector('.character')
+  //let character = document.querySelector('.violet')
   const characterStartPosition = 162
   let characterCurrentPosition = 162
 
-  // const willyWonka = document.querySelector('.willy-wonka')
+  //const characterOnRainbowBelt = document.querySelectorAll('#rainbow-belt.character')
+
+  //const willyWonka = document.querySelector('.willy-wonka')
   // const charlie = document.querySelector('.charlie')
-  // const violet = document.querySelector('.violet')
-  // const oompaLoompa = document.querySelector('.oompa-loompa')
+  const violet = document.querySelector('.violet')
+  const oompaLoompa = document.querySelector('.oompa-loompa')
 
   // Lives
 
@@ -33,7 +35,7 @@ function init() {
   const lollipopOne = document.querySelector('#lollipop-one')
   const lollipopTwo = document.querySelector('#lollipop-two')
   const lollipopThree = document.querySelector('#lollipop-three')
-  
+
 
   // Rainbow belt
 
@@ -249,14 +251,31 @@ function init() {
   function addCharacter(position) { // takes argument so function is reusable
     //console.log(position)
     //console.log(cells[position])
-    cells[position].classList.add('character') // use position as index to pick the corresponding div from the array of cells and add the class of char
+   
+    function characterChange(event) {
+      if (event.target = violet) {
+        cells[position].classList.add('violet')// use position as index to pick the corresponding div from the array of cells and add the class of char  
+      } else if (event.target = oompaLoompa) {
+        cells[position].classList.add('oompa-loompa')
+      }
+    }
+    characterChange()
   }
 
   //Remove character from grid
 
   function removeCharacter(position) {
-    cells[position].classList.remove('character')
+
+    function characterChange(event) {
+      if (event.target = violet) {
+        cells[position].classList.remove('violet')
+      } else if (event.target = oompaLoompa) {
+        cells[position].classList.remove('oompa-loompa')
+      }
+    }
+    characterChange()
   }
+
 
   // Moving character around the grid
 
@@ -280,7 +299,7 @@ function init() {
     addCharacter(characterCurrentPosition)
     if (characterInRiver()) {
       loseLife()
-        
+
     }
   }
   //console.log(characterCurrentPosition)
@@ -311,7 +330,7 @@ function init() {
     cells[treat.currentPosition].classList.remove(treat.cssClass)
   }
 
-// Move food items around grid
+  // Move food items around grid
 
   function moveFoods(treat) {
     const charactersOnTreat = characterCurrentPosition === treat.currentPosition // returns true or false
@@ -326,16 +345,16 @@ function init() {
       addFood(treat) // add food item back at the start position
       if (charactersOnTreat) {
         loseLife()
-        
+
       }
       return // return here to stop rest of function running
     }
     if (treat.currentPosition % width === width - 1 && treat.direction === 'right') { // same as above for other side of the grid
       treat.currentPosition = treat.startPosition
       addFood(treat)
-      if (charactersOnTreat) { 
+      if (charactersOnTreat) {
         loseLife()
-        
+
       }
       return
 
@@ -398,24 +417,25 @@ function init() {
     })
   }
 
-// Timer
+  // Timer
 
   let counterTimer = 0;
   let myInterval
   function startTimer() {
-    if (counterTimer == 0) {
+    if (counterTimer === 0) {
       counterTimer = 1;
       const myBar = document.getElementById("myBar");
       let height = 1;
 
-      myInterval = setInterval(myTimer, 1000);
+      myInterval = setInterval(myTimer, 50);
       function myTimer() {
         if (height >= 100) {
           clearInterval(myInterval)
           counterTimer = 0
-          //alert('Game over')
+          loseLife()
+          startTimer()
         } else {
-          height++
+          height += 0.5
           myBar.style.height = height + '%'
         }
       }
@@ -425,7 +445,7 @@ function init() {
   // Losing lives
 
   function loseLife() {
-    
+
     removeCharacter(characterCurrentPosition)
     characterCurrentPosition = characterStartPosition
     addCharacter(characterCurrentPosition)
@@ -439,35 +459,35 @@ function init() {
     return cells[characterCurrentPosition].getAttribute('id') !== 'rainbow-belt' && cells[characterCurrentPosition].classList.length === 1
   }
 
-  
-function removeLollipop() {
-  if (lives === 2) {
-  lollipopOne.style.backgroundImage = 'url(" ")'
-  
-} else if (lives === 1) {
-  lollipopTwo.style.backgroundImage = 'url(" ")'
- 
- 
-} else if (lives === 0) {
-  lollipopThree.style.backgroundImage = 'url(" ")'
-  
-}
-}
+
+  function removeLollipop() {
+    if (lives === 2) {
+      lollipopOne.style.display = 'none'
+    } else if (lives === 1) {
+      lollipopTwo.style.display = 'none'
+    } else if (lives === 0) {
+      lollipopThree.style.display = 'none'
+      alert('Game over')
+    }
+  }
 
 
 
   // Changing characters
 
   // function characterChange(event) {
-  //   console.log(event.target.id)
-  //   if (event.target.id = willyWonka) {
-  //     addCharacter(characterStartPosition)
-  //   } else if (event.target.id = charlie) {
-  //     addCharacter(characterStartPosition)
-  //   } else if (event.target.id = violet) {
-  //     addCharacter(characterStartPosition)
-  //   } else if (event.target.id = oompaLoompa) {
-  //     addCharacter(characterStartPosition)
+  //   //console.log(event)
+  //   if (event.target = willyWonka) {
+  //     //console.log('This is Willy Wonka')
+  //     character.style.backgroundImage = "url('../assets/willy_wonka_transparent-removebg-preview.png');"
+  //     console.log(character)
+  //     //characterOnRainbowBelt.style.background = "url('../assets/willy_wonka_transparent-removebg-preview.png'),url('../assets/sparkles.gif');"
+  //     // } else if (event.target.id = charlie) {
+  //     //   addCharacter(characterStartPosition)
+  //     // } else if (event.target.id = violet) {
+  //     //   addCharacter(characterStartPosition)
+  //     // } else if (event.target.id = oompaLoompa) {
+  //     //   addCharacter(characterStartPosition)
   //   }
   // }
 
@@ -516,20 +536,17 @@ function removeLollipop() {
   medium.addEventListener('click', startTimer)
   hard.addEventListener('click', startTimer)
 
-  //document.addEventListener('keyup', gameOver)
-
-
-  // willyWonka.addEventListener('click', characterChange)
-  // charlie.addEventListener('click', characterChange)
-  // violet.addEventListener('click', characterChange)
-  // oompaLoompa.addEventListener('click', characterChange)
+  //willyWonka.addEventListener('click', characterChange)
+  //charlie.addEventListener('click', characterChange)
+  violet.addEventListener('click', characterChange)
+  oompaLoompa.addEventListener('click', characterChange)
 
 
 
   // ** CALLING FUNCTIONS **
 
   createGrid(characterStartPosition) //pass function to the starting position of the char
- 
+
   //characterChange()
   //alert()
 

@@ -156,7 +156,13 @@ h1 {
   background-size: cover;
   object-fit: fill;
 }
-#rainbow-belt.character {
+#rainbow-belt.violet {
+  background: url('../assets/violet.png'),url('../assets/sparkles.gif');
+  background-size: contain,cover;
+  background-repeat: no-repeat;
+  object-fit: fill;
+}
+#rainbow-belt.oompa-loompa {
   background: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/sparkles.gif');
   background-size: contain,cover;
   background-repeat: no-repeat;
@@ -166,7 +172,7 @@ h1 {
 /* Characters */
 
 .character {
-  background-image: url('../assets/oompa_loompa_transparent-removebg-preview.png');
+  background-image: url('../assets/violet.png');
   background-repeat: no-repeat;
   background-size: contain;
   
@@ -203,8 +209,13 @@ h1 {
   background-repeat: no-repeat;
   background-size: contain;
 }
-.pink-party-ring.character {
-  background-image: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/pink-party-ring--removebg-preview.png');
+.pink-party-ring.violet {
+  background-image: url('../assets/violet.png'),url('../assets/pink-party-ring--removebg-preview.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.pink-party-ring.oompa-loompa {
+  background: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/sparkles.gif');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -213,8 +224,13 @@ h1 {
   background-repeat: no-repeat;
   background-size: contain;
 }
-.custard-cream.character{
-  background-image: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/Custard_cream_biscuit-removebg-preview.png');
+.custard-cream.violet{
+  background-image: url('../assets/violet.png'),url('../assets/Custard_cream_biscuit-removebg-preview.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.custard-cream.oompa-loompa {
+  background: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/sparkles.gif');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -223,8 +239,13 @@ h1 {
   background-repeat: no-repeat;
   background-size: contain;
 }
-.yellow-party-ring.character {
-  background-image: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/yellow-party-ring-removebg-preview.png');
+.yellow-party-ring.violet {
+  background-image: url('../assets/violet.png'),url('../assets/yellow-party-ring-removebg-preview.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.yellow-party-ring.oompa-loompa {
+  background: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/sparkles.gif');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -234,8 +255,14 @@ h1 {
   background-size: contain;
   
 }
-.egg.character  {
-  background-image: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/FriedEgg-removebg-preview.png');
+.egg.violet  {
+  background-image: url('../assets/violet.png'),url('../assets/FriedEgg-removebg-preview.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  
+}
+.egg.oompa-loompa  {
+  background: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/sparkles.gif');
   background-repeat: no-repeat;
   background-size: contain;
   
@@ -245,8 +272,13 @@ h1 {
   background-repeat: no-repeat;
   background-size: contain;
 }
-.heart.character  {
-  background-image: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/haribo-heart-removebg-preview.png');
+.heart.violet  {
+  background-image: url('../assets/violet.png'),url('../assets/haribo-heart-removebg-preview.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.heart.oompa-loompa  {
+  background: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/sparkles.gif');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -255,8 +287,13 @@ h1 {
   background-repeat: no-repeat;
   background-size: contain;
 }
-.worm.character  {
-  background-image: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/worm-removebg-preview.png');
+.worm.violet  {
+  background-image: url('../assets/violet.png'),url('../assets/worm-removebg-preview.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.worm.oompa-loompa  {
+  background: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/sparkles.gif');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -265,8 +302,13 @@ h1 {
   background-repeat: no-repeat;
   background-size: contain;
 }
-.yellow-skittle.character  {
-  background-image: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/yellow-skittle-removebg-preview.png');
+.yellow-skittle.violet  {
+  background-image: url('../assets/violet.png'),url('../assets/yellow-skittle-removebg-preview.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.yellow-skittle.oompa-loompa  {
+  background: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/sparkles.gif');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -275,8 +317,13 @@ h1 {
   background-repeat: no-repeat;
   background-size: contain;
 }
-.creme-egg.character  {
-  background-image: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/creme-egg-removebg-preview.png');
+.creme-egg.violet  {
+  background-image: url('../assets/violet.png'),url('../assets/creme-egg-removebg-preview.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.creme-egg.oompa-loompa  {
+  background: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/sparkles.gif');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -285,8 +332,13 @@ h1 {
   background-repeat: no-repeat;
   background-size: contain;
 }
-.green-skittle.character  {
-  background-image: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/green-skittle-removebg-preview.png');
+.green-skittle.violet  {
+  background-image: url('../assets/violet.png'),url('../assets/green-skittle-removebg-preview.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.green-skittle.oompa-loompa  {
+  background: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/sparkles.gif');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -312,13 +364,14 @@ h1 {
 .div-six {
 width: 50px;
 height: 300px;
-border: 3px solid white;
+border: 3px solid #white;
 margin: 50px;
 
 }
 
 #myProgress {
 /* width: 100%; */
+/* background-color: white; */
 
 }
 
@@ -326,6 +379,7 @@ margin: 50px;
 /* width: 100px; */
 height: 100%;
 background-color: white;
+;
 
 }
 
@@ -340,9 +394,7 @@ background-repeat: no-repeat;
 background-size: contain;
 object-fit: fill;
 }
-#lollipop-one-empty {
-  border: 2px solid white;
-}
+
 
 #lollipop-two {
 background-image: url('../assets/lollipop-removebg-preview.png');
@@ -350,16 +402,11 @@ background-repeat: no-repeat;
 background-size: contain;
 object-fit: fill;
 }
-#lollipop-two-empty {
-  border: 2px solid white;
-}
+
 
 #lollipop-three {
 background-image: url('../assets/lollipop-removebg-preview.png');
 background-repeat: no-repeat;
 background-size: contain;
 object-fit: fill;
-}
-#lollipop-three-empty {
-  border: 2px solid white;
 }

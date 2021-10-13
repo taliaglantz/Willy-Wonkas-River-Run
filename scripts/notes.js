@@ -68,27 +68,32 @@
 
 // //character to only be able to 'step' on food items
 // //add in rainbow bars
+// //levels
 
 // To do Wednesday
+
 // //finish game bit
 // // MVP done!!!!! :) :) :) 
-// sort lives
-// sort game over
+// //sort lives
+// //sort game over
 // sort alert messages
-// timer
+// //timer
 // manage to change characters
+// add on another treat/item
 
 // Thursday
+
 // random objects to get points
+
 // CSS
 
 // To do - JS
 
 // enter screen with start button
 
-// objects to gain a life
-// //levels
-// get food moving smoothly - setTimeout?? - add back in quicker than goes out - HELP
+// objects gain points
+
+// get food moving smoothly - setTimeout?? - add back in quicker than goes out
 
 // To do - CSS
 // fix sizing of screen
