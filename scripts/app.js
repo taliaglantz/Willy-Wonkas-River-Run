@@ -27,6 +27,9 @@ function init() {
   // const violet = document.querySelector('.violet')
   // const oompaLoompa = document.querySelector('.oompa-loompa')
 
+  // Lives
+  let lives = 3
+
   // Rainbow belt
 
   const rainbowBelt = {
@@ -271,38 +274,40 @@ function init() {
       //console.log('INVALID KEY') // any other key, log invalid key
     }
     //console.log('POSITION AFTER REDEFINING --->', characterCurrentPosition)
-  addCharacter(characterCurrentPosition)
-
+    addCharacter(characterCurrentPosition)
+    if (characterInRiver()) {
+      loseLife()
+    }
   }
   //console.log(characterCurrentPosition)
 
 
 
 
-function interactions(event) {
-  const key = event.keyCode
+  function interactions(event) {
+    const key = event.keyCode
 
-  sweetTreats.forEach(treat => {
+    sweetTreats.forEach(treat => {
 
-    if (key === 39 && characterCurrentPosition !== treat.currentPosition) { 
-      console.log('Game Over')
-    } else if (key === 37 && characterCurrentPosition !== treat.currentPosition) { 
-      console.log('Game Over')
-    } else if (key === 38 && characterCurrentPosition !== treat.currentPosition) { 
-      console.log('Game Over')
-    } else if (key === 40 && characterCurrentPosition !== treat.currentPosition) { 
-      console.log('Game Over')
-    } else {
-      console.log('carry on playing')
-    }
+      if (key === 39 && characterCurrentPosition !== treat.currentPosition) {
+        console.log('Game Over')
+      } else if (key === 37 && characterCurrentPosition !== treat.currentPosition) {
+        console.log('Game Over')
+      } else if (key === 38 && characterCurrentPosition !== treat.currentPosition) {
+        console.log('Game Over')
+      } else if (key === 40 && characterCurrentPosition !== treat.currentPosition) {
+        console.log('Game Over')
+      } else {
+        console.log('carry on playing')
+      }
 
-  })
-}
+    })
+  }
 
-// || (key === 39 && (rainbowBelt.positions.includes(characterCurrentPosition)))
-// || (key === 37 && (rainbowBelt.positions.includes(characterCurrentPosition)))
-// || (key === 38 && (rainbowBelt.positions.includes(characterCurrentPosition)))
-// || (key === 40 && (rainbowBelt.positions.includes(characterCurrentPosition)))
+  // || (key === 39 && (rainbowBelt.positions.includes(characterCurrentPosition)))
+  // || (key === 37 && (rainbowBelt.positions.includes(characterCurrentPosition)))
+  // || (key === 38 && (rainbowBelt.positions.includes(characterCurrentPosition)))
+  // || (key === 40 && (rainbowBelt.positions.includes(characterCurrentPosition)))
 
   // Add rainbow belt
   function addRainbowBelt() {
@@ -326,28 +331,48 @@ function interactions(event) {
   }
 
   function moveFoods(treat) {
-    removeFood(treat)
+    const charactersOnTreat = characterCurrentPosition === treat.currentPosition // returns true or false
 
+    removeFood(treat)
+    if (charactersOnTreat) {
+      removeCharacter(characterCurrentPosition)
+    }
     // these first 2 if statements are handling the food item reaching the edge
     if (treat.currentPosition % width === 0 && treat.direction === 'left') { // check if food item has reached the edge
       treat.currentPosition = treat.startPosition // put food item back to the start position
       addFood(treat) // add food item back at the start position
+      if (charactersOnTreat) {
+        loseLife()
+      }
       return // return here to stop rest of function running
     }
     if (treat.currentPosition % width === width - 1 && treat.direction === 'right') { // same as above for other side of the grid
       treat.currentPosition = treat.startPosition
       addFood(treat)
+      if (charactersOnTreat) { 
+        loseLife()
+      }
       return
+
     }
 
     // this if statement is the default for the movement
     if (treat.direction === 'right') { //check direction of biscuit and update position accordingly
       treat.currentPosition++
+      if (charactersOnTreat) {
+        characterCurrentPosition++
+      }
     } else {
       treat.currentPosition--
+      if (charactersOnTreat) {
+        characterCurrentPosition--
+      }
     }
 
     addFood(treat)
+    if (charactersOnTreat) {
+      addCharacter(characterCurrentPosition)
+    }
   }
 
   // start movement of the food items
@@ -397,32 +422,44 @@ function interactions(event) {
       const myBar = document.getElementById("myBar");
       let height = 1;
 
-      myInterval = setInterval(myTimer,1000);
+      myInterval = setInterval(myTimer, 1000);
       function myTimer() {
-        if (height >=100) {
+        if (height >= 100) {
           clearInterval(myInterval)
           counterTimer = 0
           //alert('Game over')
         } else {
-          height ++
+          height++
           myBar.style.height = height + '%'
         }
       }
     }
   }
 
-//   function startTimer() {
-// myInterval = setInterval(() => {
-//   counterTimer++
-//   if (counterTimer > 15) {
-//     clearInterval(myInterval)
-//     counter = 0
-//     alert('Game over')
-//   } else {
-//     console.log(counterTimer)
-//   }
-// },1000)
-//   }
+  function loseLife() {
+    removeCharacter(characterCurrentPosition)
+    characterCurrentPosition = characterStartPosition
+    addCharacter(characterCurrentPosition)
+    lives--
+  }
+
+  // if character in river
+  function characterInRiver() { // boolean function if return + &&/||
+    return cells[characterCurrentPosition].getAttribute('id') !== 'rainbow-belt' && cells[characterCurrentPosition].classList.length === 1
+  }
+
+  //   function startTimer() {
+  // myInterval = setInterval(() => {
+  //   counterTimer++
+  //   if (counterTimer > 15) {
+  //     clearInterval(myInterval)
+  //     counter = 0
+  //     alert('Game over')
+  //   } else {
+  //     console.log(counterTimer)
+  //   }
+  // },1000)
+  //   }
 
 
   // Change characters
@@ -473,7 +510,7 @@ function interactions(event) {
 
   document.addEventListener('keyup', handleKeyUp) // listening for key press
 
-  document.addEventListener('keyup', interactions)
+  //document.addEventListener('keyup', interactions)
 
   start.addEventListener('click', startMovementEasy)
 
