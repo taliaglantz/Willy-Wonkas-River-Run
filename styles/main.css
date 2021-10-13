@@ -169,7 +169,6 @@ h1 {
   background-image: url('../assets/oompa_loompa_transparent-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
-  cursor: pointer;
   
 }
 .willy-wonka {
@@ -333,5 +332,34 @@ background-color: white;
 .div-seven {
   display: flex;
   justify-content: space-around;
-  
+}
+
+#lollipop-one {
+background-image: url('../assets/lollipop-removebg-preview.png');
+background-repeat: no-repeat;
+background-size: contain;
+object-fit: fill;
+}
+#lollipop-one-empty {
+  border: 2px solid white;
+}
+
+#lollipop-two {
+background-image: url('../assets/lollipop-removebg-preview.png');
+background-repeat: no-repeat;
+background-size: contain;
+object-fit: fill;
+}
+#lollipop-two-empty {
+  border: 2px solid white;
+}
+
+#lollipop-three {
+background-image: url('../assets/lollipop-removebg-preview.png');
+background-repeat: no-repeat;
+background-size: contain;
+object-fit: fill;
+}
+#lollipop-three-empty {
+  border: 2px solid white;
 }

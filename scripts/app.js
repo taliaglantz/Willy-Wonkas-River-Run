@@ -30,7 +30,10 @@ function init() {
   // Lives
 
   let lives = 3
-  const lollipop = document.querySelectorAll('.lollipop')
+  const lollipopOne = document.querySelector('#lollipop-one')
+  const lollipopTwo = document.querySelector('#lollipop-two')
+  const lollipopThree = document.querySelector('#lollipop-three')
+  
 
   // Rainbow belt
 
@@ -277,9 +280,7 @@ function init() {
     addCharacter(characterCurrentPosition)
     if (characterInRiver()) {
       loseLife()
-        if(lives === 0) {
-          alert('Game over')
-        }
+        
     }
   }
   //console.log(characterCurrentPosition)
@@ -325,9 +326,7 @@ function init() {
       addFood(treat) // add food item back at the start position
       if (charactersOnTreat) {
         loseLife()
-        if(lives === 0) {
-          alert('Game over')
-        }
+        
       }
       return // return here to stop rest of function running
     }
@@ -336,9 +335,7 @@ function init() {
       addFood(treat)
       if (charactersOnTreat) { 
         loseLife()
-        if(lives === 0) {
-          alert('Game over')
-        }
+        
       }
       return
 
@@ -428,11 +425,12 @@ function init() {
   // Losing lives
 
   function loseLife() {
-    removeCharacter(characterCurrentPosition)
     
+    removeCharacter(characterCurrentPosition)
     characterCurrentPosition = characterStartPosition
     addCharacter(characterCurrentPosition)
     lives--
+    removeLollipop()
   }
 
   // Character falling in river
@@ -442,8 +440,20 @@ function init() {
   }
 
   
-
+function removeLollipop() {
+  if (lives === 2) {
+  lollipopOne.style.backgroundImage = 'url(" ")'
   
+} else if (lives === 1) {
+  lollipopTwo.style.backgroundImage = 'url(" ")'
+ 
+ 
+} else if (lives === 0) {
+  lollipopThree.style.backgroundImage = 'url(" ")'
+  
+}
+}
+
 
 
   // Changing characters
