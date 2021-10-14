@@ -4,24 +4,27 @@
         url('../assets/willywonka.regular-webfont.woff') format('woff');
 }
 
+.blank {
+  background-color: #9c21db;
+}
 
 * {
   box-sizing: border-box;
- 
- 
 }
-
-body {
+.body {
+  background-color: #9c21db !important;
+  overflow: hidden;
+}
+.screen-wrapper {
   display: flex;
   justify-content: center;
-  
   background-color: #9c21db;
 }
 
 .sections-wrapper {
   height: 100vh;
   width: 100vw;
-  margin: 50px;
+  /* margin: 50px; */
   display: flex;
   justify-content: space-around;
   flex-direction: row;
@@ -69,12 +72,12 @@ justify-content: space-between;
 .div-two {
   display: flex;
   flex-wrap: wrap;
-  width: 250px;
+  width: 175px;
   justify-content: space-around;
 }
 img {
   height: 90px;
-  padding: 5px;
+  padding: 10px;
   cursor: pointer;
   
 }
@@ -94,7 +97,7 @@ h1 {
   text-align: center;
   color: white;
   font-size: 60px;
-  padding: 20px;
+  padding: 10px;
   /* margin-bottom: 10px; */
   margin: 0;
 
@@ -115,8 +118,8 @@ h1 {
   flex-wrap: wrap;
   height: 100%;
   justify-content: center;
-  height: 700px;
-  width: 700px;
+  height: 600px;
+  width: 600px;
   background-color: rgb(59, 13, 13);
   border: 25px solid;
   border-image: url('../assets/sweetie-border-removebg-preview.png') 10% round;
@@ -129,8 +132,8 @@ h1 {
 .grid div {
   /* border: 1px solid white; */
   flex-grow: 1;
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   text-align: center;
   /* padding: 2px; */
   line-height: 40px;
@@ -178,9 +181,10 @@ h1 {
 /* .character {
   background-image: url('../assets/violet.png');
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: contain; 
+}*/
   
-} */
+
 .willy-wonka {
   background-image: url('../assets/willy_wonka_transparent-removebg-preview.png');
   background-repeat: no-repeat;
@@ -460,21 +464,25 @@ h1 {
 .div-six {
 width: 50px;
 height: 300px;
-border: 3px solid white;
+border: 3px solid gold;
 margin: 50px;
-
+background-color: gold;
 }
 
-#myProgress {
-/* width: 100%; */
-/* background-color: white; */
+/* object-fit: fill; */
 
-}
+
+
+ /* #myProgress {
+width: 100%; 
+ background-color: gold;
+
+}  */
 
 #myBar {
 /* width: 100px; */
 height: 100%;
-background-color: white;
+background-color: #9c21db;
 ;
 
 }
@@ -489,6 +497,7 @@ background-image: url('../assets/lollipop-removebg-preview.png');
 background-repeat: no-repeat;
 background-size: contain;
 object-fit: fill;
+height: 90px;
 }
 
 
@@ -578,7 +587,7 @@ p {
   margin: 5px;
 }
 
-}
+
 /* .blur {
   backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.2);

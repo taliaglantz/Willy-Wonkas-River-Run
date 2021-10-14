@@ -29,17 +29,17 @@ function init() {
 
   // Character
 
-  let character = []
+  //let character = []
   const characterStartPosition = 162
   let characterCurrentPosition = 162
 
-  const willyWonka = document.querySelector('.willy-wonka')
-  const charlie = document.querySelector('.charlie')
-  const violet = document.querySelector('.violet')
-  const oompaLoompa = document.querySelector('.oompa-loompa')
+  // const willyWonka = document.querySelector('.willy-wonka')
+  // const charlie = document.querySelector('.charlie')
+   const violet = document.querySelector('.violet')
+  // const oompaLoompa = document.querySelector('.oompa-loompa')
 
-  const allCharacters = ["'willy-wonka'", "'violet'", "'charlie'", "'oompa-loompa'"]
-  
+  // const allCharacters = ["'willy-wonka'", "'violet'", "'charlie'", "'oompa-loompa'"]
+
   // Lives
 
   let lives = 3
@@ -336,67 +336,71 @@ function init() {
         addFood(treat)
       }
     })
-
+    
     addRainbowBelt()
+    addCharacter(characterStartPosition)
   }
 
   // const winningCell = rainbowBelt.positions[6]
   // console.log(winningCell)
   // console.log(cells)
 
-  
 
 
 
-  function chooseCharacter(event) {
-    //console.log(event)
-    if (event.target = charlie) {
-      console.log(event.target)
-      //console.log(allCharacters[2])
-      character.push(allCharacters[2])
-      //console.log(character.join())
-      //console.log(character.classList)
-    } else if (event.target = violet) {
-      console.log(event.target)
-      character.push('willy-wonka')
-   
-    } else if (event.target = willyWonka) {
-      console.log(event.target)
-      character.push(allCharacters[0])
-      
-    } else if (event.target = oompaLoompa) {
-      console.log(event.target)
-      character.push(allCharacters[3])
-      
-      
-    
-      //console.log(event.target)
-      //console.log(willyWonka)
-      //cells[characterStartPosition].classList.remove('violet')
-      //cells[characterStartPosition].classList.add('oompa-loompa')// use position as index to pick the corresponding div from the array of cells and add the class of char  
-      //charac.classList.add('oompa-loompa')// use position as index to pick the corresponding div from the array of cells and add the class of char  
-    }
-    
-    addCharacter(characterStartPosition)
-    
-  }
-
-
-// Add character to grid
+  // Add character to grid
 
   function addCharacter(position) { // takes argument so function is reusable
     //console.log(position)
     //console.log(cells[position])
-    console.log(character)
-    cells[position].classList.add(character.join())
+    //console.log(character)
+    //cells[position].classList.add(character.join())
     //console.log(allCharacters[1])// use position as index to pick the corresponding div from the array of cells and add the class of char  
+
+    cells[position].classList.add('violet')
   }
 
   //Remove character from grid
 
   function removeCharacter(position) {
-    cells[position].classList.remove(character)
+    //cells[position].classList.remove(character.join())
+    cells[position].classList.remove('violet')
   }
+
+
+
+  // function chooseCharacter(event) {
+  //   //console.log(event)
+  //   if (event.target = charlie) {
+  //     //console.log(event.target)
+  //     //console.log(allCharacters[2])
+  //     let character = []
+  //     character.push(allCharacters[2])
+  //     //console.log(character.join())
+  //     //console.log(character.classList)
+  //   } else if (event.target = violet) {
+  //     //console.log(event.target)
+  //     //console.log(character)
+  //     let character = []
+  //     character.push(allCharacters[1])
+  //   } else if (event.target = willyWonka) {
+  //     // console.log(event.target)
+  //     let character = []
+  //     character.push(allCharacters[0])
+
+  //   } else if (event.target = oompaLoompa) {
+  //     //console.log(event.target)
+  //     let character = []
+  //     character.push(allCharacters[3])
+
+  //     //cells[characterStartPosition].classList.remove('violet')
+  //     //cells[characterStartPosition].classList.add('oompa-loompa')// use position as index to pick the corresponding div from the array of cells and add the class of char  
+  //     //charac.classList.add('oompa-loompa')// use position as index to pick the corresponding div from the array of cells and add the class of char  
+  //   }
+
+  //   addCharacter(characterStartPosition)
+
+  // }
 
 
   // Moving character around the grid
@@ -563,7 +567,7 @@ function init() {
       const myBar = document.getElementById("myBar");
       let height = 1;
 
-      myInterval = setInterval(myTimer, 500);
+      myInterval = setInterval(myTimer, 75);
       function myTimer() {
         if (height >= 100) {
           clearInterval(myInterval)
@@ -571,8 +575,9 @@ function init() {
           loseLife()
           startTimer()
         } else {
-          height += 0.5
+          height += .5
           myBar.style.height = height + '%'
+          console.log(height)
         }
       }
     }
@@ -622,7 +627,8 @@ function init() {
     const key = event.keyCode
     if (key === 39 && characterCrossesSuccessfully()) {
       console.log('successful')
-
+      document.classList.add('body')
+      
       //body.classList.add('alert-box-successful')
 
       // document.getElementsByClassName('.alert-box-successful').style.visibility = 'visible'
@@ -631,14 +637,10 @@ function init() {
 
     } else if (key === 37 && characterCrossesSuccessfully()) {
       //console.log('successful')
-      //document.getElementsByClassName('.sections-wrapper').style.visibility = 'hidden'
-      //document.getElementsByClassName('.sections-wrapper').style.visibility = 'hidden'
-      //document.getElementsByClassName('.sections-wrapper').style.visibility = 'hidden'
+      
     } else if (key === 38 && characterCrossesSuccessfully()) {
       //console.log('successful')
-      //document.getElementsByClassName('.sections-wrapper').style.visibility = 'hidden'
-      //document.getElementsByClassName('.sections-wrapper').style.visibility = 'hidden'
-      //document.getElementsByClassName('.sections-wrapper').style.visibility = 'hidden'
+      
     }
   }
 
@@ -685,10 +687,10 @@ function init() {
   medium.addEventListener('click', startTimer)
   hard.addEventListener('click', startTimer)
 
-  willyWonka.addEventListener('click', chooseCharacter)
-  charlie.addEventListener('click', chooseCharacter)
-  violet.addEventListener('click', chooseCharacter)
-  oompaLoompa.addEventListener('click', chooseCharacter)
+  // willyWonka.addEventListener('click', chooseCharacter)
+  // charlie.addEventListener('click', chooseCharacter)
+   // violet.addEventListener('click', chooseCharacter)
+  // oompaLoompa.addEventListener('click', chooseCharacter)
 
   document.addEventListener('keyup', winning)
 
