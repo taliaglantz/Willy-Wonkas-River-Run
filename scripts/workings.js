@@ -440,3 +440,52 @@
   // || (key === 37 && (rainbowBelt.positions.includes(characterCurrentPosition)))
   // || (key === 38 && (rainbowBelt.positions.includes(characterCurrentPosition)))
   // || (key === 40 && (rainbowBelt.positions.includes(characterCurrentPosition)))
+
+
+
+
+  // Changing characters
+
+  // function characterChange(event) {
+  //   //console.log(event)
+  //   if (event.target = willyWonka) {
+  //     //console.log('This is Willy Wonka')
+  //     character.style.backgroundImage = "url('../assets/willy_wonka_transparent-removebg-preview.png');"
+  //     console.log(character)
+  //     //characterOnRainbowBelt.style.background = "url('../assets/willy_wonka_transparent-removebg-preview.png'),url('../assets/sparkles.gif');"
+  //     // } else if (event.target.id = charlie) {
+  //     //   addCharacter(characterStartPosition)
+  //     // } else if (event.target.id = violet) {
+  //     //   addCharacter(characterStartPosition)
+  //     // } else if (event.target.id = oompaLoompa) {
+  //     //   addCharacter(characterStartPosition)
+  //   }
+  // }
+
+  //console.log(willyWonka)
+
+  //function characterChange(event) {
+
+  //   function addCharacter(position) {
+  //     if (event.target.id = willyWonka) {
+  //       cells[position].classList.add('willy-wonka')
+  //     } else if (event.target.id = charlie) {
+  //       cells[position].classList.add('charlie')
+  //     } else if (event.target.id = violet) {
+  //       cells[position].classList.add('violet')
+  //     } else if (event.target.id = oompaLoompa) {
+  //       cells[position].classList.add('oompa-loompa')
+  //     } 
+  //   }
+
+  //   function removeCharacter(position) {
+  //     if (event.target.id = willyWonka) {
+  //       cells[position].classList.remove('willy-wonka')
+  //     } else if (event.target.id = charlie) {
+  //       cells[position].classList.remove('charlie')
+  //     } else if (event.target.id = violet) {
+  //       cells[position].classList.remove('violet')
+  //     } else if (event.target.id = oompaLoompa) {
+  //       cells[position].classList.remove('oompa-loompa')
+  //     } 
+  //   }

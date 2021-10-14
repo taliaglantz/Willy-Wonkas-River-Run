@@ -33,8 +33,6 @@ function init() {
   const characterStartPosition = 162
   let characterCurrentPosition = 162
 
-  //const characterOnRainbowBelt = document.querySelectorAll('#rainbow-belt.character')
-
   const willyWonka = document.querySelector('.willy-wonka')
   const charlie = document.querySelector('.charlie')
   const violet = document.querySelector('.violet')
@@ -346,7 +344,37 @@ function init() {
   // console.log(winningCell)
   // console.log(cells)
 
-  // Add character to grid
+  
+
+
+
+  function chooseCharacter(event) {
+    //console.log(event)
+    if (event.target = oompaLoompa) {
+      //console.log(event.target)
+      //console.log(oompaLoompa)
+      character = 'oompa-loompa'
+    } else if (event.target = violet) {
+      
+      character = 'violet'
+    } else if (event.target = willyWonka) {
+      
+      character = 'willy-wonka'
+    } else if (event.target = charlie) {
+      
+      character = 'charlie'
+    
+      //console.log(event.target)
+      //console.log(willyWonka)
+      //cells[characterStartPosition].classList.remove('violet')
+      //cells[characterStartPosition].classList.add('oompa-loompa')// use position as index to pick the corresponding div from the array of cells and add the class of char  
+      //charac.classList.add('oompa-loompa')// use position as index to pick the corresponding div from the array of cells and add the class of char  
+    }
+    addCharacter(characterStartPosition) // call the function that adds the char to the starting position
+  }
+
+
+// Add character to grid
 
   function addCharacter(position) { // takes argument so function is reusable
     //console.log(position)
@@ -355,44 +383,12 @@ function init() {
     //console.log(allCharacters[1])// use position as index to pick the corresponding div from the array of cells and add the class of char  
   }
 
-
-  function characterChange(event) {
-    //console.log(event)
-    if (event.target = oompaLoompa) {
-      //console.log(event.target)
-      //console.log(willyWonka)
-      //cells[characterStartPosition].classList.remove('violet')
-      //cells[characterStartPosition].classList.add('oompa-loompa')// use position as index to pick the corresponding div from the array of cells and add the class of char  
-      //charac.classList.add('oompa-loompa')// use position as index to pick the corresponding div from the array of cells and add the class of char  
-      
-      
-      // } else if (event.target = oompaLoompa) {
-      //   cells[position].classList.add('oompa-loompa')
-    }
-
-
-
-
-    addCharacter(characterStartPosition) // call the function that adds the char to the starting position
-  
-  }
-
-
   //Remove character from grid
 
   function removeCharacter(position) {
     cells[position].classList.remove(character)
   }
 
-  // function removeCharacter(position) {
-  //   function characterChange(event) {
-  //     if (event.target = violet) {
-  //       cells[position].classList.remove('violet')
-  //     } else if (event.target = oompaLoompa) {
-  //       cells[position].classList.remove('oompa-loompa')
-  //     }
-  //   }
-  // }
 
   // Moving character around the grid
 
@@ -663,52 +659,6 @@ function init() {
 
 
 
-  // Changing characters
-
-  // function characterChange(event) {
-  //   //console.log(event)
-  //   if (event.target = willyWonka) {
-  //     //console.log('This is Willy Wonka')
-  //     character.style.backgroundImage = "url('../assets/willy_wonka_transparent-removebg-preview.png');"
-  //     console.log(character)
-  //     //characterOnRainbowBelt.style.background = "url('../assets/willy_wonka_transparent-removebg-preview.png'),url('../assets/sparkles.gif');"
-  //     // } else if (event.target.id = charlie) {
-  //     //   addCharacter(characterStartPosition)
-  //     // } else if (event.target.id = violet) {
-  //     //   addCharacter(characterStartPosition)
-  //     // } else if (event.target.id = oompaLoompa) {
-  //     //   addCharacter(characterStartPosition)
-  //   }
-  // }
-
-  //console.log(willyWonka)
-
-  //function characterChange(event) {
-
-  //   function addCharacter(position) {
-  //     if (event.target.id = willyWonka) {
-  //       cells[position].classList.add('willy-wonka')
-  //     } else if (event.target.id = charlie) {
-  //       cells[position].classList.add('charlie')
-  //     } else if (event.target.id = violet) {
-  //       cells[position].classList.add('violet')
-  //     } else if (event.target.id = oompaLoompa) {
-  //       cells[position].classList.add('oompa-loompa')
-  //     } 
-  //   }
-
-  //   function removeCharacter(position) {
-  //     if (event.target.id = willyWonka) {
-  //       cells[position].classList.remove('willy-wonka')
-  //     } else if (event.target.id = charlie) {
-  //       cells[position].classList.remove('charlie')
-  //     } else if (event.target.id = violet) {
-  //       cells[position].classList.remove('violet')
-  //     } else if (event.target.id = oompaLoompa) {
-  //       cells[position].classList.remove('oompa-loompa')
-  //     } 
-  //   }
-
 
   // ** EVENT LISTENERS **
 
@@ -726,10 +676,10 @@ function init() {
   medium.addEventListener('click', startTimer)
   hard.addEventListener('click', startTimer)
 
-  willyWonka.addEventListener('click', characterChange)
-  charlie.addEventListener('click', characterChange)
-  violet.addEventListener('click', characterChange)
-  oompaLoompa.addEventListener('click', characterChange)
+  willyWonka.addEventListener('click', chooseCharacter)
+  charlie.addEventListener('click', chooseCharacter)
+  violet.addEventListener('click', chooseCharacter)
+  oompaLoompa.addEventListener('click', chooseCharacter)
 
   document.addEventListener('keyup', winning)
 
