@@ -29,7 +29,7 @@ function init() {
 
   // Character
 
-  let character
+  let character = []
   const characterStartPosition = 162
   let characterCurrentPosition = 162
 
@@ -38,7 +38,7 @@ function init() {
   const violet = document.querySelector('.violet')
   const oompaLoompa = document.querySelector('.oompa-loompa')
 
-  const allCharacters = [willyWonka, violet, charlie, oompaLoompa]
+  const allCharacters = ["'willy-wonka'", "'violet'", "'charlie'", "'oompa-loompa'"]
   
   // Lives
 
@@ -350,19 +350,25 @@ function init() {
 
   function chooseCharacter(event) {
     //console.log(event)
-    if (event.target = oompaLoompa) {
-      //console.log(event.target)
-      //console.log(oompaLoompa)
-      character = 'oompa-loompa'
+    if (event.target = charlie) {
+      console.log(event.target)
+      //console.log(allCharacters[2])
+      character.push(allCharacters[2])
+      //console.log(character.join())
+      //console.log(character.classList)
     } else if (event.target = violet) {
-      
-      character = 'violet'
+      console.log(event.target)
+      character.push('willy-wonka')
+   
     } else if (event.target = willyWonka) {
+      console.log(event.target)
+      character.push(allCharacters[0])
       
-      character = 'willy-wonka'
-    } else if (event.target = charlie) {
+    } else if (event.target = oompaLoompa) {
+      console.log(event.target)
+      character.push(allCharacters[3])
       
-      character = 'charlie'
+      
     
       //console.log(event.target)
       //console.log(willyWonka)
@@ -370,7 +376,9 @@ function init() {
       //cells[characterStartPosition].classList.add('oompa-loompa')// use position as index to pick the corresponding div from the array of cells and add the class of char  
       //charac.classList.add('oompa-loompa')// use position as index to pick the corresponding div from the array of cells and add the class of char  
     }
-    addCharacter(characterStartPosition) // call the function that adds the char to the starting position
+    
+    addCharacter(characterStartPosition)
+    
   }
 
 
@@ -379,7 +387,8 @@ function init() {
   function addCharacter(position) { // takes argument so function is reusable
     //console.log(position)
     //console.log(cells[position])
-    cells[position].classList.add(character)
+    console.log(character)
+    cells[position].classList.add(character.join())
     //console.log(allCharacters[1])// use position as index to pick the corresponding div from the array of cells and add the class of char  
   }
 
