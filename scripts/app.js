@@ -11,13 +11,17 @@ function init() {
   const width = 13
   const height = 13
   const cellCount = width * height// total number of cells
-
   const cells = [] // empty array to store the divs that we create
+
+  // Buttons
+
   const start = document.querySelector('.start')
   const easy = document.querySelector('#easy')
   const medium = document.querySelector('#medium')
   const hard = document.querySelector('#hard')
   const startGame = document.querySelector('.start-game')
+  const closeWindow = document.querySelector('.close-window')
+  const playAgain = document.querySelector('.play-again')
 
   
 
@@ -578,8 +582,8 @@ function init() {
       lollipopTwo.style.display = 'none'
     } else if (lives === 0) {
       lollipopThree.style.display = 'none'
-      alert('Game over')
-      location.reload()
+      //alert('Game over')
+      
 
     }
   }
@@ -588,21 +592,33 @@ function init() {
 function characterCrossesSuccessfully() {
   return characterCurrentPosition === rainbowBelt.positions[6]
 } 
-  //characterCrossesSuccessfully()
   //console.log(rainbowBelt.positions[6])
   
+
+
 // Winning screen
 function winning(event) {
   const key = event.keyCode
   if (key === 39 && characterCrossesSuccessfully()) {
-    document.getElementsByClassName('.alert-box').style.visibility = 'visible'
+    //console.log('successful')
+    document.getElementsByClassName('.sections-wrapper').style.visibility = 'hidden'
   } else if (key === 37 && characterCrossesSuccessfully()) {
-    document.getElementsByClassName('.alert-box').style.visibility = 'visible'
+    //console.log('successful')
+    document.getElementsByClassName('.sections-wrapper').style.visibility = 'hidden'
   } else if (key === 38 && characterCrossesSuccessfully()) {
-    document.getElementsByClassName('.alert-box').style.visibility = 'visible'
+    //console.log('successful')
+    document.getElementsByClassName('.sections-wrapper').style.visibility = 'hidden'
   }
 }
-// Reloading page
+
+
+// Play again
+
+function playAgain() {
+  location.reload()
+}
+
+
 
 
   // Changing characters

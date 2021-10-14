@@ -406,8 +406,25 @@ object-fit: fill;
 
 
 /* The alert message box */
-.alert-box {
+.alert-box-game-over {
   visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid white;
+  padding: 10px;
+  background-color: #9c21db;
+  color: white;
+  text-align: center;
+  width: 400px;
+  height: 400px;
+  font-family: 'Willy Wonka';
+  font-size: 30px;
+  position: absolute;
+  z-index: 1;
+  
+}
+.alert-box-successful {
+  visibility: visible;
   display: flex;
   flex-direction: column;
   border: 2px solid white;
@@ -428,6 +445,10 @@ object-fit: fill;
 }
 p {
   margin: 0;
+}
+
+.loser {
+  margin-top: 100px;
 }
 
 #golden-ticket {
