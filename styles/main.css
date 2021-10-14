@@ -40,17 +40,7 @@ justify-content: space-evenly;
 align-items: center;
 /* width: calc(33.33%); */
 }
-.start {
-  color: white;
-  text-align: center;
-  padding: 20px;
-  font-size: 30px;
-  font-family: 'Willy Wonka';
-  background-color: gold;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-}
+
 
 .div-one {
 color: white;
@@ -62,7 +52,7 @@ justify-content: space-between;
 
 }
 
-#easy, #medium, #hard {
+.start, #easy, #medium, #hard, .close-window {
   color: white;
   text-align: center;
   padding: 20px;
@@ -72,7 +62,6 @@ justify-content: space-between;
   border-radius: 5px;
   border: none;
   cursor: pointer;
-  text-align: center;
   margin: 5px;
 
 }
@@ -412,3 +401,49 @@ background-repeat: no-repeat;
 background-size: contain;
 object-fit: fill;
 }
+
+
+
+/* The alert message box */
+.alert-box {
+  /* display: none; */
+  display: flex;
+  flex-direction: column;
+  border: 2px solid white;
+  padding: 20px;
+  background-color: #9c21db;
+  color: white;
+  text-align: center;
+  width: 400px;
+  height: 400px;
+  font-family: 'Willy Wonka';
+  font-size: 30px;
+}
+
+#golden-ticket {
+  width: 200px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+
+/* The close button */
+/* .close-buttton {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+} */
+
+/* When moving the mouse over the close button */
+/* .close-button:hover {
+  //color: black;
+} */

@@ -1,4 +1,6 @@
 function init() {
+
+
   //console.log('JS working')
 
   // ** VARIABLES ** 
@@ -15,6 +17,7 @@ function init() {
   const easy = document.querySelector('#easy')
   const medium = document.querySelector('#medium')
   const hard = document.querySelector('#hard')
+  const startGame = document.querySelector('.start-game')
 
   // Character
 
@@ -164,7 +167,7 @@ function init() {
       item: 'heart',
       cssClass: 'heart',
       startPosition: 90,
-      currentPosition: 88,
+      currentPosition: 90,
       direction: 'left',
       order: 'first',
       treatTimer: null
@@ -182,7 +185,7 @@ function init() {
       item: 'heart',
       cssClass: 'heart',
       startPosition: 90,
-      currentPosition: 88,
+      currentPosition: 90,
       direction: 'left',
       order: 'third',
       treatTimer: null
@@ -191,7 +194,7 @@ function init() {
       item: 'worm',
       cssClass: 'worm',
       startPosition: 65,
-      currentPosition: 69,
+      currentPosition: 65,
       direction: 'right',
       order: 'first',
       treatTimer: null
@@ -200,7 +203,7 @@ function init() {
       item: 'worm',
       cssClass: 'worm',
       startPosition: 65,
-      currentPosition: 69,
+      currentPosition: 65,
       direction: 'right',
       order: 'second',
       treatTimer: null
@@ -209,7 +212,7 @@ function init() {
       item: 'worm',
       cssClass: 'worm',
       startPosition: 65,
-      currentPosition: 69,
+      currentPosition: 65,
       direction: 'right',
       order: 'third',
       treatTimer: null
@@ -306,10 +309,10 @@ function init() {
     for (let i = 0; i < cellCount; i++) { // for loop to run for every cell
       const cell = document.createElement('div') // create the div
       //console.log(cell)
-      //cell.innerText = i // inner text of the div to be its index
+      cell.innerText = i // inner text of the div to be its index
       grid.appendChild(cell) // make the cell a child of the grid element we grabbed above
       cells.push(cell) // add the newly created div into our empty array
-     
+
       //console.log(typeof(parseInt(cell.innerText)))
     }
 
@@ -387,7 +390,8 @@ function init() {
     addCharacter(characterCurrentPosition)
     if (characterInRiver()) {
       loseLife()
-
+    } else if (characterCrossesSuccessfully()) {
+      alert('Well done!')
     }
   }
   //console.log(characterCurrentPosition)
@@ -530,7 +534,7 @@ function init() {
       const myBar = document.getElementById("myBar");
       let height = 1;
 
-      myInterval = setInterval(myTimer, 50);
+      myInterval = setInterval(myTimer, 500);
       function myTimer() {
         if (height >= 100) {
           clearInterval(myInterval)
@@ -571,9 +575,19 @@ function init() {
     } else if (lives === 0) {
       lollipopThree.style.display = 'none'
       alert('Game over')
+      location.reload()
+
     }
   }
 
+  // character crossing successfully
+function characterCrossesSuccessfully() {
+  return characterCurrentPosition === rainbowBelt.positions[6]
+} 
+  //characterCrossesSuccessfully()
+  //console.log(rainbowBelt.positions[6])
+  
+// 
 
 
   // Changing characters
@@ -643,6 +657,9 @@ function init() {
   //charlie.addEventListener('click', characterChange)
   //violet.addEventListener('click', characterChange)
   //oompaLoompa.addEventListener('click', characterChange)
+
+
+
 
 
 
