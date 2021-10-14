@@ -19,6 +19,8 @@ function init() {
   const hard = document.querySelector('#hard')
   const startGame = document.querySelector('.start-game')
 
+  
+
   // Character
 
   //let character = document.querySelector('.violet')
@@ -51,6 +53,7 @@ function init() {
   }
   // console.log(rainbowBelt.positions)
 
+  
 
   // Sweet Treats
 
@@ -176,7 +179,7 @@ function init() {
       item: 'heart',
       cssClass: 'heart',
       startPosition: 90,
-      currentPosition: 88,
+      currentPosition: 90,
       direction: 'left',
       order: 'second',
       treatTimer: null
@@ -313,10 +316,9 @@ function init() {
       grid.appendChild(cell) // make the cell a child of the grid element we grabbed above
       cells.push(cell) // add the newly created div into our empty array
 
-      //console.log(typeof(parseInt(cell.innerText)))
+      
     }
 
-    //console.log(filteredCells)
 
     sweetTreats.forEach(treat => {
       if (treat.order === 'first') {
@@ -331,6 +333,10 @@ function init() {
     addRainbowBelt()
     addCharacter(characterStartPosition) // call the function that adds the char to the starting position
   }
+
+  // const winningCell = rainbowBelt.positions[6]
+  // console.log(winningCell)
+  // console.log(cells)
 
   // Add character to grid
 
@@ -390,8 +396,6 @@ function init() {
     addCharacter(characterCurrentPosition)
     if (characterInRiver()) {
       loseLife()
-    } else if (characterCrossesSuccessfully()) {
-      alert('Well done!')
     }
   }
   //console.log(characterCurrentPosition)
@@ -587,7 +591,18 @@ function characterCrossesSuccessfully() {
   //characterCrossesSuccessfully()
   //console.log(rainbowBelt.positions[6])
   
-// 
+// Winning screen
+function winning(event) {
+  const key = event.keyCode
+  if (key === 39 && characterCrossesSuccessfully()) {
+    document.getElementsByClassName('.alert-box').style.visibility = 'visible'
+  } else if (key === 37 && characterCrossesSuccessfully()) {
+    document.getElementsByClassName('.alert-box').style.visibility = 'visible'
+  } else if (key === 38 && characterCrossesSuccessfully()) {
+    document.getElementsByClassName('.alert-box').style.visibility = 'visible'
+  }
+}
+// Reloading page
 
 
   // Changing characters
@@ -657,6 +672,8 @@ function characterCrossesSuccessfully() {
   //charlie.addEventListener('click', characterChange)
   //violet.addEventListener('click', characterChange)
   //oompaLoompa.addEventListener('click', characterChange)
+
+  document.addEventListener('keyup', winning)
 
 
 

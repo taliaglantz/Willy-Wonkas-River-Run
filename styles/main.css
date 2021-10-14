@@ -14,6 +14,7 @@
 body {
   display: flex;
   justify-content: center;
+  
   background-color: #9c21db;
 }
 
@@ -406,11 +407,11 @@ object-fit: fill;
 
 /* The alert message box */
 .alert-box {
-  /* display: none; */
+  visibility: hidden;
   display: flex;
   flex-direction: column;
   border: 2px solid white;
-  padding: 20px;
+  padding: 10px;
   background-color: #9c21db;
   color: white;
   text-align: center;
@@ -418,16 +419,33 @@ object-fit: fill;
   height: 400px;
   font-family: 'Willy Wonka';
   font-size: 30px;
+  position: absolute;
+  z-index: 1;
+  
+}
+.message {
+  height: 300px;;
+}
+p {
+  margin: 0;
 }
 
 #golden-ticket {
-  width: 200px;
+  width: 380px;
+  height: 190px;
 }
 
 .buttons {
   display: flex;
   justify-content: space-evenly;
 }
+/* .blur {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.2);
+  z-index: 10;
+  height: 1000px;
+width: 100px;
+} */
 
 
 
