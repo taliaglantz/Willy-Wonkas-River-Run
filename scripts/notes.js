@@ -84,7 +84,7 @@
 // Thursday
 // sort alert messages
 // manage to change characters
-// CSS
+// CSS: audio, background, timer
 
 
 

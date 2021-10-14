@@ -424,7 +424,7 @@ object-fit: fill;
   
 }
 .alert-box-successful {
-  visibility: visible;
+  visibility: hidden;
   display: flex;
   flex-direction: column;
   border: 2px solid white;
@@ -459,6 +459,21 @@ p {
 .buttons {
   display: flex;
   justify-content: space-evenly;
+}
+
+.restart-winner, .restart-loser, .close-window-winner, .close-window-loser {
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 30px;
+  font-family: 'Willy Wonka';
+  background-color: gold;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+}
+
 }
 /* .blur {
   backdrop-filter: blur(10px);

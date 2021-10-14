@@ -19,25 +19,29 @@ function init() {
   const easy = document.querySelector('#easy')
   const medium = document.querySelector('#medium')
   const hard = document.querySelector('#hard')
-  const startGame = document.querySelector('.start-game')
-  const closeWindow = document.querySelector('.close-window')
-  const playAgain = document.querySelector('.play-again')
 
-  
+  const closeWindowWinner = document.querySelector('.close-window-winner')
+  const playAgainWinner = document.querySelector('.restart-winner')
+  const closeWindowLoser = document.querySelector('.close-window-loser')
+  const playAgainLoser = document.querySelector('.restart-loser')
+
+
 
   // Character
 
-  //let character = document.querySelector('.violet')
+  let character
   const characterStartPosition = 162
   let characterCurrentPosition = 162
 
   //const characterOnRainbowBelt = document.querySelectorAll('#rainbow-belt.character')
 
-  //const willyWonka = document.querySelector('.willy-wonka')
-  // const charlie = document.querySelector('.charlie')
-  //const violet = document.querySelector('.violet')
-  //const oompaLoompa = document.querySelector('.oompa-loompa')
+  const willyWonka = document.querySelector('.willy-wonka')
+  const charlie = document.querySelector('.charlie')
+  const violet = document.querySelector('.violet')
+  const oompaLoompa = document.querySelector('.oompa-loompa')
 
+  const allCharacters = [willyWonka, violet, charlie, oompaLoompa]
+  
   // Lives
 
   let lives = 3
@@ -57,7 +61,7 @@ function init() {
   }
   // console.log(rainbowBelt.positions)
 
-  
+
 
   // Sweet Treats
 
@@ -313,14 +317,15 @@ function init() {
   // Making grid
 
   function createGrid(characterStartPosition) {
+    //document.getElementsByClassName('.alert-box-game-over alert-box-successful').style.visibility = 'hidden'
     for (let i = 0; i < cellCount; i++) { // for loop to run for every cell
       const cell = document.createElement('div') // create the div
       //console.log(cell)
-      cell.innerText = i // inner text of the div to be its index
+      //cell.innerText = i // inner text of the div to be its index
       grid.appendChild(cell) // make the cell a child of the grid element we grabbed above
       cells.push(cell) // add the newly created div into our empty array
 
-      
+
     }
 
 
@@ -335,7 +340,6 @@ function init() {
     })
 
     addRainbowBelt()
-    addCharacter(characterStartPosition) // call the function that adds the char to the starting position
   }
 
   // const winningCell = rainbowBelt.positions[6]
@@ -347,25 +351,37 @@ function init() {
   function addCharacter(position) { // takes argument so function is reusable
     //console.log(position)
     //console.log(cells[position])
-    cells[position].classList.add('violet')// use position as index to pick the corresponding div from the array of cells and add the class of char  
+    cells[position].classList.add(character)
+    //console.log(allCharacters[1])// use position as index to pick the corresponding div from the array of cells and add the class of char  
   }
 
-  // function addCharacter(position) { // takes argument so function is reusable
-  //   //console.log(position)
-  //   //console.log(cells[position])
-  //   function characterChange(event) {
-  //     if (event.target = violet) {
-  //       cells[position].classList.add('violet')// use position as index to pick the corresponding div from the array of cells and add the class of char  
-  //     } else if (event.target = oompaLoompa) {
-  //       cells[position].classList.add('oompa-loompa')
-  //     }
-  //   }
-  // }
+
+  function characterChange(event) {
+    //console.log(event)
+    if (event.target = oompaLoompa) {
+      //console.log(event.target)
+      //console.log(willyWonka)
+      //cells[characterStartPosition].classList.remove('violet')
+      //cells[characterStartPosition].classList.add('oompa-loompa')// use position as index to pick the corresponding div from the array of cells and add the class of char  
+      //charac.classList.add('oompa-loompa')// use position as index to pick the corresponding div from the array of cells and add the class of char  
+      
+      
+      // } else if (event.target = oompaLoompa) {
+      //   cells[position].classList.add('oompa-loompa')
+    }
+
+
+
+
+    addCharacter(characterStartPosition) // call the function that adds the char to the starting position
+  
+  }
+
 
   //Remove character from grid
 
   function removeCharacter(position) {
-    cells[position].classList.remove('violet')
+    cells[position].classList.remove(character)
   }
 
   // function removeCharacter(position) {
@@ -583,40 +599,66 @@ function init() {
     } else if (lives === 0) {
       lollipopThree.style.display = 'none'
       //alert('Game over')
-      
+      losing()
 
     }
   }
 
   // character crossing successfully
-function characterCrossesSuccessfully() {
-  return characterCurrentPosition === rainbowBelt.positions[6]
-} 
-  //console.log(rainbowBelt.positions[6])
-  
-
-
-// Winning screen
-function winning(event) {
-  const key = event.keyCode
-  if (key === 39 && characterCrossesSuccessfully()) {
-    //console.log('successful')
-    document.getElementsByClassName('.sections-wrapper').style.visibility = 'hidden'
-  } else if (key === 37 && characterCrossesSuccessfully()) {
-    //console.log('successful')
-    document.getElementsByClassName('.sections-wrapper').style.visibility = 'hidden'
-  } else if (key === 38 && characterCrossesSuccessfully()) {
-    //console.log('successful')
-    document.getElementsByClassName('.sections-wrapper').style.visibility = 'hidden'
+  function characterCrossesSuccessfully() {
+    return characterCurrentPosition === rainbowBelt.positions[6]
   }
-}
+  //console.log(rainbowBelt.positions[6])
 
+  const sectionWrapper = document.querySelector('.sections-wrapper')
+  const body = document.querySelector('body')
+  // Winning screen
+  function winning(event) {
+    const key = event.keyCode
+    if (key === 39 && characterCrossesSuccessfully()) {
+      console.log('successful')
 
-// Play again
+      //body.classList.add('alert-box-successful')
 
-function playAgain() {
-  location.reload()
-}
+      // document.getElementsByClassName('.alert-box-successful').style.visibility = 'visible'
+      //document.getElementsByClassName('.sections-wrapper').style.visibility = 'visible'
+      //document.getElementsByClassName('.alert-box-successful').style.visibility = 'hidden'
+
+    } else if (key === 37 && characterCrossesSuccessfully()) {
+      //console.log('successful')
+      //document.getElementsByClassName('.sections-wrapper').style.visibility = 'hidden'
+      //document.getElementsByClassName('.sections-wrapper').style.visibility = 'hidden'
+      //document.getElementsByClassName('.sections-wrapper').style.visibility = 'hidden'
+    } else if (key === 38 && characterCrossesSuccessfully()) {
+      //console.log('successful')
+      //document.getElementsByClassName('.sections-wrapper').style.visibility = 'hidden'
+      //document.getElementsByClassName('.sections-wrapper').style.visibility = 'hidden'
+      //document.getElementsByClassName('.sections-wrapper').style.visibility = 'hidden'
+    }
+  }
+
+  // Losing Screen
+
+  function losing() {
+    //document.getElementsByClassName('.sections-wrapper').style.visibility = 'hidden'
+    //document.getElementsByClassName('.sections-wrapper').style.visibility = 'hidden'
+    //document.getElementsByClassName('.sections-wrapper').style.visibility = 'hidden'
+  }
+
+  // Play again
+
+  function reload(event) {
+
+    //console.log(event)
+    location.reload(event)
+    //document.getElementsByClassName('.sections-wrapper').style.visibility = 'hidden'
+  }
+
+  // Window close
+
+  function byeByeGame(event) {
+    window.close(event)
+  }
 
 
 
@@ -684,12 +726,17 @@ function playAgain() {
   medium.addEventListener('click', startTimer)
   hard.addEventListener('click', startTimer)
 
-  //willyWonka.addEventListener('click', characterChange)
-  //charlie.addEventListener('click', characterChange)
-  //violet.addEventListener('click', characterChange)
-  //oompaLoompa.addEventListener('click', characterChange)
+  willyWonka.addEventListener('click', characterChange)
+  charlie.addEventListener('click', characterChange)
+  violet.addEventListener('click', characterChange)
+  oompaLoompa.addEventListener('click', characterChange)
 
   document.addEventListener('keyup', winning)
+
+  closeWindowWinner.addEventListener('click', byeByeGame)
+  playAgainWinner.addEventListener('click', reload)
+  closeWindowLoser.addEventListener('click', byeByeGame)
+  playAgainLoser.addEventListener('click', reload)
 
 
 
