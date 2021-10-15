@@ -72,17 +72,18 @@ justify-content: space-between;
   background-image: url('../assets/gold-foil.png')
 
 }
-.div-two {
+
+.character-wrapper {
   display: flex;
   flex-wrap: wrap;
   width: 175px;
   justify-content: space-around;
 }
+
 img {
   height: 90px;
   padding: 10px;
   cursor: pointer;
-  
 }
 
 /*** SECTION 2 ***/
@@ -503,7 +504,7 @@ background-color: #9c21db;
   flex-direction: column;
 }
 
-.lives, .timer {
+.lives, .timer, .pick-a-character {
   text-align: center;
   color: rgb(59, 13, 13);
   font-family: 'Lobster', cursive;
