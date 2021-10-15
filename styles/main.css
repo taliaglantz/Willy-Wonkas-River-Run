@@ -3,6 +3,7 @@
   src:  url('../assets/willywonka.regular-webfont.woff2') format('woff2'),
         url('../assets/willywonka.regular-webfont.woff') format('woff');
 }
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 .blank {
   background-color: #9c21db;
@@ -57,16 +58,18 @@ justify-content: space-between;
 }
 
 .start, #easy, #medium, #hard, .close-window {
-  color: white;
+  color: rgb(59, 13, 13);
   text-align: center;
   padding: 20px;
-  font-size: 30px;
-  font-family: 'Willy Wonka';
-  background-color: gold;
+  font-size: 25px;
+  /* font-family: 'Willy Wonka'; */
+  font-family: 'Lobster', cursive;
+  font-weight:bold;
   border-radius: 5px;
   border: none;
   cursor: pointer;
   margin: 5px;
+  background-image: url('../assets/gold-foil.png')
 
 }
 .div-two {
@@ -95,14 +98,22 @@ img {
 h1 {
   font-family: 'Willy Wonka';
   text-align: center;
-  color: white;
-  font-size: 60px;
+  /* color: white; */
+  font-size: 70px;
   padding: 10px;
   /* margin-bottom: 10px; */
   margin: 0;
+  /* text-shadow: 5px 5px 5px  #F1BE15; */
+  color:#c3a343;
+  -webkit-text-fill-color: transparent;
+  background: -webkit-linear-gradient(transparent, transparent),
+  url(https://media.istockphoto.com/photos/gold-foil-picture-id641038612?k=20&m=641038612&s=170667a&w=0&h=WIdEkkQ2hMDmvcKw3AVxOfKONJeEtdVMM0GBSJSfJH8=) repeat;
+  background: -o-linear-gradient(transparent, transparent);
+  -webkit-background-clip: text;
+}
 
   
-}
+
 
 .div-three {
   
@@ -464,9 +475,9 @@ h1 {
 .div-six {
 width: 50px;
 height: 300px;
-border: 3px solid gold;
+border: 3px solid #F1BE15;
 margin: 50px;
-background-color: gold;
+background-image: url('../assets/gold-foil.png')
 }
 
 /* object-fit: fill; */
@@ -475,7 +486,7 @@ background-color: gold;
 
  /* #myProgress {
 width: 100%; 
- background-color: gold;
+ background-color: #F1BE15;
 
 }  */
 
@@ -489,10 +500,24 @@ background-color: #9c21db;
 
 .div-seven {
   display: flex;
+  flex-direction: column;
+}
+
+.lives, .timer {
+  text-align: center;
+  color: rgb(59, 13, 13);
+  font-family: 'Lobster', cursive;
+  font-weight: bold;
+  font-size: 20px;;
+}
+
+.lollipop-wrapper {
+  display: flex;
   justify-content: space-around;
 }
 
 #lollipop-one {
+ 
 background-image: url('../assets/lollipop-removebg-preview.png');
 background-repeat: no-repeat;
 background-size: contain;
@@ -502,6 +527,7 @@ height: 90px;
 
 
 #lollipop-two {
+  
 background-image: url('../assets/lollipop-removebg-preview.png');
 background-repeat: no-repeat;
 background-size: contain;
@@ -510,6 +536,7 @@ object-fit: fill;
 
 
 #lollipop-three {
+  
 background-image: url('../assets/lollipop-removebg-preview.png');
 background-repeat: no-repeat;
 background-size: contain;
@@ -556,7 +583,7 @@ object-fit: fill;
 .message {
   height: 300px;;
 }
-p {
+.congratulations {
   margin: 0;
 }
 
@@ -580,7 +607,7 @@ p {
   padding: 20px;
   font-size: 30px;
   font-family: 'Willy Wonka';
-  background-color: gold;
+  background-color: #F1BE15;
   border-radius: 5px;
   border: none;
   cursor: pointer;

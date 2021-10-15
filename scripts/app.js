@@ -319,7 +319,7 @@ function init() {
     for (let i = 0; i < cellCount; i++) { // for loop to run for every cell
       const cell = document.createElement('div') // create the div
       //console.log(cell)
-      //cell.innerText = i // inner text of the div to be its index
+      cell.innerText = i // inner text of the div to be its index
       grid.appendChild(cell) // make the cell a child of the grid element we grabbed above
       cells.push(cell) // add the newly created div into our empty array
 
@@ -567,7 +567,7 @@ function init() {
       const myBar = document.getElementById("myBar");
       let height = 1;
 
-      myInterval = setInterval(myTimer, 75);
+      myInterval = setInterval(myTimer, 100);
       function myTimer() {
         if (height >= 100) {
           clearInterval(myInterval)
@@ -577,7 +577,7 @@ function init() {
         } else {
           height += .5
           myBar.style.height = height + '%'
-          console.log(height)
+          //console.log(height)
         }
       }
     }
@@ -616,7 +616,7 @@ function init() {
 
   // character crossing successfully
   function characterCrossesSuccessfully() {
-    return characterCurrentPosition === rainbowBelt.positions[6]
+    return characterCurrentPosition === rainbowBelt.positions[0] || rainbowBelt.positions[1] || rainbowBelt.positions[2] || rainbowBelt.positions[3] || rainbowBelt.positions[4] || rainbowBelt.positions[5] || rainbowBelt.positions[6] || rainbowBelt.positions[7] || rainbowBelt.positions[8] || rainbowBelt.positions[9] || rainbowBelt.positions[10] || rainbowBelt.positions[11] || rainbowBelt.positions[12]
   }
   //console.log(rainbowBelt.positions[6])
 
@@ -629,17 +629,17 @@ function init() {
       console.log('successful')
       document.classList.add('body')
       
-      //body.classList.add('alert-box-successful')
+      body.classList.add('alert-box-successful')
 
       // document.getElementsByClassName('.alert-box-successful').style.visibility = 'visible'
       //document.getElementsByClassName('.sections-wrapper').style.visibility = 'visible'
       //document.getElementsByClassName('.alert-box-successful').style.visibility = 'hidden'
 
     } else if (key === 37 && characterCrossesSuccessfully()) {
-      //console.log('successful')
+      console.log('successful')
       
     } else if (key === 38 && characterCrossesSuccessfully()) {
-      //console.log('successful')
+      console.log('successful')
       
     }
   }
