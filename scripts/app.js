@@ -35,7 +35,7 @@ function init() {
 
   // const willyWonka = document.querySelector('.willy-wonka')
   // const charlie = document.querySelector('.charlie')
-   const violet = document.querySelector('.violet')
+  const violet = document.querySelector('.violet')
   // const oompaLoompa = document.querySelector('.oompa-loompa')
 
   // const allCharacters = ["'willy-wonka'", "'violet'", "'charlie'", "'oompa-loompa'"]
@@ -55,7 +55,8 @@ function init() {
     cssId: 'rainbow-belt',
     //positions: 1
     //positions: [1,2]
-    positions: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168]
+    positions: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168],
+    positionsSuccess: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
   }
   // console.log(rainbowBelt.positions)
 
@@ -319,7 +320,7 @@ function init() {
     for (let i = 0; i < cellCount; i++) { // for loop to run for every cell
       const cell = document.createElement('div') // create the div
       //console.log(cell)
-      cell.innerText = i // inner text of the div to be its index
+      //cell.innerText = i // inner text of the div to be its index
       grid.appendChild(cell) // make the cell a child of the grid element we grabbed above
       cells.push(cell) // add the newly created div into our empty array
 
@@ -336,7 +337,7 @@ function init() {
         addFood(treat)
       }
     })
-    
+
     addRainbowBelt()
     addCharacter(characterStartPosition)
   }
@@ -616,10 +617,9 @@ function init() {
 
   // character crossing successfully
   function characterCrossesSuccessfully() {
-    return characterCurrentPosition === rainbowBelt.positions[0] || rainbowBelt.positions[1] || rainbowBelt.positions[2] || rainbowBelt.positions[3] || rainbowBelt.positions[4] || rainbowBelt.positions[5] || rainbowBelt.positions[6] || rainbowBelt.positions[7] || rainbowBelt.positions[8] || rainbowBelt.positions[9] || rainbowBelt.positions[10] || rainbowBelt.positions[11] || rainbowBelt.positions[12]
+    return rainbowBelt.positionsSuccess.includes(characterCurrentPosition)
+    //console.log(rainbowBelt.positions[6])
   }
-  //console.log(rainbowBelt.positions[6])
-
   const sectionWrapper = document.querySelector('.sections-wrapper')
   const body = document.querySelector('body')
   // Winning screen
@@ -628,7 +628,7 @@ function init() {
     if (key === 39 && characterCrossesSuccessfully()) {
       console.log('successful')
       document.classList.add('body')
-      
+
       body.classList.add('alert-box-successful')
 
       // document.getElementsByClassName('.alert-box-successful').style.visibility = 'visible'
@@ -637,10 +637,10 @@ function init() {
 
     } else if (key === 37 && characterCrossesSuccessfully()) {
       console.log('successful')
-      
+
     } else if (key === 38 && characterCrossesSuccessfully()) {
       console.log('successful')
-      
+
     }
   }
 
@@ -689,7 +689,7 @@ function init() {
 
   // willyWonka.addEventListener('click', chooseCharacter)
   // charlie.addEventListener('click', chooseCharacter)
-   // violet.addEventListener('click', chooseCharacter)
+  // violet.addEventListener('click', chooseCharacter)
   // oompaLoompa.addEventListener('click', chooseCharacter)
 
   document.addEventListener('keyup', winning)
