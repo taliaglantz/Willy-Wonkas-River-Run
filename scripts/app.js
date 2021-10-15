@@ -15,7 +15,7 @@ function init() {
 
   // Buttons
 
-  const start = document.querySelector('.start')
+  //const start = document.querySelector('.start')
   const easy = document.querySelector('#easy')
   const medium = document.querySelector('#medium')
   const hard = document.querySelector('#hard')
@@ -29,16 +29,14 @@ function init() {
 
   // Character
 
-  //let character = []
+  let character = 'violet'
   const characterStartPosition = 162
   let characterCurrentPosition = 162
 
-  // const willyWonka = document.querySelector('.willy-wonka')
-  // const charlie = document.querySelector('.charlie')
-  const violet = document.querySelector('.violet')
-  // const oompaLoompa = document.querySelector('.oompa-loompa')
+  const characterChoice = document.querySelectorAll('.charImage')
 
-  // const allCharacters = ["'willy-wonka'", "'violet'", "'charlie'", "'oompa-loompa'"]
+  let preGame = true
+
 
   // Lives
 
@@ -358,74 +356,62 @@ function init() {
     //cells[position].classList.add(character.join())
     //console.log(allCharacters[1])// use position as index to pick the corresponding div from the array of cells and add the class of char  
 
-    cells[position].classList.add('violet')
+    cells[position].classList.add(character)
   }
 
   //Remove character from grid
 
   function removeCharacter(position) {
     //cells[position].classList.remove(character.join())
-    cells[position].classList.remove('violet')
+    cells[position].classList.remove(character)
   }
 
 
 
-  // function chooseCharacter(event) {
-  //   //console.log(event)
-  //   if (event.target = charlie) {
-  //     //console.log(event.target)
-  //     //console.log(allCharacters[2])
-  //     let character = []
-  //     character.push(allCharacters[2])
-  //     //console.log(character.join())
-  //     //console.log(character.classList)
-  //   } else if (event.target = violet) {
-  //     //console.log(event.target)
-  //     //console.log(character)
-  //     let character = []
-  //     character.push(allCharacters[1])
-  //   } else if (event.target = willyWonka) {
-  //     // console.log(event.target)
-  //     let character = []
-  //     character.push(allCharacters[0])
-
-  //   } else if (event.target = oompaLoompa) {
-  //     //console.log(event.target)
-  //     let character = []
-  //     character.push(allCharacters[3])
-
-  //     //cells[characterStartPosition].classList.remove('violet')
-  //     //cells[characterStartPosition].classList.add('oompa-loompa')// use position as index to pick the corresponding div from the array of cells and add the class of char  
-  //     //charac.classList.add('oompa-loompa')// use position as index to pick the corresponding div from the array of cells and add the class of char  
-  //   }
-
-  //   addCharacter(characterStartPosition)
-
-  // }
+  function chooseCharacter(event) {
+    //console.log(event)
+    if (preGame) {
+      character = event.target.id // character is an id that represents a string
+      cells[characterStartPosition].classList.replace('charlie', character)
+      cells[characterStartPosition].classList.replace('violet', character)
+      cells[characterStartPosition].classList.replace('willy-wonka', character)
+      cells[characterStartPosition].classList.replace('oompa-loompa', character)
+      console.log(character)
+    }
+  }
 
 
   // Moving character around the grid
 
   function handleKeyUp(event) {
-    const key = event.keyCode
-    //console.log('position before moving', characterCurrentPosition)
-    removeCharacter(characterCurrentPosition)
 
-    if ((key === 39 && characterCurrentPosition % width !== width - 1)) { // if the right arrow is pressed and the character is not on the right edge
-      characterCurrentPosition++ // redefine character position index to be previous position plus 1
-    } else if ((key === 37 && characterCurrentPosition % width !== 0)) { // if the left arrow is pressed and the cat is not on the left edge
-      characterCurrentPosition-- // redefine character position index to be previous position minus 1
-    } else if ((key === 38 && characterCurrentPosition >= width)) { // if the up arrow is pressed and the character is not on the top row
-      characterCurrentPosition -= width // redefine cacharactert position index to be previous position minus width
-    } else if ((key === 40 && characterCurrentPosition + width <= width * height - 1)) { // if the down arrow is pressed and the character is not on the bottom row
-      characterCurrentPosition += width // redefine character position index to be previous position plus width
-    } else {
-      //console.log('INVALID KEY') // any other key, log invalid key
+
+    if (!preGame) {
+      const key = event.keyCode
+      //console.log('position before moving', characterCurrentPosition)
+      removeCharacter(characterCurrentPosition)
+
+      if ((key === 39 && characterCurrentPosition % width !== width - 1)) { // if the right arrow is pressed and the character is not on the right edge
+        characterCurrentPosition++ // redefine character position index to be previous position plus 1
+      } else if ((key === 37 && characterCurrentPosition % width !== 0)) { // if the left arrow is pressed and the cat is not on the left edge
+        characterCurrentPosition-- // redefine character position index to be previous position minus 1
+      } else if ((key === 38 && characterCurrentPosition >= width)) { // if the up arrow is pressed and the character is not on the top row
+        characterCurrentPosition -= width // redefine cacharactert position index to be previous position minus width
+      } else if ((key === 40 && characterCurrentPosition + width <= width * height - 1)) { // if the down arrow is pressed and the character is not on the bottom row
+        characterCurrentPosition += width // redefine character position index to be previous position plus width
+      } else {
+        //console.log('INVALID KEY') // any other key, log invalid key
+      }
+      //console.log('POSITION AFTER REDEFINING --->', characterCurrentPosition)
+      addCharacter(characterCurrentPosition)
     }
-    //console.log('POSITION AFTER REDEFINING --->', characterCurrentPosition)
-    addCharacter(characterCurrentPosition)
+
     if (characterInRiver()) {
       loseLife()
+    }
+
+    if (rainbowBelt.positionsSuccess.includes(characterCurrentPosition)) {
+      winning()
     }
   }
   //console.log(characterCurrentPosition)
@@ -553,17 +539,19 @@ function init() {
         setTimeout(() => { // delay start of the second set of food items
           addFood(treat) // add them at their starting positions
           treat.treatTimer = setInterval(() => moveFoods(treat), 500)
-        }, 4000) // determines how long before 2nd food item comes in
+        }, 5000) // determines how long before 2nd food item comes in
       }
     })
   }
 
   // Timer
 
+  
   let counterTimer = 0;
   let myInterval
   function startTimer() {
     if (counterTimer === 0) {
+      preGame = false
       counterTimer = 1;
       const myBar = document.getElementById("myBar");
       let height = 1;
@@ -620,36 +608,31 @@ function init() {
     return rainbowBelt.positionsSuccess.includes(characterCurrentPosition)
     //console.log(rainbowBelt.positions[6])
   }
-  const sectionWrapper = document.querySelector('.sections-wrapper')
-  const body = document.querySelector('body')
+
+
+
+  
   // Winning screen
-  function winning(event) {
-    const key = event.keyCode
-    if (key === 39 && characterCrossesSuccessfully()) {
-      console.log('successful')
-      document.classList.add('body')
 
-      body.classList.add('alert-box-successful')
 
-      // document.getElementsByClassName('.alert-box-successful').style.visibility = 'visible'
-      //document.getElementsByClassName('.sections-wrapper').style.visibility = 'visible'
-      //document.getElementsByClassName('.alert-box-successful').style.visibility = 'hidden'
+  const section = document.querySelector('section')
+  const winDiv = document.querySelector('.alert-box-successful')
+  const loseDiv = document.querySelector('.alert-box-game-over')
 
-    } else if (key === 37 && characterCrossesSuccessfully()) {
-      console.log('successful')
+  function winning() {
+    section.classList.add('none')
+    // section.classList.add('alert-box-successful')
+    winDiv.style.visibility = 'visible'
 
-    } else if (key === 38 && characterCrossesSuccessfully()) {
-      console.log('successful')
 
-    }
   }
 
   // Losing Screen
 
   function losing() {
-    //document.getElementsByClassName('.sections-wrapper').style.visibility = 'hidden'
-    //document.getElementsByClassName('.sections-wrapper').style.visibility = 'hidden'
-    //document.getElementsByClassName('.sections-wrapper').style.visibility = 'hidden'
+    section.classList.add('none')
+    // section.classList.add('alert-box-game-over')
+    loseDiv.style.visibility = 'visible'
   }
 
   // Play again
@@ -675,24 +658,25 @@ function init() {
 
   document.addEventListener('keyup', handleKeyUp) // listening for key press
 
-  start.addEventListener('click', startMovementEasy)
+  //start.addEventListener('click', startMovementEasy)
 
   easy.addEventListener('click', startMovementEasy)
   medium.addEventListener('click', startMovementMedium)
   hard.addEventListener('click', startMovementHard)
 
-  start.addEventListener('click', startTimer)
+  //start.addEventListener('click', startTimer)
 
   easy.addEventListener('click', startTimer)
   medium.addEventListener('click', startTimer)
   hard.addEventListener('click', startTimer)
 
-  // willyWonka.addEventListener('click', chooseCharacter)
-  // charlie.addEventListener('click', chooseCharacter)
-  // violet.addEventListener('click', chooseCharacter)
-  // oompaLoompa.addEventListener('click', chooseCharacter)
+  characterChoice.forEach((char) => {
+    char.addEventListener('click', chooseCharacter)
+  })
 
-  document.addEventListener('keyup', winning)
+ 
+
+  
 
   closeWindowWinner.addEventListener('click', byeByeGame)
   playAgainWinner.addEventListener('click', reload)

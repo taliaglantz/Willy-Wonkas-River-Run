@@ -57,7 +57,22 @@ justify-content: space-between;
 
 }
 
-.start, #easy, #medium, #hard, .close-window {
+/* .start {
+  color: rgb(59, 13, 13);
+  text-align: center;
+  padding: 20px;
+  font-size: 25px;
+  /* font-family: 'Willy Wonka'; 
+  font-family: 'Lobster', cursive;
+  font-weight:bold;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+  background-image: url('../assets/gold-foil.png')
+
+} */
+#easy, #medium, #hard, .close-window {
   color: rgb(59, 13, 13);
   text-align: center;
   padding: 20px;
@@ -504,7 +519,7 @@ background-color: #9c21db;
   flex-direction: column;
 }
 
-.lives, .timer, .pick-a-character {
+.lives, .timer, .pick-a-character, .pick-a-level {
   text-align: center;
   color: rgb(59, 13, 13);
   font-family: 'Lobster', cursive;
@@ -581,6 +596,11 @@ object-fit: fill;
   z-index: 1;
   
 }
+
+.none {
+  display: none;
+}
+
 .message {
   height: 300px;;
 }
