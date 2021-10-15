@@ -57,27 +57,13 @@ justify-content: space-between;
 
 }
 
-/* .start {
-  color: rgb(59, 13, 13);
-  text-align: center;
-  padding: 20px;
-  font-size: 25px;
-  /* font-family: 'Willy Wonka'; 
-  font-family: 'Lobster', cursive;
-  font-weight:bold;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  margin: 5px;
-  background-image: url('../assets/gold-foil.png')
 
-} */
 #easy, #medium, #hard, .close-window {
   color: rgb(59, 13, 13);
   text-align: center;
   padding: 20px;
   font-size: 25px;
-  /* font-family: 'Willy Wonka'; */
+  
   font-family: 'Lobster', cursive;
   font-weight:bold;
   border-radius: 5px;
@@ -123,7 +109,7 @@ h1 {
   color:#c3a343;
   -webkit-text-fill-color: transparent;
   background: -webkit-linear-gradient(transparent, transparent),
-  url(https://media.istockphoto.com/photos/gold-foil-picture-id641038612?k=20&m=641038612&s=170667a&w=0&h=WIdEkkQ2hMDmvcKw3AVxOfKONJeEtdVMM0GBSJSfJH8=) repeat;
+  url('https://media.istockphoto.com/photos/gold-foil-picture-id641038612?k=20&m=641038612&s=170667a&w=0&h=WIdEkkQ2hMDmvcKw3AVxOfKONJeEtdVMM0GBSJSfJH8=') repeat;
   background: -o-linear-gradient(transparent, transparent);
   -webkit-background-clip: text;
 }
@@ -205,12 +191,7 @@ h1 {
 
 /* Characters */
 
-/* .character {
-  background-image: url('../assets/violet.png');
-  background-repeat: no-repeat;
-  background-size: contain; 
-}*/
-  
+
 
 .willy-wonka {
   background-image: url('../assets/willy_wonka_transparent-removebg-preview.png');
@@ -250,7 +231,7 @@ h1 {
   background-size: contain;
 }
 .pink-party-ring.oompa-loompa {
-  background: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/sparkles.gif');
+  background: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/pink-party-ring--removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -260,7 +241,7 @@ h1 {
   background-size: contain;
 }
 .pink-party-ring.charlie {
-  background: url('../assets/charlie.png'),url('../assets/sparkles.gif');
+  background: url('../assets/charlie.png'),url('../assets/pink-party-ring--removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -275,7 +256,7 @@ h1 {
   background-size: contain;
 }
 .custard-cream.oompa-loompa {
-  background: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/sparkles.gif');
+  background: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/Custard_cream_biscuit-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -285,7 +266,7 @@ h1 {
   background-size: contain;
 }
 .custard-cream.charlie {
-  background: url('../assets/charlie.png'),url('../assets/sparkles.gif');
+  background: url('../assets/charlie.png'),url('../assets/Custard_cream_biscuit-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -300,7 +281,7 @@ h1 {
   background-size: contain;
 }
 .yellow-party-ring.oompa-loompa {
-  background: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/sparkles.gif');
+  background: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/yellow-party-ring-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -310,7 +291,7 @@ h1 {
   background-size: contain;
 }
 .yellow-party-ring.charlie {
-  background: url('../assets/charlie.png'),url('../assets/sparkles.gif');
+  background: url('../assets/charlie.png'),url('../assets/yellow-party-ring-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -327,7 +308,7 @@ h1 {
   
 }
 .egg.oompa-loompa  {
-  background: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/sparkles.gif');
+  background: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/FriedEgg-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
   
@@ -339,7 +320,7 @@ h1 {
   
 }
 .egg.charlie  {
-  background: url('../assets/charlie.png'),url('../assets/sparkles.gif');
+  background: url('../assets/charlie.png'),url('../assets/FriedEgg-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
   
@@ -355,7 +336,7 @@ h1 {
   background-size: contain;
 }
 .heart.oompa-loompa  {
-  background: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/sparkles.gif');
+  background: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/haribo-heart-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -365,7 +346,7 @@ h1 {
   background-size: contain;
 }
 .heart.charlie  {
-  background: url('../assets/charlie.png'),url('../assets/sparkles.gif');
+  background: url('../assets/charlie.png'),url('../assets/haribo-heart-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -380,7 +361,7 @@ h1 {
   background-size: contain;
 }
 .worm.oompa-loompa  {
-  background: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/sparkles.gif');
+  background: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/worm-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -390,7 +371,7 @@ h1 {
   background-size: contain;
 }
 .worm.charlie  {
-  background: url('../assets/charlie.png'),url('../assets/sparkles.gif');
+  background: url('../assets/charlie.png'),url('../assets/worm-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -405,7 +386,7 @@ h1 {
   background-size: contain;
 }
 .yellow-skittle.oompa-loompa  {
-  background: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/sparkles.gif');
+  background: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/yellow-skittle-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -415,7 +396,7 @@ h1 {
   background-size: contain;
 }
 .yellow-skittle.charlie  {
-  background: url('../assets/charlie.png'),url('../assets/sparkles.gif');
+  background: url('../assets/charlie.png'),url('../assets/yellow-skittle-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -430,8 +411,7 @@ h1 {
   background-size: contain;
 }
 .creme-egg.oompa-loompa  {
-  background: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/sparkles.gif');
-  background-repeat: no-repeat;
+  background: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/creme-egg-removebg-preview.png');
   background-size: contain;
 }
 .creme-egg.willy-wonka  {
@@ -440,7 +420,7 @@ h1 {
   background-size: contain;
 }
 .creme-egg.charlie  {
-  background: url('../assets/charlie.png'),url('../assets/sparkles.gif');
+  background: url('../assets/charlie.png'),url('../assets/creme-egg-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -455,7 +435,7 @@ h1 {
   background-size: contain;
 }
 .green-skittle.oompa-loompa  {
-  background: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/sparkles.gif');
+  background: url('../assets/oompa_loompa_transparent-removebg-preview.png'),url('../assets/green-skittle-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -465,7 +445,7 @@ h1 {
   background-size: contain;
 }
 .green-skittle.charlie  {
-  background: url('../assets/charlie.png'),url('../assets/sparkles.gif');
+  background: url('../assets/charlie.png'),url('../assets/green-skittle-removebg-preview.png');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -482,12 +462,7 @@ h1 {
   }
 
 
-/* .div-five {
-  border: 2px solid white;
-  color: white;
-  font-family: 'Willy Wonka';
-  padding: 15px;
-} */
+
 .div-six {
 width: 50px;
 height: 300px;
@@ -496,22 +471,11 @@ margin: 50px;
 background-image: url('../assets/gold-foil.png')
 }
 
-/* object-fit: fill; */
-
-
-
- /* #myProgress {
-width: 100%; 
- background-color: #F1BE15;
-
-}  */
 
 #myBar {
 /* width: 100px; */
 height: 100%;
 background-color: #9c21db;
-;
-
 }
 
 .div-seven {
@@ -559,7 +523,7 @@ background-size: contain;
 object-fit: fill;
 }
 
-
+/*ALERTS*/
 
 /* The alert message box */
 .alert-box-game-over {
@@ -601,10 +565,7 @@ object-fit: fill;
   
 }
 
-/* .wonka-factory-entrance {
-  background-image: url('../assets/wonka-factory.png');
-  background-repeat: no-repeat;
-} */
+
 .none {
   display: none;
 }
@@ -631,42 +592,17 @@ object-fit: fill;
 }
 
 .restart-winner, .restart-loser, .close-window-winner, .close-window-loser {
-  color: white;
+  color: rgb(59, 13, 13);
   text-align: center;
   padding: 20px;
-  font-size: 30px;
-  font-family: 'Willy Wonka';
-  background-color: #F1BE15;
+  font-size: 25px;
+  font-family: 'Lobster', cursive;
+  font-weight: bold;
   border-radius: 5px;
   border: none;
   cursor: pointer;
   margin: 5px;
+  background-image: url('../assets/gold-foil.png')
 }
 
 
-/* .blur {
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.2);
-  z-index: 10;
-  height: 1000px;
-width: 100px;
-} */
-
-
-
-/* The close button */
-/* .close-buttton {
-  margin-left: 15px;
-  color: white;
-  font-weight: bold;
-  float: right;
-  font-size: 22px;
-  line-height: 20px;
-  cursor: pointer;
-  transition: 0.3s;
-} */
-
-/* When moving the mouse over the close button */
-/* .close-button:hover {
-  //color: black;
-} */

@@ -340,11 +340,6 @@ function init() {
     addCharacter(characterStartPosition)
   }
 
-  // const winningCell = rainbowBelt.positions[6]
-  // console.log(winningCell)
-  // console.log(cells)
-
-
 
 
   // Add character to grid
@@ -353,16 +348,14 @@ function init() {
     //console.log(position)
     //console.log(cells[position])
     //console.log(character)
-    //cells[position].classList.add(character.join())
-    //console.log(allCharacters[1])// use position as index to pick the corresponding div from the array of cells and add the class of char  
-
+   
     cells[position].classList.add(character)
   }
 
   //Remove character from grid
 
   function removeCharacter(position) {
-    //cells[position].classList.remove(character.join())
+
     cells[position].classList.remove(character)
   }
 
@@ -609,6 +602,7 @@ function init() {
   }
 
   // character crossing successfully
+
   function characterCrossesSuccessfully() {
     return rainbowBelt.positionsSuccess.includes(characterCurrentPosition)
     //console.log(rainbowBelt.positions[6])
@@ -619,36 +613,28 @@ function init() {
   
   // Winning screen
 
-
   const section = document.querySelector('section')
   const winDiv = document.querySelector('.alert-box-successful')
   const loseDiv = document.querySelector('.alert-box-game-over')
 
   function winning() {
-    
-    // section.classList.add('wonka-factory-entrance')
+
     section.classList.add('none')
-
     winDiv.style.visibility = 'visible'
-
-
   }
 
   // Losing Screen
 
   function losing() {
     section.classList.add('none')
-    // section.classList.add('alert-box-game-over')
     loseDiv.style.visibility = 'visible'
   }
 
   // Play again
 
   function reload(event) {
-
     //console.log(event)
     location.reload(event)
-    //document.getElementsByClassName('.sections-wrapper').style.visibility = 'hidden'
   }
 
   // Window close
@@ -671,7 +657,7 @@ function init() {
   medium.addEventListener('click', startMovementMedium)
   hard.addEventListener('click', startMovementHard)
 
-  //start.addEventListener('click', startTimer)
+  
 
   easy.addEventListener('click', startTimer)
   medium.addEventListener('click', startTimer)
@@ -699,8 +685,7 @@ function init() {
 
   createGrid(characterStartPosition) //pass function to the starting position of the char
 
-  //characterChange()
-  //alert()
+  
 
 }
 

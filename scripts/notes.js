@@ -84,9 +84,11 @@
 // Thursday
 // sort alert messages
 // manage to change characters
-// CSS: audio, background, timer
+//// CSS: background, timer
 
-
+// Friday
+// // sort alert messages
+// // manage to change characters
 
 
 // To do - JS
@@ -95,10 +97,28 @@
 // get food moving smoothly - setTimeout?? - add back in quicker than goes out
 
 // To do - CSS
-// fix sizing of screen
+// // fix sizing of screen
 // factory and gate at top
 // animations on lollies
 // sizing of characters
 // // border
+
+
+// PROCESSING
+
+// Next time...:
+// Force myself to take breaks
+// Do min 30 min walking/day - either bit in morning then bit later or all in one go
+// Do something else before going to bed!
+// STOP OVERCOMPLICATING THINGS!!!!!
+
+// What I did well...:
+// Asking for help (usually not good at this)
+// have more sleep if needed - coding is exhausting
+// take a small break on the weekend in project week (1 morning off and one evening?)
+// Doing a detailed plan
+
+
+
 
 
