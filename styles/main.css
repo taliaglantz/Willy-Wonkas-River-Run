@@ -577,6 +577,8 @@ object-fit: fill;
   font-size: 30px;
   position: absolute;
   z-index: 1;
+  margin-top: 10%;
+    margin-left: 500px;
   
 }
 .alert-box-successful {
@@ -594,9 +596,15 @@ object-fit: fill;
   font-size: 30px;
   position: absolute;
   z-index: 1;
+  margin-top: 10%;
+    margin-left: 500px;
   
 }
 
+/* .wonka-factory-entrance {
+  background-image: url('../assets/wonka-factory.png');
+  background-repeat: no-repeat;
+} */
 .none {
   display: none;
 }

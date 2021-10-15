@@ -408,6 +408,7 @@ function init() {
 
     if (characterInRiver()) {
       loseLife()
+      
     }
 
     if (rainbowBelt.positionsSuccess.includes(characterCurrentPosition)) {
@@ -457,6 +458,7 @@ function init() {
       addFood(treat) // add food item back at the start position
       if (charactersOnTreat) {
         loseLife()
+       
 
       }
       return // return here to stop rest of function running
@@ -466,6 +468,7 @@ function init() {
       addFood(treat)
       if (charactersOnTreat) {
         loseLife()
+        
 
       }
       return
@@ -556,18 +559,20 @@ function init() {
       const myBar = document.getElementById("myBar");
       let height = 1;
 
-      myInterval = setInterval(myTimer, 100);
+      myInterval = setInterval(myTimer, 150);
       function myTimer() {
         if (height >= 100) {
           clearInterval(myInterval)
           counterTimer = 0
-          loseLife()
-          startTimer()
+          //loseLife()
+          //startTimer()
+          losing()
         } else {
           height += .5
           myBar.style.height = height + '%'
           //console.log(height)
         }
+      
       }
     }
   }
@@ -620,8 +625,10 @@ function init() {
   const loseDiv = document.querySelector('.alert-box-game-over')
 
   function winning() {
+    
+    // section.classList.add('wonka-factory-entrance')
     section.classList.add('none')
-    // section.classList.add('alert-box-successful')
+
     winDiv.style.visibility = 'visible'
 
 

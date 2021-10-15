@@ -33,9 +33,9 @@
       <div class='div-one'>
         <p class='pick-a-level'>Step 2: Pick a level to start</p>
         <div class='level-wrapper'></div>
-        <button id='easy' type="submit">EASY</button>
-        <button id='medium' type="submit">MEDIUM</button>
-        <button id='hard' type="submit">HARD</button>
+        <button id='easy' type="submit" onclick="this.disabled = true">EASY</button>
+        <button id='medium' type="submit" onclick="this.disabled = true">MEDIUM</button>
+        <button id='hard' type="submit" onclick="this.disabled = true">HARD</button>
       </div>
       </div>
 
@@ -94,6 +94,7 @@
   <div class='alert-box-game-over'>
     <div class='message'>
       <p class='loser'>No Golden Ticket this time! </p>
+    <
     </div>
     <div class='buttons'>
       <button class='restart-loser' type='submit'>Play again</button>
