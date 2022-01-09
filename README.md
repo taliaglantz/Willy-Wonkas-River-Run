@@ -3,7 +3,8 @@
 ![Willy Wonka's River Run - logo](assets/wwrrtitle.png)
 
 ## Table of Contents
-- [Overview](#overview) 
+- [Overview](#overview)
+- [Project Description](#project-description)
 - [Technologies used](#technologies-used)
 - [Planning](#planning)
 - [Build](#build)
@@ -17,19 +18,11 @@
 ## Overview
 This project was my first project created during General Assembly’s Software Engineering Immersive Course, which I completed from September-December 2021.
 
-
 ### Goal 
 As a solo project, build a grid-based browser game using Vanilla JavaScript.
 
 ### Timeframe
 8 days
-
-### Project description
-This was my first project on General Assembly’s Software Engineering Immersive, and the first time I had been given a brief, but effectively been told to run with it! 
-
-Willy Wonka’s River Run is based on the game Frogger, which was initially conceived by Konami video game developer Akira Hashimoto in 1981. Using the logic from Frogger, however, adapting it slightly, the objective of my game is for the player to use the arrow keys to move a character across Willy Wonka’s chocolate river. They do this by jumping on moving treats and landing on rainbow belts. At the beginning of the game, the player has the option to pick both a character and a level. The game has to be completed within a certain amount of time and each player has 3 lives. 
-
-![Screenshot of game](assets/game.png)
 
 ### Deployed link
 https://taliaglantz.github.io/SEI-Project-1/ 
@@ -38,6 +31,14 @@ https://taliaglantz.github.io/SEI-Project-1/
 1. Either clone or download the source code.
 2. Open the index.html file in your browser.
 3. Play!
+
+<a name="project-description"></a>
+## Project description
+This was my first project on General Assembly’s Software Engineering Immersive, and the first time I had been given a brief, but effectively been told to run with it! 
+
+Willy Wonka’s River Run is based on the game Frogger, which was initially conceived by Konami video game developer Akira Hashimoto in 1981. Using the logic from Frogger, however, adapting it slightly, the objective of my game is for the player to use the arrow keys to move a character across Willy Wonka’s chocolate river. They do this by jumping on moving treats and landing on rainbow belts. At the beginning of the game, the player has the option to pick both a character and a level. The game has to be completed within a certain amount of time and each player has 3 lives. 
+
+![Screenshot of game](assets/game.png)
 
 <a name="technologies-used"></a>
 ## Technologies used
