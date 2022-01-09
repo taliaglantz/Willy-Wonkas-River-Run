@@ -51,8 +51,6 @@ function init() {
   const rainbowBelt = {
     item: 'rainbow belt',
     cssId: 'rainbow-belt',
-    //positions: 1
-    //positions: [1,2]
     positions: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168],
     positionsSuccess: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
   }
@@ -608,14 +606,14 @@ function init() {
     //console.log(rainbowBelt.positions[6])
   }
 
-
-
   
-  // Winning screen
+  // Winning and losing screens
 
   const section = document.querySelector('section')
   const winDiv = document.querySelector('.alert-box-successful')
   const loseDiv = document.querySelector('.alert-box-game-over')
+
+  // Winning screen
 
   function winning() {
 
@@ -644,9 +642,6 @@ function init() {
   }
 
 
-
-
-
   // ** EVENT LISTENERS **
 
   document.addEventListener('keyup', handleKeyUp) // listening for key press
@@ -667,9 +662,6 @@ function init() {
     char.addEventListener('click', chooseCharacter)
   })
 
- 
-
-  
 
   closeWindowWinner.addEventListener('click', byeByeGame)
   playAgainWinner.addEventListener('click', reload)
@@ -678,16 +670,10 @@ function init() {
 
 
 
-
-
-
   // ** CALLING FUNCTIONS **
 
   createGrid(characterStartPosition) //pass function to the starting position of the char
 
-  
-
 }
-
 
 window.addEventListener('DOMContentLoaded', init)
