@@ -4,9 +4,7 @@
 
 ## Table of Contents
 - [Overview](#overview)
-- [Project Description](#project-description)
 - [Technologies used](#technologies-used)
-- [Planning](#planning)
 - [Build](#build)
 - [Known bugs](#known-bugs)
 - [Wins](#wins)
@@ -16,10 +14,13 @@
 
 <a name="overview"></a>
 ## Overview
-This project was my first project created during General Assembly’s Software Engineering Immersive Course, which I completed from September-December 2021.
+Willy Wonka’s River Run was my first project created during General Assembly’s Software Engineering Immersive Course, which I completed from September-December 2021.
 
-### Goal 
-As a solo project, build a grid-based browser game using Vanilla JavaScript.
+<strong>The goal:</strong> as a solo project, build a grid-based browser game using HTML, CSS and Vanilla JavaScript.
+
+The game I created is called Willy Wonka’s River Run and is based on the game Frogger, which was initially conceived by Konami video game developer Akira Hashimoto in 1981. Using the logic from Frogger, however, adapting it slightly, the objective of my game is for the player to use the arrow keys to move a character across Willy Wonker’s chocolate river. They do this by jumping on moving treats and landing on rainbow belts. At the beginning of the game, the player has the option to pick both a character and a level. The game has to be completed within a certain amount of time and each player has 3 lives. 
+
+![Screenshot of game](assets/game.png)
 
 ### Timeframe
 8 days
@@ -32,22 +33,12 @@ https://taliaglantz.github.io/SEI-Project-1/
 2. Open the index.html file in your browser.
 3. Play!
 
-<a name="project-description"></a>
-## Project description
-This was my first project on General Assembly’s Software Engineering Immersive, and the first time I had been given a brief, but effectively been told to run with it! 
-
-Willy Wonka’s River Run is based on the game Frogger, which was initially conceived by Konami video game developer Akira Hashimoto in 1981. Using the logic from Frogger, however, adapting it slightly, the objective of my game is for the player to use the arrow keys to move a character across Willy Wonka’s chocolate river. They do this by jumping on moving treats and landing on rainbow belts. At the beginning of the game, the player has the option to pick both a character and a level. The game has to be completed within a certain amount of time and each player has 3 lives. 
-
-![Screenshot of game](assets/game.png)
-
 <a name="technologies-used"></a>
 ## Technologies used
 
 * HTML5
 * CSS3
 * JavaScript
-* Git and GitHub
-* Google Fonts
 
 <a name="build"></a>
 ## Build
@@ -201,6 +192,10 @@ I then started working on the “winner” and “loser” alert messages, which
   }
 
 ```
+<img src="assets/Screenshot 2022-01-13 at 10.46.09.png" width=350>
+<img src="assets/Screenshot 2022-01-13 at 10.45.46.png" width=350>
+
+
 
 ### Day 8
 
