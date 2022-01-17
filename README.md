@@ -26,7 +26,7 @@ The game I created is called Willy Wonka’s River Run and is based on the game 
 8 days
 
 ### Deployed link
-https://taliaglantz.github.io/SEI-Project-1/ 
+https://taliaglantz.github.io/Willy-Wonkas-River-Run/
 
 ### Getting started
 1. Either clone or download the source code.
