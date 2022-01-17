@@ -210,7 +210,7 @@ We had our project presentations at around lunchtime so my morning was mostly sp
 
 <a name="wins"></a>
 ## Wins
-It is very easy to say that a challenge turned into a win, but it’s true! When planning the game, I wanted to try to go that extra mile and attempt bonus tasks that would take the game to a new level. I had my heart set on ensuring the player had the ability to choose which character they would like to play and I am so happy this additional feature made it into the game! Generally, I am also so pleased with my planning, I broke the tasks down into achievable goals so the overall project felt more manageable and I was therefore able to achieve my desired outcome and overall success.
+It is very easy to say that a challenge turned into a win, but it’s true! When planning the game, I wanted to try to go that extra mile and <strong>attempt bonus tasks</strong> that would take the game to a new level. I had my heart set on ensuring the player had the ability to choose which character they would like to play and I am so happy this additional feature made it into the game! Generally, I am also so pleased with my <strong>planning</strong>, I broke the tasks down into achievable goals so the overall project felt more manageable and I was therefore able to achieve my desired outcome and overall success.
 
 
 <a name="challenges"></a>
